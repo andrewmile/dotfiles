@@ -2,5 +2,6 @@
 {
 	"status_bar_text": [
         "{{branch}}"
-    ]
+    ],
+    "show_line_annotation": "false"
 }
