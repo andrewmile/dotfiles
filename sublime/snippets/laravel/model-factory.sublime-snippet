@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+\$factory->define('App\\${1:model}', function (Faker\Generator \$faker) {
+    return [
+        ${2}
+    ];
+});
+]]></content>
+	<tabTrigger>fac</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

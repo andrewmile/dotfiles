@@ -1,0 +1,9 @@
+[
+
+	{
+        "caption": "Reg Replace: PHP Testing Replace",
+        "command": "reg_replace",
+        "args": {"replacements": ["replace_use_with_something", "replace_php_with_js"]}
+    }
+
+]

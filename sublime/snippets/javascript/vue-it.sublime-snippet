@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[it('${1:should do something}', () => {
+	${2}
+	expect(wrapper.is('div')).to.equal(true)
+})
+]]></content>
+	<tabTrigger>vit</tabTrigger>
+	<scope>source.js</scope>
+</snippet>

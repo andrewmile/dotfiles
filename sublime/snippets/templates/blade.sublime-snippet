@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[@extends('layouts.master')
+
+@section('content')
+
+    $1
+
+@stop
+]]></content>
+	<tabTrigger>blade</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

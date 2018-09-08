@@ -1,0 +1,6 @@
+// GitGutter Settings - User
+{
+	"status_bar_text": [
+        "{{branch}}"
+    ]
+}

@@ -1,0 +1,21 @@
+<snippet>
+    <content><![CDATA[import { expect } from 'chai'
+import { mount } from 'avoriaz'
+import ${1:${TM_FILENAME/(.+)\..+\..+|.*/$1/:name}} from '@/components/${1:${TM_FILENAME/(.+)\..+\..+|.*/$1/:name}}.vue'
+
+describe('${1:${TM_FILENAME/(.+)\..+\..+|.*/$1/:name}}.vue', () => {
+    var wrapper;
+    beforeEach(() => {
+        wrapper = mount(${1:${TM_FILENAME/(.+)\..+\..+|.*/$1/:name}})
+    })
+
+    it('${2:should do something}', () => {
+      expect(wrapper.is('div')).to.equal(true)
+    })
+})
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <!-- <tabTrigger>hello</tabTrigger> -->
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

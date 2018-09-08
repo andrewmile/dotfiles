@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[default:
+    extensions:
+        Laracasts\Behat:
+        Behat\MinkExtension:
+            default_session: laravel
+            laravel: ~
+    autoload: [ %paths.base%/features ]
+    suites:]]></content>
+	<tabTrigger>behat.yml</tabTrigger>
+</snippet>

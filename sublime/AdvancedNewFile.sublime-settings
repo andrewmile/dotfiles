@@ -1,0 +1,14 @@
+{
+	"file_templates": {
+		"php": [
+			"Packages/User/snippets/templates/php-class.sublime-snippet",
+			"Packages/User/snippets/templates/blade.sublime-snippet",
+		],
+		"js": [
+			"Packages/User/snippets/templates/vue-spec.sublime-snippet"
+		],
+		"vue": [
+			"Packages/User/snippets/templates/vue-component.sublime-snippet"
+		]
+	}
+}

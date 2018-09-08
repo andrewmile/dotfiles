@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+{{ Former::${1:sm_}text('${2:field}')$0 }}
+]]></content>
+	<tabTrigger>ft</tabTrigger>
+	<scope>text.html</scope>
+</snippet>

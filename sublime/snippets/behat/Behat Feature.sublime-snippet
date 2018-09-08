@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[Feature: ${1:feature_name}
+     ${2:feature purpose}
+     as a ${3:actor}
+     ${4:feature requirement}]]></content>
+	<tabTrigger>behat-feature</tabTrigger>
+</snippet>

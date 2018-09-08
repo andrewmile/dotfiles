@@ -1,0 +1,41 @@
+<snippet>
+	<content><![CDATA[use Behat\Behat\Context\Context;
+use Behat\Gherkin\Node\TableNode;
+use Behat\Gherkin\Node\PyStringNode;
+use Laracasts\Behat\Context\Migrator;
+use PHPUnit_Framework_Assert as PHPUnit;
+use Behat\MinkExtension\Context\MinkContext;
+use Behat\Behat\Context\SnippetAcceptingContext;
+use Laracasts\Behat\Context\DatabaseTransactions;
+use Behat\Behat\Tester\Exception\PendingException;
+
+/**
+ * Defines application features from the specific context.
+ */
+class Browser extends MinkContext implements Context, SnippetAcceptingContext
+{
+    use Migrator;
+    use DatabaseTransactions;
+
+    /**
+     * Initializes context.
+     *
+     * Every scenario gets its own context instance.
+     * You can also pass arbitrary arguments to the
+     * context constructor through behat.yml.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
+     * @BeforeScenario
+     */
+    public function beforeScenario()
+    {
+        //
+    }
+}
+]]></content>
+	<tabTrigger>behat-context</tabTrigger>
+</snippet>

@@ -1,0 +1,18 @@
+{
+	"replacements": {
+
+		"replace_use_with_something": {
+			"find": "use",
+			"replace": "something",
+			"greedy": true,
+			"case": false
+		},
+		"replace_php_with_js": {
+			"find": "php",
+			"replace": "js",
+			"greedy": true,
+			"case": false
+		},
+
+	}
+}

@@ -1,0 +1,24 @@
+[
+	{ "keys": ["option+command+down"], "command": "goto_definition" },
+	{ "keys": ["ctrl+option+c"], "command": "run_macro_file", "args": {"file": "res://Packages/User/Macros/php-construct-injector.sublime-macro"} },
+	{ "keys": ["alt+super+k"], "command": "run_macro_file", "args": {"file": "res://Packages/User/macros/implode-list-with-quotes.sublime-macro"} },
+	{ "keys": ["alt+super+l"], "command": "run_macro_file", "args": {"file": "res://Packages/User/macros/implode-list.sublime-macro"} },
+	{ "keys": ["f1"], "command": "import_namespace"},
+	{ "keys": ["f2"], "command": "insert_php_constructor_property"},
+	{ "keys": ["f3"], "command": "find_use"},
+	{ "keys": ["f4"], "command": "expand_fqcn"},
+	{ "keys": ["alt+super+down"], "command": "goto_definition_scope"},
+	{ "keys": ["alt+super+up"], "press_command": "drag_select", "command": "goto_definition"},
+	{ "keys": ["ctrl+super+f"], "command": "phpunit_test_file"},
+	{ "keys": ["ctrl+super+t"], "command": "phpunit_test_nearest"},
+	{ "keys": ["ctrl+super+p"], "command": "phpunit_test_last"},
+	{ "keys": ["ctrl+super+a"], "command": "phpunit_test_suite"},
+	{ "keys": ["ctrl+super+s"], "command": "phpunit_test_switch"},
+	{ "keys": ["command+alt+backspace"], "command": "advanced_new_file_delete", "args": {"current": true}},
+	{ "keys": ["super+b"], "command": "toggle_side_bar" },
+	{ "keys": ["escape"], "command": "hide_panel", "args": {"cancel": true},
+    	"context":[
+    		{ "key": "panel_visible", "operator": "equal", "operand": true }
+    	]
+ 	}
+]

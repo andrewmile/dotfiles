@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+{{ Former::${1:sm_}select('${2:field}')->options(${3:\$options})$0 }}
+]]></content>
+	<tabTrigger>fs</tabTrigger>
+	<scope>text.html</scope>
+</snippet>

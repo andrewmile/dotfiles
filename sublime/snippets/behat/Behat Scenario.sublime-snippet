@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[Scenario: ${1:scenario name}
+	Given $2
+	When $3
+	Then $4]]></content>
+	<tabTrigger>behat-scenario</tabTrigger>
+</snippet>

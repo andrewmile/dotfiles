@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+\$factory->defineAs(App\\${1:model}::class, '${2:state}', function (Faker\Generator \$faker) use(\$factory) {
+    \$raw = $factory->raw(App\\${1:model}::class);
+
+    return array_merge(\$raw, [
+        ${3}
+    ]);
+});
+]]></content>
+    <tabTrigger>facas</tabTrigger>
+    <scope>source.php</scope>
+    <description>Laravel model factory defineAs</description>
+</snippet>

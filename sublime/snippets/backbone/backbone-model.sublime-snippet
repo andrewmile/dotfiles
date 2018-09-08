@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+define(function (require) {
+
+    "use strict";
+
+    var \$             = require('jquery'),
+        Backbone      = require('backbone');
+
+    return Backbone.Model.extend({
+
+    	defaults: {
+    	}
+
+    });
+
+});
+]]></content>
+	<tabTrigger>bm</tabTrigger>
+	<scope>source.js</scope>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+/** @test */
+function ${1:methodName}()
+{
+    $2
+}
+]]></content>
+	<tabTrigger>tmet</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

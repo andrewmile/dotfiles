@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+{{ Former::inline_radios('${1:field}')
+	->radios([
+		'${2:Label One}' => ['name' => '${1:field}', 'value' => '${3:value one}'],
+		'${4:Label Two}' => ['name' => '${1:field}', 'value' => '${5:value two}']
+	])$0 }}
+]]></content>
+	<tabTrigger>fr</tabTrigger>
+	<scope>text.html</scope>
+</snippet>

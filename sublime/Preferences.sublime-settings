@@ -1,0 +1,41 @@
+{
+	"bold_folder_labels": true,
+	"close_windows_when_empty": true,
+	"color_scheme": "Packages/Theme - Cobalt2/cobalt2.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"fade_fold_buttons": false,
+	"file_exclude_patterns":
+	[
+		".DS_Store"
+	],
+	"folder_exclude_patterns":
+	[
+		".git"
+	],
+	"font_size": 18,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Markdown",
+		"MarkdownEditing",
+		"RegReplace"
+	],
+	"indent_guide_options":
+	[
+		"draw_active"
+	],
+	"line_padding_bottom": 8,
+	"line_padding_top": 8,
+	"phpunit.php_executable": "/Users/andrew.morgan/homebrew/bin/php",
+	"rulers":
+	[
+		80,
+		100
+	],
+	"show_full_path": true,
+	"theme": "Cobalt2.sublime-theme",
+	"trim_trailing_white_space_on_save": true,
+	"use_simple_full_screen": true,
+	"word_wrap": true
+}

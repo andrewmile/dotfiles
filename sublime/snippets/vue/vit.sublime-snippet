@@ -1,0 +1,10 @@
+<snippet>
+<content><![CDATA[
+it('${1}', () => {
+    ${0}
+});
+]]></content>
+<tabTrigger>vit</tabTrigger>
+<description>Vue Test Utils it method</description>
+<scope>source.js, meta.function-call.js, meta.group.js, meta.block.js, meta.function-call.js, meta.group.js, meta.block.js</scope>
+</snippet>

@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+->addGroupClass('${1:class}')$0
+]]></content>
+	<tabTrigger>fgc</tabTrigger>
+	<scope>text.html</scope>
+</snippet>

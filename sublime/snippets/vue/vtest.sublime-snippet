@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+import expect from 'expect';
+import { mount } from '@vue/test-utils';
+import * as assert from 'helpers/assert.js';
+import ${TM_FILENAME/(.*)\.spec.+/$1/g} from '@/${TM_FILEPATH/^.+specs\/(.+)\.spec.+/$1/g}.vue';
+
+describe('${TM_FILENAME/(.*)\.spec.+/$1/g}.vue', () => {
+
+    it('${1}', () => {
+        ${0}
+    });
+
+});
+
+]]></content>
+<tabTrigger>vtest</tabTrigger>
+<description>Vue Test Utils test</description>
+<scope>source.js</scope>
+</snippet>
