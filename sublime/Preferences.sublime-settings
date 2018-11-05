@@ -10,9 +10,10 @@
 	],
 	"folder_exclude_patterns":
 	[
-		".git"
+		".git",
+		"storage"
 	],
-	"font_size": 18,
+	"font_size": 17,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -27,6 +28,7 @@
 	],
 	"line_padding_bottom": 8,
 	"line_padding_top": 8,
+	"phpunit.php_executable": "/Users/andrew.morgan/homebrew/bin/php",
 	"rulers":
 	[
 		80,

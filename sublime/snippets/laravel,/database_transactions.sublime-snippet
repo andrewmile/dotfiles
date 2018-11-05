@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+use DatabaseTransactions;
+]]></content>
+    <tabTrigger>udt</tabTrigger>
+    <scope>embedding.php, text.html.basic, meta.embedded.block.php, source.php, meta.class.php, meta.block.php, meta.use.php, keyword.other.use.php</scope>
+    <description>use DatabaseTransactions trait</description>
+</snippet>

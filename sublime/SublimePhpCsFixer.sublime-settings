@@ -1,0 +1,6 @@
+{
+	"config": "${folder}/.php_cs.dist",
+	"path": "/Users/andrew.morgan/.composer/vendor/bin/php-cs-fixer",
+	"php_path": "/Users/andrew.morgan/homebrew/bin/php",
+	"on_save": true
+}

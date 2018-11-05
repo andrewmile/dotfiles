@@ -1,0 +1,8 @@
+// SublimeLinter Settings - User
+{
+	"linters": {
+		"phpcs": {
+			"executable": "/Users/andrew.morgan/.composer/vendor/bin/phpcs"
+		}
+	}
+}
