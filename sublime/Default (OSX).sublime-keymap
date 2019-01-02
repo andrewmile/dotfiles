@@ -20,5 +20,10 @@
     	"context":[
     		{ "key": "panel_visible", "operator": "equal", "operand": true }
     	]
+ 	},
+ 	{ "keys": ["escape"], "command": "single_selection",
+    	"context":[
+    		{ "key": "num_selections", "operator": "not_equal", "operand": 1 }
+    	]
  	}
 ]
