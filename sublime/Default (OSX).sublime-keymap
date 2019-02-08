@@ -25,5 +25,6 @@
     	"context":[
     		{ "key": "num_selections", "operator": "not_equal", "operand": 1 }
     	]
- 	}
+ 	},
+ 	{ "keys": ["super+shift+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} }
 ]
