@@ -1,10 +1,11 @@
 <snippet>
 	<content><![CDATA[
-public function ${1:methodName}($2)
+protected function ${1:methodName}($2)
 {
-    $3
+    $0
 }
 ]]></content>
-	<tabTrigger>met</tabTrigger>
+	<tabTrigger>pmet</tabTrigger>
 	<scope>source.php</scope>
 </snippet>
+

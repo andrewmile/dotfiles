@@ -1,11 +1,10 @@
 <snippet>
 	<content><![CDATA[
-/** @test */
-function ${1:methodName}()
+public function ${1:methodName}($2)
 {
     $0
 }
 ]]></content>
-	<tabTrigger>tmet</tabTrigger>
+	<tabTrigger>met</tabTrigger>
 	<scope>source.php</scope>
 </snippet>
