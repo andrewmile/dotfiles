@@ -36,4 +36,24 @@
     {"keys": ["super+alt+s"], "command": "xdebug_session_start"},
     {"keys": ["super+alt+t"], "command": "xdebug_session_stop"},
     {"keys": ["super+alt+r"], "command": "xdebug_session_restart"},
+    {
+        "keys": ["ctrl+super+up"],
+        "command": "chain",
+        "args": {
+            "commands": [
+                ["swap_line_up"],
+                ["reindent", {"single_line": false}]
+            ]
+        }
+    },
+    {
+        "keys": ["ctrl+super+down"],
+        "command": "chain",
+        "args": {
+            "commands": [
+                ["swap_line_down"],
+                ["reindent", {"single_line": false}]
+            ]
+        }
+    },
 ]
