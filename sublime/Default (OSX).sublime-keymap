@@ -3,6 +3,7 @@
 	{ "keys": ["ctrl+option+c"], "command": "run_macro_file", "args": {"file": "res://Packages/User/Macros/php-construct-injector.sublime-macro"} },
 	{ "keys": ["alt+super+k"], "command": "run_macro_file", "args": {"file": "res://Packages/User/macros/implode-list-with-quotes.sublime-macro"} },
 	{ "keys": ["alt+super+l"], "command": "run_macro_file", "args": {"file": "res://Packages/User/macros/implode-list.sublime-macro"} },
+	{ "keys": ["shift+alt+p"], "command": "run_macro_file", "args": {"file": "res://Packages/User/macros/native-session-to-laravel.sublime-macro"} },
 	{ "keys": ["f1"], "command": "import_namespace"},
 	{ "keys": ["f2"], "command": "insert_php_constructor_property"},
 	{ "keys": ["f3"], "command": "find_use"},
@@ -26,5 +27,13 @@
     		{ "key": "num_selections", "operator": "not_equal", "operand": 1 }
     	]
  	},
- 	{ "keys": ["super+shift+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} }
+ 	{ "keys": ["super+shift+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+    {"keys": ["super+alt+b"], "command": "xdebug_breakpoint"},
+    {"keys": ["super+alt+g"], "command": "xdebug_continue", "args": {"command": "run"}},
+    {"keys": ["super+alt+o"], "command": "xdebug_continue", "args": {"command": "step_over"}},
+    {"keys": ["super+alt+i"], "command": "xdebug_continue", "args": {"command": "step_into"}},
+    {"keys": ["super+alt+u"], "command": "xdebug_continue", "args": {"command": "step_out"}},
+    {"keys": ["super+alt+s"], "command": "xdebug_session_start"},
+    {"keys": ["super+alt+t"], "command": "xdebug_session_stop"},
+    {"keys": ["super+alt+r"], "command": "xdebug_session_restart"},
 ]

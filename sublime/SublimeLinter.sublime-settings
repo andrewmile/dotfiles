@@ -2,7 +2,8 @@
 {
 	"linters": {
 		"phpcs": {
-			"executable": "/Users/andrew.morgan/.composer/vendor/bin/phpcs"
+			"executable": "/Users/andrew/.composer/vendor/bin/phpcs",
+			"args": "--standard='/Users/andrew/Code/tighten/handbook/.phpcs.xml.dist'"
 		}
 	}
 }

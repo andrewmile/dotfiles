@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+dd(${1:\$$2});
+]]></content>
+    <tabTrigger>dd</tabTrigger>
+    <scope>source.php</scope>
+    <description>Die and dump</description>
+</snippet>

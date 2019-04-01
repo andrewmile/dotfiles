@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+dd('test');
+]]></content>
+    <tabTrigger>ddt</tabTrigger>
+    <scope>source.php</scope>
+    <description>Die and dump test</description>
+</snippet>

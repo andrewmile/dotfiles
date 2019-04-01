@@ -11,9 +11,10 @@
 	"folder_exclude_patterns":
 	[
 		".git",
-		"storage"
+		"storagez",
+		"node_modules"
 	],
-	"font_size": 17,
+	"font_size": 16,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -24,11 +25,16 @@
 	],
 	"indent_guide_options":
 	[
+		"draw_normal",
 		"draw_active"
 	],
 	"line_padding_bottom": 8,
 	"line_padding_top": 8,
-	"phpunit.php_executable": "/Users/andrew.morgan/homebrew/bin/php",
+	"phpcs":
+	{
+		"phpcbf_on_save": true
+	},
+	"phpunit.php_executable": "/usr/local/bin/php",
 	"rulers":
 	[
 		80,
@@ -37,7 +43,9 @@
 	"show_errors_inline": false,
 	"show_full_path": true,
 	"theme": "Cobalt2.sublime-theme",
+	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true,
+	"use_tab_stops": true,
 	"word_wrap": true
 }

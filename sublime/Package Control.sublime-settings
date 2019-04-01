@@ -11,10 +11,10 @@
 		"Behat",
 		"Behat Features",
 		"BetterSnippetManager",
+		"ChangeQuotes",
 		"ColorPicker",
 		"Colorsublime",
 		"Compare Side-By-Side",
-		"Craft-Twig",
 		"DashDoc",
 		"DocBlockr",
 		"Dockerfile Syntax Highlighting",
@@ -45,8 +45,8 @@
 		"Package Control",
 		"PackageResourceViewer",
 		"PHP Companion",
-		"PHP CS Fixer",
 		"PHP Getters and Setters",
+		"Phpcs",
 		"PhpSimpleRefactor",
 		"PHPUnitKit",
 		"PlainTasks",
@@ -65,9 +65,11 @@
 		"SublimeLinter-phpcs",
 		"SublimeREPL",
 		"SublimeXiki",
+		"TailwindCSSAutocomplete",
 		"Theme - Cobalt2",
 		"TodoReview",
 		"Twig",
-		"Vue Syntax Highlight"
+		"Vue Syntax Highlight",
+		"Xdebug Client"
 	]
 }

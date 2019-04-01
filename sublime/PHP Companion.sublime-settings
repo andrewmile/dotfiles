@@ -1,5 +1,5 @@
 {
-	"use_sort_length": true,
+	"use_sort_length": false,
 	"visibility": "protected",
 	"namespace_prefix": "App"
 }
