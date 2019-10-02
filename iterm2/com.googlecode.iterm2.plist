@@ -295,7 +295,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>671 332 796 486 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 730 527 0 0 1920 1080 </string>
+	<string>0 0 730 527 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1518,7 +1518,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>InconsolataForPowerline 18</string>
+			<string>InconsolataForPowerline 20</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1605,7 +1605,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>CBEC1394-653E-48E4-88F5-262B20DA5C17</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>21</integer>
+	<integer>23</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
