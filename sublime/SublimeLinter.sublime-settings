@@ -4,6 +4,9 @@
 		"phpcs": {
 			"executable": "/Users/andrew/.composer/vendor/bin/phpcs",
 			"args": "--standard='/Users/andrew/Code/tighten/handbook/.phpcs.xml.dist'"
-		}
+		},
+        "tlint": {
+            "executable": "/Users/andrew/.composer/vendor/bin/tlint"
+        }
 	}
 }

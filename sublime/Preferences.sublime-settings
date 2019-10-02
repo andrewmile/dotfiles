@@ -1,4 +1,8 @@
 {
+	"additional_path_items":
+	[
+		"/Users/andrew/.composer/vendor/bin"
+	],
 	"bold_folder_labels": true,
 	"close_windows_when_empty": true,
 	"color_scheme": "Packages/Theme - Cobalt2/cobalt2.tmTheme",
@@ -11,10 +15,9 @@
 	"folder_exclude_patterns":
 	[
 		".git",
-		"storagez",
-		"node_modules"
+		"storage"
 	],
-	"font_size": 16,
+	"font_size": 20,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -47,5 +50,6 @@
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true,
 	"use_tab_stops": true,
-	"word_wrap": true
+	"word_wrap": true,
+	"vintage_start_in_command_mode": true
 }

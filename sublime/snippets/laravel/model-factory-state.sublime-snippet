@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+\$factory->state(App\\${1:Model}::class, '${2:state}', function ($faker) {
+    return [
+        ${3}
+    ];
+});
+]]></content>
+	<tabTrigger>fac-state</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

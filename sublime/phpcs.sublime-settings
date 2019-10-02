@@ -2,5 +2,6 @@
 	"phpcbf_additional_args": {
         "--standard": "/Users/andrew/Code/tighten/handbook/.phpcs.xml.dist",
     },
-	"phpcbf_executable_path": "/Users/andrew/.composer/vendor/bin/phpcbf"
+	"phpcbf_executable_path": "/Users/andrew/.composer/vendor/bin/phpcbf",
+    "phpcs_show_quick_panel": false
 }

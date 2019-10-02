@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+assertEquals($1);
+]]></content>
+    <tabTrigger>ae</tabTrigger>
+    <scope>source.php</scope>
+    <description>Assert Equals</description>
+</snippet>

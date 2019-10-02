@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+assertFalse($1);
+]]></content>
+    <tabTrigger>af</tabTrigger>
+    <scope>source.php</scope>
+    <description>Assert False</description>
+</snippet>
