@@ -1,0 +1,169 @@
+; !  | means mandatory
+; #  | means optional
+; C  | left_command
+; T  | left_control
+; O  | left_option
+; S  | left_shift
+; F  | fn
+; Q  | right_command
+; W  | right_control
+; E  | right_option
+; R  | right_shift
+; !! | mandatory command + control + optional + shift (hyper)
+; ## | optional any
+
+{
+  :templates {:launch "open -a %s"}
+  :layers {
+    :hyper-mode {:key :caps_lock :alone {:key :escape}}
+  }
+  :simlayers {
+    :comma-mode {:key :comma}
+    :semicolon-mode {:key :semicolon}
+    :quote-mode {:key :quote}
+    :spacebar-mode {:key :spacebar}
+    :slash-mode {:key :slash}
+    :period-mode {:key :period}
+    :x-mode {:key :x}
+    :z-mode {:key :z}
+  }
+  :simlayer-threshold 150
+  :applications {
+    :bear ["^net\\.shinyfrog\\.bear$"]
+    :chrome ["^com\\.google\\.Chrome$"]
+    :finder ["^com\\.apple\\.finder$"]
+    :notion ["^notion\\.id$"]
+    :slack ["^com\\.tinyspeck\\.slackmacgap$"]
+    :spotify ["^com\\.spotify\\.client$"]
+    :trello ["^com\\.fluidapp\\.FluidApp\\.Trello$"]
+  }
+  :main [
+    {
+      :des "Hyper Mode"
+      :rules [:hyper-mode
+        [:semicolon :!!semicolon] ; open Alfred
+        [:a :!!a] ; get app bundle ID from Alfred
+        [:h :!!h] ; navigate back
+        [:l :!!l] ; navigate forward
+        ; [:h :!COleft_arrow [:bear :spotify]] ; navigate back
+        ; [:h :!Copen_bracket [:chrome :finder :notion :slack :trello]] ; navigate back
+        ; [:l :!COright_arrow [:bear :spotify]] ; navigate forward
+        ; [:l :!Cclose_bracket [:chrome :finder :notion :slack :trello]] ; navigate forward
+        [:o :!!o]
+        [:p :!Cv]
+        [:j :!SCopen_bracket]
+        [:k :!SCclose_bracket]
+        [:m :!!m]
+        [:n :!!n]
+        [:u :!Cz]
+        [:y :!!y]
+        [:return_or_enter :caps_lock]
+        [:quote :!!quote]
+      ]
+    }
+    {
+      :des "Comma mode to launch apps"
+      :rules [:comma-mode
+        [:a [:launch "Slack.app"]]
+        [:b [:launch "Google\\ Chrome.app"]]
+        [:c :!!c] ; Fantastical
+        [:d [:launch "TablePlus.app"]]
+        [:e [:launch "Sublime\\ Text.app"]]
+        [:f [:launch "Finder.app"]]
+        [:g [:launch "Omnifocus.app"]]
+        [:r [:launch "Bear.app"]]
+        [:s [:launch "Spotify.app"]]
+        [:t :!Ospacebar] ; iTerm
+        [:z [:launch "Trello.app"]]
+      ]
+    }
+    {
+      :des "Semicolon mode for performing actions"
+      :rules [:semicolon-mode
+        [:a :!Ca] ; Select all
+        [:g :!!g] ; Omnifocus quick entry
+        [:e :!!e] ; Edit with
+        [:d :!!d] ; Edit done
+        [:s :!Cs] ; Save
+        [:v :!!v] ; Alfred clipboard
+        [:x :!Tc] ; ctrl+c
+      ]
+    }
+    {
+     :des "Quote mode for running commands"
+     :rules [:quote-mode
+      [:w :!SCw] ; Close all windows
+     ]
+    }
+    {
+     :des "Spacebar mode for window management"
+     :rules [:spacebar-mode
+      [:m :!TOCm] ; Moom
+      [:d :!TOCd] ; Moom: Move to right display
+      [:f :!TOCf] ; Moom: Fullscreen
+      [:g :!TOCg] ; Moom: Center screen
+      [:return_or_enter :!TOCreturn_or_enter] ; Moom: Reset
+      [:h :!TOCh] ; Moom: Move half screen left
+      [:j :!TOCj] ; Moom: Move half screen bottom
+      [:k :!TOCk] ; Moom: Move half screen top
+      [:l :!TOl] ; Moom: Move half screen right
+      [:u :!TOCu] ; Moom: Move to top left
+      [:o :!TOCo] ; Moom: Move to top right
+      [:n :!TOCn] ; Moom: Move to bottom left
+      [:period :!TOCperiod] ; Moom: Move to bottom right
+      [:t :!Ct] ; Cmd+t
+      [:w :!Cw] ; Cmd+w
+      [:q :!Cq] ; Cmd+q
+      [:r :!Cr] ; Cmd+q
+      [:c :!STC4] ; Screenshot to clipboard
+      [:s :!SC4] ; Screenshot to filesystem
+     ]
+   }
+   {
+     :des "Slash mode for Vim movements and search commands"
+     :rules [:slash-mode
+       [:b :!Oleft_arrow] ; go back one word
+       [:w :!Oright_arrow] ; go forward one word
+       [:a :!Cright_arrow] ; go to end of line
+       ; [:g :!!g] ; global google search
+       ; [:z :!!z] ; global amazon search
+     ]
+   }
+   {
+     :des "Period mode for Vim selections"
+     :rules [:period-mode
+       [:b :!OSleft_arrow] ; select one word back
+       [:w :!OSright_arrow] ; select one word forward
+       [:a :!CSright_arrow] ; select to end of line
+     ]
+    }
+    {
+     :des "X mode for Vim selections"
+     :rules [:x-mode
+       [:h :!Sleft_arrow] ; select one character back
+       [:j :!Sdown_arrow] ; select one line down
+       [:k :!Sup_arrow] ; select one line up
+       [:l :!Sright_arrow] ; select one character forward
+       [:i :!CSleft_arrow] ; select to start of line
+     ]
+   }
+   {
+     :des "Z mode for Vim movements"
+     :rules [:z-mode
+       [:h :left_arrow] ; go back one character
+       [:j :down_arrow] ; go down one line
+       [:k :up_arrow] ; go up one line
+       [:l :right_arrow] ; go forward one character
+       [:i :!Cleft_arrow] ; go to start of line
+       [:slash :!!f] ; find
+     ]
+    }
+    {
+     :des "Move Lines"
+     :rules [
+      [:!Cj :!TCdown_arrow] ; Move line down
+      [:!Ck :!TCup_arrow] ; Move line up
+     ]
+   }
+  ]
+}
