@@ -1,3 +1,12 @@
+chrome = 'com.google.Chrome'
+discord = 'com.hnc.Discord'
+finder = 'com.apple.finder'
+iterm = 'com.googlecode.iterm2'
+notion = 'notion.id'
+preview = 'com.apple.Preview'
+spotify = 'com.spotify.client'
+sublime = 'com.sublimetext.3'
+
 function appIs(bundle)
     return hs.application.frontmostApplication():bundleID() == bundle
 end
@@ -19,5 +28,16 @@ allwindows:subscribe(wf.windowDestroyed, function (window, appName, reason)
         else
             app:hide()
         end
+    end
+end)
+hs.urlevent.bind('closeWindow', function()
+    hs.eventtap.keyStroke({'cmd'}, 'W')
+    if appIs(chrome) then
+        hs.timer.doAfter(1, function()
+            app = hs.application.frontmostApplication()
+            if next(app:visibleWindows()) == nil then
+                app:hide()
+            end
+        end)
     end
 end)
