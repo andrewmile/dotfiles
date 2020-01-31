@@ -14,8 +14,7 @@
 	],
 	"folder_exclude_patterns":
 	[
-		".git",
-		"storage"
+		".git"
 	],
 	"font_size": 20,
 	"highlight_line": true,
@@ -50,6 +49,8 @@
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true,
 	"use_tab_stops": true,
+	"vintage_start_in_command_mode": true,
+	"vintage_use_clipboard": true,
 	"word_wrap": true,
-	"vintage_start_in_command_mode": true
+	"draw_centered": true
 }
