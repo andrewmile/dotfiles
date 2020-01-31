@@ -10,6 +10,10 @@ ln -s "$dotfiles/sublime" "$HOME/Library/Application Support/Sublime Text 3/Pack
 echo "linking karabiner config"
 ln -s "$dotfiles/karabiner/karabiner.edn" "$HOME/.config/karabiner.edn"
 
+# link hammerspoon config
+echo "linking hammerspoon config"
+ln -s "$dotfiles/hammerspoon/init.lua" "$HOME/.hammerspoon/init.lua"
+
 echo "Display full POSIX path as Finder window title"
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
