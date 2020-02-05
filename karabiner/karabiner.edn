@@ -114,7 +114,7 @@
       [:t :!Ct] ; Cmd+t
       [:w :!Cw] ; Cmd+w
       [:q :!Cq] ; Cmd+q
-      [:r :!Cr] ; Cmd+q
+      [:r :!Cr] ; Cmd+r
       [:c :!STC4] ; Screenshot to clipboard
       [:s :!SC4] ; Screenshot to filesystem
      ]
