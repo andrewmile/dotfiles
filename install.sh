@@ -12,7 +12,7 @@ ln -s "$dotfiles/karabiner/karabiner.edn" "$HOME/.config/karabiner.edn"
 
 # link hammerspoon config
 echo "linking hammerspoon config"
-ln -s "$dotfiles/hammerspoon/init.lua" "$HOME/.hammerspoon/init.lua"
+ln -s "$dotfiles/hammerspoon" "$HOME/.hammerspoon"
 
 echo "Display full POSIX path as Finder window title"
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true

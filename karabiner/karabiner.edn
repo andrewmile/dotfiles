@@ -13,7 +13,10 @@
 ; ## | optional any
 
 {
-  :templates {:launch "open -a %s"}
+  :templates {
+   :launch "open -a %s"
+   :hs "open -g hammerspoon://%s"
+  }
   :layers {
     :hyper-mode {:key :caps_lock :alone {:key :escape}}
   }
@@ -43,22 +46,18 @@
       :rules [:hyper-mode
         [:semicolon :!!semicolon] ; open Alfred
         [:a :!!a] ; get app bundle ID from Alfred
-        [:h :!!h] ; navigate back
-        [:l :!!l] ; navigate forward
-        ; [:h :!COleft_arrow [:bear :spotify]] ; navigate back
-        ; [:h :!Copen_bracket [:chrome :finder :notion :slack :trello]] ; navigate back
-        ; [:l :!COright_arrow [:bear :spotify]] ; navigate forward
-        ; [:l :!Cclose_bracket [:chrome :finder :notion :slack :trello]] ; navigate forward
-        [:o :!!o]
+        [:h [:hs "navigateBack"]]
+        [:l [:hs "navigateForward"]]
+        [:o [:hs "openAnything"]]
         [:p :!Cv]
         [:j :!SCopen_bracket]
         [:k :!SCclose_bracket]
-        [:m :!!m]
+        [:m [:hs "toggleSidebar"]]
         [:n :!!n]
         [:u :!Cz]
-        [:y :!!y]
+        [:y [:hs "copyAnything"]]
         [:return_or_enter :caps_lock]
-        [:quote :!!quote]
+        [:quote [:hs "openCommandPalette"]]
       ]
     }
     {
@@ -92,6 +91,7 @@
     {
      :des "Quote mode for running commands"
      :rules [:quote-mode
+      [:f :!SOCf] ; Add selected text to BitBar
       [:w :!SCw] ; Close all windows
      ]
     }
@@ -150,10 +150,10 @@
    {
      :des "Z mode for Vim movements"
      :rules [:z-mode
-       [:h :left_arrow] ; go back one character
-       [:j :down_arrow] ; go down one line
-       [:k :up_arrow] ; go up one line
-       [:l :right_arrow] ; go forward one character
+       [:h [:hs "arrowLeft"]]
+       [:j [:hs "arrowDown"]]
+       [:k [:hs "arrowUp"]]
+       [:l [:hs "arrowRight"]]
        [:i :!Cleft_arrow] ; go to start of line
        [:slash :!!f] ; find
      ]
