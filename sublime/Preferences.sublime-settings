@@ -6,6 +6,7 @@
 	"bold_folder_labels": true,
 	"close_windows_when_empty": true,
 	"color_scheme": "Packages/Theme - Cobalt2/cobalt2.tmTheme",
+	"draw_centered": true,
 	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": false,
 	"file_exclude_patterns":
@@ -14,7 +15,8 @@
 	],
 	"folder_exclude_patterns":
 	[
-		".git"
+		".git",
+		"node_modules"
 	],
 	"font_size": 20,
 	"highlight_line": true,
@@ -51,6 +53,5 @@
 	"use_tab_stops": true,
 	"vintage_start_in_command_mode": true,
 	"vintage_use_clipboard": true,
-	"word_wrap": true,
-	"draw_centered": true
+	"word_wrap": true
 }

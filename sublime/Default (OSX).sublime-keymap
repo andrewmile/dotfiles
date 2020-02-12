@@ -37,7 +37,6 @@
     {"keys": ["super+alt+s"], "command": "xdebug_session_start"},
     {"keys": ["super+alt+t"], "command": "xdebug_session_stop"},
     {"keys": ["super+alt+r"], "command": "xdebug_session_restart"},
-    { "keys": ["super+ctrl+alt+shift+o"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
     { "keys": ["super+ctrl+alt+shift+n"], "command": "toggle_side_bar" }
     // {
     //     "keys": ["ctrl+super+up"],
