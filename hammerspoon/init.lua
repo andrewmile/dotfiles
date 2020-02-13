@@ -142,38 +142,6 @@ hs.urlevent.bind('toggleSidebar', function()
     end
 end)
 
-hs.urlevent.bind('arrowUp', function()
-    if focusedWindowIs(fantastical) then
-        hs.eventtap.keyStroke({'shift'}, 'up')
-    else
-        hs.eventtap.keyStroke({}, 'up')
-    end
-end)
-
-hs.urlevent.bind('arrowDown', function()
-    if focusedWindowIs(fantastical) then
-        hs.eventtap.keyStroke({'shift'}, 'down')
-    else
-        hs.eventtap.keyStroke({}, 'down')
-    end
-end)
-
-hs.urlevent.bind('arrowLeft', function()
-    if focusedWindowIs(fantastical) then
-        hs.eventtap.keyStroke({'shift'}, 'left')
-    else
-        hs.eventtap.keyStroke({}, 'left')
-    end
-end)
-
-hs.urlevent.bind('arrowRight', function()
-    if focusedWindowIs(fantastical) then
-        hs.eventtap.keyStroke({'shift'}, 'right')
-    else
-        hs.eventtap.keyStroke({}, 'right')
-    end
-end)
-
 hs.urlevent.bind('navigateBack', function()
     if focusedWindowIs(fantastical) then
         hs.eventtap.keyStroke({}, 'left')

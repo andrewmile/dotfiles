@@ -150,10 +150,10 @@
    {
      :des "Z mode for Vim movements"
      :rules [:z-mode
-       [:h [:hs "arrowLeft"]]
-       [:j [:hs "arrowDown"]]
-       [:k [:hs "arrowUp"]]
-       [:l [:hs "arrowRight"]]
+       [:h :left_arrow] ; go back one character
+       [:j :down_arrow] ; go down one line
+       [:k :up_arrow] ; go up one line
+       [:l :right_arrow] ; go forward one character
        [:i :!Cleft_arrow] ; go to start of line
        [:slash :!!f] ; find
      ]
