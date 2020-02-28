@@ -166,6 +166,22 @@ hs.urlevent.bind('navigateForward', function()
     end
 end)
 
+hs.urlevent.bind('goToPreviousTab', function()
+    if appIs(tableplus) then
+        hs.eventtap.keyStroke({'cmd'}, '[')
+    else
+        hs.eventtap.keyStroke({'cmd', 'shift'}, '[')
+    end
+end)
+
+hs.urlevent.bind('goToNextTab', function()
+    if appIs(tableplus) then
+        hs.eventtap.keyStroke({'cmd'}, ']')
+    else
+        hs.eventtap.keyStroke({'cmd', 'shift'}, ']')
+    end
+end)
+
 hs.urlevent.bind('openCommandPalette', function()
     if appIs(sublime) then
         hs.eventtap.keyStroke({'cmd', 'shift'}, 'p')
