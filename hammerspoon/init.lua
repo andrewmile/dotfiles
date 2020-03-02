@@ -4,6 +4,7 @@ discord = 'com.hnc.Discord'
 drafts = 'com.agiletortoise.Drafts-OSX'
 fantastical = 'com.flexibits.fantastical'
 finder = 'com.apple.finder'
+githubDesktop = 'com.github.GitHubClient'
 iterm = 'com.googlecode.iterm2'
 notion = 'notion.id'
 omnifocus = 'com.omnigroup.OmniFocus3.MacAppStore'
@@ -125,6 +126,8 @@ hs.urlevent.bind('openAnything', function()
         triggerAlfredSearch('bm')
     elseif appIs(bear) then
         triggerAlfredWorkflow('com.drgrib.bear', 'bear_search')
+    elseif appIs(githubDesktop) then
+        hs.eventtap.keyStroke({'cmd'}, 't')
     end
 end)
 
