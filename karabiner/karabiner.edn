@@ -73,6 +73,7 @@
         [:r [:launch "Bear.app"]]
         [:s [:launch "Spotify.app"]]
         [:t :!Ospacebar] ; iTerm
+        [:v [:launch "GitHub\\ Desktop.app"]]
         [:z [:launch "Trello.app"]]
       ]
     }
