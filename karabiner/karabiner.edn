@@ -30,7 +30,7 @@
     :x-mode {:key :x}
     :z-mode {:key :z}
   }
-  :simlayer-threshold 150
+  :simlayer-threshold 250
   :applications {
     :bear ["^net\\.shinyfrog\\.bear$"]
     :chrome ["^com\\.google\\.Chrome$"]
@@ -133,11 +133,15 @@
      ]
    }
    {
-     :des "Period mode for Vim selections"
+     :des "Period mode for commands and Vim selections"
      :rules [:period-mode
        [:b :!OSleft_arrow] ; select one word back
        [:w :!OSright_arrow] ; select one word forward
-       [:a :!CSright_arrow] ; select to end of line
+       ; [:a :!CSright_arrow] ; select to end of line
+       [:t :!TCt] ; test current method
+       [:e :!TCp] ; test previous method
+       [:f :!TCf] ; test current file
+       [:s :!TCa] ; test whole suite
      ]
     }
     {
