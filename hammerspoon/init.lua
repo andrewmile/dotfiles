@@ -118,7 +118,7 @@ hs.urlevent.bind('openAnything', function()
         hs.eventtap.keyStroke({'cmd'}, 'k')
     elseif appIs(omnifocus) then
         hs.eventtap.keyStroke({'cmd'}, 'o')
-    elseif appIs({trello}) then
+    elseif appIs(trello) then
         hs.eventtap.keyStrokes('b')
     elseif appIs(spotify) then
         triggerAlfredWorkflow('com.vdesabou.spotify.mini.player', 'spot_mini')
