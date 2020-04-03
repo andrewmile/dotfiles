@@ -25,7 +25,7 @@
     :semicolon-mode {:key :semicolon}
     :quote-mode {:key :quote}
     :spacebar-mode {:key :spacebar}
-    :slash-mode {:key :slash}
+    :search-mode {:key :slash}
     :period-mode {:key :period}
     :x-mode {:key :x}
     :z-mode {:key :z}
@@ -123,13 +123,14 @@
      ]
    }
    {
-     :des "Slash mode for Vim movements and search commands"
-     :rules [:slash-mode
-       [:b :!Oleft_arrow] ; go back one word
-       [:w :!Oright_arrow] ; go forward one word
-       [:a :!Cright_arrow] ; go to end of line
-       ; [:g :!!g] ; global google search
-       ; [:z :!!z] ; global amazon search
+     :des "Search mode"
+     :rules [:search-mode
+       [:a :!CSf] ; find all
+       [:f :!Cf] ; normal find
+       [:g :!CSOg] ; global google search
+       [:t :!CSOt] ; search open tabs
+       [:w :!CSOw] ; search open windows
+       [:z :!CSOz] ; global amazon search
      ]
    }
    {
