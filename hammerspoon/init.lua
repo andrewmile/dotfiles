@@ -193,6 +193,55 @@ hs.urlevent.bind('openCommandPalette', function()
     end
 end)
 
+hs.urlevent.bind('runCommand', function(listener, params)
+    if appIs(sublime) then
+        runCommandInSublime(params.key)
+    elseif appIs(slack) then
+        addEmojiReactionToLastMessage(params.key)
+    end
+end)
+
+function runCommandInSublime(key)
+    if (key == 'a') then
+        hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'a') -- run all tests
+    elseif (key == 'f') then
+        hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'f') -- test current file
+    elseif (key == 'r') then
+        hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'p') -- rerun last test
+    elseif (key == 't') then
+        hs.eventtap.keyStroke({'cmd', 'ctrl'}, 't') -- test current method
+    end
+end
+
+function addEmojiReactionToLastMessage(key)
+    emoji = mapKeyToEmoji(key)
+
+    hs.eventtap.keyStroke({'cmd', 'shift'}, '\\')
+    hs.eventtap.keyStrokes(emoji)
+    hs.timer.delayed.new(.2, function ()
+        hs.eventtap.keyStroke({}, 'return')
+    end):start()
+end
+
+function mapKeyToEmoji(key)
+    if (key == 'g') then
+        return ':thumbsup:'
+    elseif (key == 's') then
+        return ':smile:'
+    elseif (key == 't') then
+        return ':tada:'
+    elseif (key == 'w') then
+        return ':wave:'
+    end
+end
+
+hs.urlevent.bind('insertAnything', function(listener, params)
+    if appIs(slack) then
+        emoji = mapKeyToEmoji(params.key)
+        hs.eventtap.keyStrokes(emoji)
+    end
+end)
+
 hs.urlevent.bind('copyAnything', function()
     text = getSelectedText(true)
     if text then

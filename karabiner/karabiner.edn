@@ -26,7 +26,8 @@
     :quote-mode {:key :quote}
     :spacebar-mode {:key :spacebar}
     :search-mode {:key :slash}
-    :period-mode {:key :period}
+    :command-mode {:key :period}
+    :insert-mode {:key :i}
     :x-mode {:key :x}
     :z-mode {:key :z}
   }
@@ -134,15 +135,15 @@
      ]
    }
    {
-     :des "Period mode for commands and Vim selections"
-     :rules [:period-mode
-       [:b :!OSleft_arrow] ; select one word back
-       [:w :!OSright_arrow] ; select one word forward
-       ; [:a :!CSright_arrow] ; select to end of line
-       [:t :!TCt] ; test current method
-       [:e :!TCp] ; test previous method
-       [:f :!TCf] ; test current file
-       [:s :!TCa] ; test whole suite
+     :des "Command mode"
+     :rules [:command-mode
+       [:a [:hs "runCommand?key=a"]]
+       [:f [:hs "runCommand?key=f"]]
+       [:g [:hs "runCommand?key=g"]]
+       [:r [:hs "runCommand?key=r"]]
+       [:s [:hs "runCommand?key=s"]]
+       [:t [:hs "runCommand?key=t"]]
+       [:w [:hs "runCommand?key=w"]]
      ]
     }
     {
@@ -171,6 +172,15 @@
      :rules [
       [:!Cj :!TCdown_arrow] ; Move line down
       [:!Ck :!TCup_arrow] ; Move line up
+     ]
+   }
+   {
+     :des "Insert Mode"
+     :rules [:insert-mode
+       [:g [:hs "insertAnything?key=g"]]
+       [:s [:hs "insertAnything?key=s"]]
+       [:t [:hs "insertAnything?key=t"]]
+       [:w [:hs "insertAnything?key=w"]]
      ]
    }
   ]
