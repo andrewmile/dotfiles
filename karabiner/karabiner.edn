@@ -28,6 +28,7 @@
     :search-mode {:key :slash}
     :command-mode {:key :period}
     :insert-mode {:key :i}
+    :open-mode {:key :o}
     :x-mode {:key :x}
     :z-mode {:key :z}
   }
@@ -48,17 +49,21 @@
         [:semicolon :!!semicolon] ; open Alfred
         [:a :!!a] ; get app bundle ID from Alfred
         [:h [:hs "navigateBack"]]
-        [:l [:hs "navigateForward"]]
-        [:o [:hs "openAnything"]]
-        [:p :!Cv]
+        ; [:i ]
         [:j [:hs "goToPreviousTab"]]
         [:k [:hs "goToNextTab"]]
+        [:l [:hs "navigateForward"]]
         [:m [:hs "toggleSidebar"]]
-        [:n :!!n]
+        ; [:n :!!n]
+        [:o [:hs "openAnything"]]
+        [:p :!Cv]
         [:u :!Cz]
         [:y [:hs "copyAnything"]]
+        [:quote :!!quote] ; scroll mode
         [:return_or_enter :caps_lock]
-        [:quote [:hs "openCommandPalette"]]
+        ; [:comma :!!n]
+        [:period [:hs "openCommandPalette"]]
+        ; [:slash :!!n]
       ]
     }
     {
@@ -181,6 +186,13 @@
        [:s [:hs "insertAnything?key=s"]]
        [:t [:hs "insertAnything?key=t"]]
        [:w [:hs "insertAnything?key=w"]]
+     ]
+   }
+   {
+     :des "Insert Mode"
+     :rules [:open-mode
+       [:s :!TSs] ; open selection hints
+       [:t :!TSt] ; open selection hints in new tab
      ]
    }
   ]
