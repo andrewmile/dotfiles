@@ -218,9 +218,9 @@ function addEmojiReactionToLastMessage(key)
 
     hs.eventtap.keyStroke({'cmd', 'shift'}, '\\')
     hs.eventtap.keyStrokes(emoji)
-    hs.timer.delayed.new(1, function ()
+    hs.timer.doAfter(1, function ()
         hs.eventtap.keyStroke({}, 'return')
-    end):start()
+    end)
 end
 
 function mapKeyToEmoji(key)
