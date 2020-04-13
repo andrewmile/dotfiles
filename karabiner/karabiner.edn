@@ -63,7 +63,7 @@
         [:return_or_enter :caps_lock]
         ; [:comma :!!n]
         [:period [:hs "openCommandPalette"]]
-        ; [:slash :!!n]
+        [:slash :!Cf] ; normal find
       ]
     }
     {
@@ -132,7 +132,6 @@
      :des "Search mode"
      :rules [:search-mode
        [:a :!CSf] ; find all
-       [:f :!Cf] ; normal find
        [:g :!CSOg] ; global google search
        [:t :!CSOt] ; search open tabs
        [:w :!CSOw] ; search open windows
