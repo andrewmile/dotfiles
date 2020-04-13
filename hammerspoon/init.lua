@@ -242,6 +242,14 @@ hs.urlevent.bind('insertAnything', function(listener, params)
     end
 end)
 
+hs.urlevent.bind('saveAnything', function()
+    if appIs(trello) then
+        hs.eventtap.keyStroke({'cmd'}, 'return')
+    else
+        hs.eventtap.keyStroke({'cmd'}, 's')
+    end
+end)
+
 hs.urlevent.bind('copyAnything', function()
     text = getSelectedText(true)
     if text then

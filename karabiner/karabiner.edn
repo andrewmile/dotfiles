@@ -92,7 +92,7 @@
         [:g :!!g] ; Omnifocus quick entry
         [:e :!!e] ; Edit with
         [:d :!!d] ; Edit done
-        [:s :!Cs] ; Save
+        [:s [:hs "saveAnything"]] ; Save
         [:v :!!v] ; Alfred clipboard
         [:x :!Tc] ; ctrl+c
       ]
