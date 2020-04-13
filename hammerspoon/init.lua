@@ -239,6 +239,15 @@ hs.urlevent.bind('insertAnything', function(listener, params)
     if appIs(slack) then
         emoji = mapKeyToEmoji(params.key)
         hs.eventtap.keyStrokes(emoji)
+    elseif (appIs(trello)) then
+        if (params.key == 'd') then
+            -- edit description
+            hs.eventtap.keyStrokes('e')
+            hs.eventtap.keyStroke({}, 'right')
+        elseif (params.key == 'c') then
+            -- insert checklist
+            hs.eventtap.keyStrokes('-')
+        end
     end
 end)
 
