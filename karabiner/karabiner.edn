@@ -202,6 +202,9 @@
    {
      :des "Open Mode"
      :rules [:open-mode
+       [:f [:hs "openMode?key=f"]]
+       [:g [:hs "openMode?key=g"]]
+       [:r [:hs "openMode?key=r"]]
        [:s :!TSs] ; open selection hints
        [:t :!TSt] ; open selection hints in new tab
      ]

@@ -281,6 +281,27 @@ hs.urlevent.bind('insertAnything', function(listener, params)
     end
 end)
 
+hs.urlevent.bind('openMode', function(listener, params)
+    if (appIs(slack)) then
+        if (params.key == 'g') then
+            -- open general
+            hs.eventtap.keyStroke({'cmd'}, 'k')
+            hs.eventtap.keyStrokes('general')
+            hs.timer.doAfter(.1, function()
+                hs.eventtap.keyStroke({}, 'return')
+            end)
+        end
+    elseif (appIs(omnifocus)) then
+        if (params.key == 'f') then
+            -- open forecast
+            hs.eventtap.keyStroke({'cmd'}, '4')
+        elseif (params.key == 'r') then
+            -- open routines
+            hs.eventtap.keyStroke({'cmd'}, '7')
+        end
+    end
+end)
+
 hs.urlevent.bind('saveAnything', function()
     if appIs(trello) then
         hs.eventtap.keyStroke({'cmd'}, 'return')
