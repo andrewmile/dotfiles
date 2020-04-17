@@ -21,6 +21,7 @@
     :hyper-mode {:key :caps_lock :alone {:key :escape}}
   }
   :simlayers {
+    :append-mode {:key :a}
     :comma-mode {:key :comma}
     :semicolon-mode {:key :semicolon}
     :quote-mode {:key :quote}
@@ -179,10 +180,19 @@
      ]
    }
    {
+     :des "Append Mode"
+     :rules [:append-mode
+       [:comma [:hs "appendAnything?key=comma"]]
+       [:semicolon [:hs "appendAnything?key=semicolon"]]
+     ]
+   }
+   {
      :des "Insert Mode"
      :rules [:insert-mode
-       [:d [:hs "insertAnything?key=d"]]
        [:c [:hs "insertAnything?key=c"]]
+       [:d [:hs "insertAnything?key=d"]]
+       [:e [:hs "insertAnything?key=e"]]
+       [:f [:hs "insertAnything?key=f"]]
        [:g [:hs "insertAnything?key=g"]]
        [:s [:hs "insertAnything?key=s"]]
        [:t [:hs "insertAnything?key=t"]]

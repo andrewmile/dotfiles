@@ -235,10 +235,40 @@ function mapKeyToEmoji(key)
     end
 end
 
+hs.urlevent.bind('appendAnything', function(listener, params)
+    if (appIs(sublime)) then
+        if (params.key == 'comma') then
+            -- append comma
+            hs.eventtap.keyStroke({'cmd', 'option'}, ',')
+        elseif (params.key == 'semicolon') then
+            -- append semicolon
+            hs.eventtap.keyStroke({'cmd'}, ';')
+        end
+    end
+end)
+
 hs.urlevent.bind('insertAnything', function(listener, params)
     if appIs(slack) then
         emoji = mapKeyToEmoji(params.key)
         hs.eventtap.keyStrokes(emoji)
+    elseif (appIs(sublime)) then
+        if (params.key == 'c') then
+            -- insert constructor
+            hs.eventtap.keyStroke({}, 'f2')
+        elseif (params.key == 'd') then
+            -- import dependency
+            hs.eventtap.keyStroke({}, 'f3')
+        elseif (params.key == 'e') then
+            -- expand fully qualified name
+            hs.eventtap.keyStroke({}, 'f4')
+        elseif (params.key == 'f') then
+            -- insert function
+            hs.eventtap.keyStrokes('closure')
+            hs.eventtap.keyStroke({}, 'tab')
+        elseif (params.key == 's') then
+            -- import namespace
+            hs.eventtap.keyStroke({}, 'f1')
+        end
     elseif (appIs(trello)) then
         if (params.key == 'd') then
             -- edit description
