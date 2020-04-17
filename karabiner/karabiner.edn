@@ -50,7 +50,7 @@
         [:semicolon :!!semicolon] ; open Alfred
         [:a :!!a] ; get app bundle ID from Alfred
         [:h [:hs "navigateBack"]]
-        ; [:i ]
+        [:i :!!i] ; Alfred clipboard
         [:j [:hs "goToPreviousTab"]]
         [:k [:hs "goToNextTab"]]
         [:l [:hs "navigateForward"]]
@@ -94,7 +94,7 @@
         [:e :!!e] ; Edit with
         [:d :!!d] ; Edit done
         [:s [:hs "saveAnything"]] ; Save
-        [:v :!!v] ; Alfred clipboard
+        ; [:v]
         [:x :!Tc] ; ctrl+c
       ]
     }
