@@ -134,6 +134,8 @@
      :rules [:search-mode
        [:a :!CSf] ; find all
        [:g :!CSOg] ; global google search
+       [:r :!TSt] ; open selection hints in new tab
+       [:s :!TSs] ; open selection hints
        [:t :!CSOt] ; search open tabs
        [:w :!CSOw] ; search open windows
        [:z :!CSOz] ; global amazon search
@@ -205,8 +207,6 @@
        [:f [:hs "openMode?key=f"]]
        [:g [:hs "openMode?key=g"]]
        [:r [:hs "openMode?key=r"]]
-       [:s :!TSs] ; open selection hints
-       [:t :!TSt] ; open selection hints in new tab
      ]
    }
   ]
