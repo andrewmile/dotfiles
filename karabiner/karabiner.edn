@@ -33,7 +33,7 @@
     :x-mode {:key :x}
     :z-mode {:key :z}
   }
-  :simlayer-threshold 250
+  :simlayer-threshold 150
   :applications {
     :bear ["^net\\.shinyfrog\\.bear$"]
     :chrome ["^com\\.google\\.Chrome$"]
