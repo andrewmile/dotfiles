@@ -1,11 +1,11 @@
 <snippet>
-	<content><![CDATA[@extends('layouts.master')
+	<content><![CDATA[@extends('layouts.app')
 
 @section('content')
 
     $1
 
-@stop
+@endsection
 ]]></content>
 	<tabTrigger>blade</tabTrigger>
 	<scope>source.php</scope>
