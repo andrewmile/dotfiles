@@ -70,6 +70,7 @@
     {
       :des "Comma mode to launch apps"
       :rules [:comma-mode
+        [:caps_lock :!!n] ; Show notification center
         [:a [:launch "Slack.app"]]
         [:b [:launch "Google\\ Chrome.app"]]
         [:c :!!c] ; Fantastical
@@ -77,6 +78,7 @@
         [:e [:launch "Sublime\\ Text.app"]]
         [:f [:launch "Finder.app"]]
         [:g [:launch "Omnifocus.app"]]
+        ; [:q [:launch ""]]
         [:r [:launch "Bear.app"]]
         [:s [:launch "Spotify.app"]]
         [:t :!Ospacebar] ; iTerm
