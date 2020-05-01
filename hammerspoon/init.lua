@@ -125,7 +125,7 @@ hs.urlevent.bind('openAnything', function()
     elseif appIs(chrome) then
         triggerAlfredSearch('bm')
     elseif appIs(bear) then
-        triggerAlfredWorkflow('com.drgrib.bear', 'bear_search')
+        triggerAlfredWorkflow('com.drgrib.bear', 'search bear')
     elseif appIs(githubDesktop) then
         hs.eventtap.keyStroke({'cmd'}, 't')
     end
