@@ -292,7 +292,7 @@ hs.urlevent.bind('openMode', function(listener, params)
             end)
         end
     elseif (appIs(omnifocus)) then
-        if (params.key == 'f') then
+        if (params.key == 't') then
             -- open forecast
             hs.eventtap.keyStroke({'cmd'}, '4')
         elseif (params.key == 'r') then
