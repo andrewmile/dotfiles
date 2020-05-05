@@ -206,10 +206,12 @@
    {
      :des "Open Mode"
      :rules [:open-mode
+       [:c [:hs "openMode?key=c"]]
        [:f [:hs "openMode?key=f"]]
        [:g [:hs "openMode?key=g"]]
        [:r [:hs "openMode?key=r"]]
        [:t [:hs "openMode?key=t"]]
+       [:v [:hs "openMode?key=v"]]
      ]
    }
   ]

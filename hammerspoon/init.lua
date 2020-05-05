@@ -299,6 +299,14 @@ hs.urlevent.bind('openMode', function(listener, params)
             -- open routines
             hs.eventtap.keyStroke({'cmd'}, '7')
         end
+    elseif (appIs(githubDesktop)) then
+        if (params.key == 'c') then
+            -- show changes
+            hs.eventtap.keyStroke({'cmd'}, '1')
+        elseif (params.key == 'v') then
+            -- show history
+            hs.eventtap.keyStroke({'cmd'}, '2')
+        end
     end
 end)
 
