@@ -23,6 +23,7 @@
   :simlayers {
     :append-mode {:key :a}
     :comma-mode {:key :comma}
+    :copy-mode {:key :y}
     :semicolon-mode {:key :semicolon}
     :quote-mode {:key :quote}
     :spacebar-mode {:key :spacebar}
@@ -153,6 +154,12 @@
        [:s [:hs "runCommand?key=s"]]
        [:t [:hs "runCommand?key=t"]]
        [:w [:hs "runCommand?key=w"]]
+     ]
+    }
+    {
+     :des "Copy mode"
+     :rules [:copy-mode
+       [:d [:hs "copyMode?key=d"]]
      ]
     }
     {

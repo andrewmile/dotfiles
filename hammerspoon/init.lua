@@ -235,6 +235,18 @@ function mapKeyToEmoji(key)
     end
 end
 
+hs.urlevent.bind('copyMode', function(listener, params)
+    if appIs(chrome) then
+        isSuccess, pageTitle = hs.osascript.javascript([[
+            Application('Google Chrome').windows[0].activeTab.name()
+        ]])
+        isSuccess, pageUrl = hs.osascript.javascript([[
+            Application('Google Chrome').windows[0].activeTab.url()
+        ]])
+        hs.pasteboard.setContents('[' .. pageTitle .. '](' .. pageUrl .. ')')
+    end
+end)
+
 hs.urlevent.bind('appendAnything', function(listener, params)
     if (appIs(sublime)) then
         if (params.key == 'comma') then
