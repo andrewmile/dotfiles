@@ -71,6 +71,16 @@ ln -s "$dotfiles/hammerspoon" "$HOME/.hammerspoon"
 echo "Display full POSIX path as Finder window title"
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+
+# Enable tap to click. (Don't have to press down on the trackpad -- just tap it.)
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+
+# Bottom right screen corner → Start screen saver
+defaults write com.apple.dock wvous-bl-corner -int 5
+
 # install npm packages in home directory
 echo "moving npm global install directory to home folder"
 mkdir "${HOME}/.npm-packages"
