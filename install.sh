@@ -55,6 +55,8 @@ ln -s "$dotfiles/sublime" "$HOME/Library/Application Support/Sublime Text 3/Pack
 mkdir $HOME/bin
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
 
+mkdir $HOME/Code
+
 # Enable key repeat in Sublime
 defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
 
