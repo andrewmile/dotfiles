@@ -41,6 +41,8 @@ ZSH_THEME="cobalt2"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+ZSH_DISABLE_COMPFIX=true
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -54,7 +56,7 @@ source $ZSH/oh-my-zsh.sh
 #export PATH="/usr/local/bin:/usr/local/Cellar:/usr/bin:/bin:/usr/sbin:/sbin"
 #export PATH="$(brew --prefix homebrew/php/php72)/bin:$PATH"
 export PATH=/usr/local/bin:"$(brew --prefix php)/bin:$PATH"
-export PATH=~/.composer/vendor/bin:$PATH:~/Library/Python/2.7/bin
+export PATH=~/.composer/vendor/bin:$PATH:~/Library/Python/2.7/bin:~/bin
 export PATH="$PATH:$HOME/.bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 

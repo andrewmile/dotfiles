@@ -22,6 +22,23 @@ else
   curl -L http://install.ohmyz.sh | sh
 fi
 
+rm $HOME/.zshrc
+ln -s "$dotfiles/.zshrc" "$HOME/.zshrc"
+source $HOME/.zshrc
+
+ln -s "$dotfiles/iterm2/cobalt2.zsh-theme" "$HOME/.oh-my-zsh/themes/cobalt2.zsh-theme"
+
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+
+## Install powerline
+pip install --user powerline-status
+git clone https://github.com/powerline/fonts
+cd fonts
+./install.sh
+cd ..
+sudo rm -R fonts
+
 # Set default MySQL root password and auth type.
 mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
 
@@ -35,7 +52,8 @@ $HOME/.composer/vendor/bin/valet install
 echo "linking sublime user folder"
 ln -s "$dotfiles/sublime" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+mkdir $HOME/bin
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
 
 # Enable key repeat in Sublime
 defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
@@ -47,9 +65,6 @@ ln -s "$dotfiles/karabiner/karabiner.edn" "$HOME/.config/karabiner.edn"
 # link hammerspoon config
 echo "linking hammerspoon config"
 ln -s "$dotfiles/hammerspoon" "$HOME/.hammerspoon"
-
-mkdir $HOME/.oh-my-zsh/themes
-ln -s "$dotfiles/iterm2/cobalt2.zsh-theme" "$HOME/.oh-my-zsh/themes/cobalt2.zsh-theme"
 
 echo "Display full POSIX path as Finder window title"
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
