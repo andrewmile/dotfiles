@@ -330,6 +330,8 @@
 	</dict>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>HideFromDockAndAppSwitcher</key>
+	<true/>
 	<key>HideMenuBarInFullscreen</key>
 	<false/>
 	<key>HotKeyBookmark</key>
@@ -1725,7 +1727,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>CBEC1394-653E-48E4-88F5-262B20DA5C17</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>192</integer>
+	<integer>193</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
