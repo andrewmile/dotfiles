@@ -48,6 +48,9 @@ ln -s "$dotfiles/karabiner/karabiner.edn" "$HOME/.config/karabiner.edn"
 echo "linking hammerspoon config"
 ln -s "$dotfiles/hammerspoon" "$HOME/.hammerspoon"
 
+mkdir $HOME/.oh-my-zsh/themes
+ln -s "$dotfiles/iterm2/cobalt2.zsh-theme" "$HOME/.oh-my-zsh/themes/cobalt2.zsh-theme"
+
 echo "Display full POSIX path as Finder window title"
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
