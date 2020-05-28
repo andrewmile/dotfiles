@@ -26,6 +26,9 @@ ln -s "$dotfiles/sublime" "$HOME/Library/Application Support/Sublime Text 3/Pack
 
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 
+# Enable key repeat in Sublime
+defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
+
 # link karabiner config
 echo "linking karabiner config"
 ln -s "$dotfiles/karabiner/karabiner.edn" "$HOME/.config/karabiner.edn"
