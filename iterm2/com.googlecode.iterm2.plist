@@ -330,6 +330,8 @@
 	</dict>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>HideMenuBarInFullscreen</key>
+	<false/>
 	<key>HotKeyBookmark</key>
 	<string>38FBE943-A8C1-49DC-B96B-8E138BE2CB9C</string>
 	<key>HotKeyTogglesWindow</key>
@@ -400,7 +402,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>671 332 796 486 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 877 </string>
+	<string>0 0 1440 878 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1723,7 +1725,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>CBEC1394-653E-48E4-88F5-262B20DA5C17</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>191</integer>
+	<integer>192</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
