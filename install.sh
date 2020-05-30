@@ -28,6 +28,8 @@ source $HOME/.zshrc
 
 ln -s "$dotfiles/iterm2/cobalt2.zsh-theme" "$HOME/.oh-my-zsh/themes/cobalt2.zsh-theme"
 
+ln -s "$dotfiles/lambo" "$HOME/.lambo"
+
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
 

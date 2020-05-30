@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+PROJECTPATH="."
+MESSAGE="Initial commit."
+DEVELOP=false
+AUTH=false
+NODE=false
+CODEEDITOR="subl"
+BROWSER=""
+LINK=false
+DB_USERNAME="root"
+DB_PASSWORD="root"
