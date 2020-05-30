@@ -81,6 +81,14 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 # Bottom right screen corner → Start screen saver
 defaults write com.apple.dock wvous-bl-corner -int 5
 
+# Enable full keyboard access for all controls
+# (e.g. enable Tab in modal dialogs)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
 # install npm packages in home directory
 echo "moving npm global install directory to home folder"
 mkdir "${HOME}/.npm-packages"
