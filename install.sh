@@ -43,7 +43,7 @@ sudo rm -R fonts
 mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
 
 # Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/spark-installer laravel/valet tightenco/tlint
+/usr/local/bin/composer global require laravel/installer laravel/spark-installer laravel/valet tightenco/lambo tightenco/tlint squizlabs/php_codesniffer friendsofphp/php-cs-fixer codedungeon/laravel-craftsman laravel-zero/installer
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
@@ -97,10 +97,10 @@ ln -s "$dotfiles/.mackup.cfg" "${HOME}/.mackup.cfg"
 ln -s "$dotfiles/vim/vimrc" "${HOME}/.vim/vimrc"
 
 echo "installing global npm packages"
+npm install -g @vue/cli
 npm install -g eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
 npm install -g fx
-npm install -g gulp
-npm install -g @vue/cli
+npm install -g yo
 
 # list globally installed packages
 npm -g list --depth=0
