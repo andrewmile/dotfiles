@@ -48,10 +48,6 @@ mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_passwor
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
 
-# link sublime user folder
-echo "linking sublime user folder"
-ln -s "$dotfiles/sublime" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
-
 mkdir $HOME/bin
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
 
