@@ -1,0 +1,73 @@
+set nocompatible               " NEVER change this! Use Vim mode, not vi mode.
+filetype plugin indent on      " Enable automatic settings based on file type
+syntax on                      " Enable colour syntax highlighting
+set clipboard=unnamed          " Yank content to clipboard
+set shiftwidth=2
+set softtabstop=2
+set expandtab                  " Replace tabs with spaces
+set autoindent
+set cursorline
+
+" ********************
+" nerdtree
+" ********************
+map <C-n> :NERDTreeToggle<CR>
+
+" FZF as fuzzy file searcher with ctrl+p
+map <C-p> :FZF<cr>
+
+" Open splits
+nmap vs :vsplit<cr>
+nmap sp :split<cr>
+" Open vimrc in vsplit
+nmap rc :vsplit ~/.vim/vimrc<cr>
+
+" ********************
+" vim-plug
+" ********************
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+
+"Plug 'dahu/vim-help'
+Plug 'scrooloose/nerdtree'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+"Plug 'leafoftree/vim-vue-plugin'
+"Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+"Plug 'w0rp/ale'
+"Plug 'vim-airline/vim-airline'
+"Plug 'jszakmeister/vim-togglecursor'
+"Plug 'junegunn/goyo.vim'
+Plug 'flazz/vim-colorschemes'
+"Plug 'jelera/vim-javascript-syntax'
+"Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'html', 'vue'] }
+Plug 'pangloss/vim-javascript'
+"Plug 'sheerun/vim-polyglot'
+"Plug 'herringtondarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'posva/vim-vue'
+"Plug 'othree/javascript-libraries-syntax.vim'
+
+call plug#end()
+
+" Colorscheme
+colorscheme cobalt2
+
+" Show line numbers
+:set number
+
+highlight GitGutterAdd    ctermfg=2
+highlight GitGutterChange ctermfg=3
+highlight GitGutterDelete ctermfg=1
+
+:set signcolumn=yes  " force the signcolumn to appear
+
+"let g:vue_pre_processors = ['typescript']
+"let g:vue_pre_processors = 'detect_on_enter'
