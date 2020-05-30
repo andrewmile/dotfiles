@@ -90,6 +90,9 @@ echo "moving npm global install directory to home folder"
 mkdir "${HOME}/.npm-packages"
 ln -s "$dotfiles/npm/.npmrc" "${HOME}/.npmrc"
 
+# link mackup
+ln -s "$dotfiles/.mackup.cfg" "${HOME}/.mackup.cfg"
+
 echo "installing global npm packages"
 npm install -g eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
 npm install -g fx
