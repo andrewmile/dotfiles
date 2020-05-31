@@ -38,7 +38,6 @@ cask 'hammerspoon'
 cask 'handbrake'
 cask 'iterm2'
 cask 'karabiner-elements'
-cask 'moom'
 cask 'notion'
 cask 'postman'
 cask 'rocket'
@@ -63,6 +62,7 @@ mas 'Due', id: 524373870
 mas 'Fantastical', id: 975937182
 mas 'LINE', id: 539883307
 mas 'Menu World Time', id: 1446377255
+mas 'Moom', id: 419330170
 mas 'Omnifocus', id: 1346203938
 mas 'Pocket', id: 568494494
 mas 'Spark', id: 1176895641
