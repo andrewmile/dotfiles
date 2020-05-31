@@ -51,6 +51,7 @@ cask 'sublime-text'
 cask 'tableplus'
 cask 'telegram-desktop'
 cask 'twitch'
+cask 'witch'
 
 # Mac App Store
 mas 'Bear', id: 1091189122
