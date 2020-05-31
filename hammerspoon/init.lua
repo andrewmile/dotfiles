@@ -131,6 +131,14 @@ hs.urlevent.bind('openAnything', function()
     end
 end)
 
+hs.urlevent.bind('reloadAnything', function()
+    if appIs(omnifocus) then
+        hs.eventtap.keyStroke({'cmd'}, 'k')
+    else
+        hs.eventtap.keyStroke({'cmd'}, 'r')
+    end
+end)
+
 hs.urlevent.bind('toggleSidebar', function()
     if appIs(sublime) then
         hs.eventtap.keyStroke({'cmd'}, 'b')

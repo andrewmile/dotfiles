@@ -127,7 +127,7 @@
       [:t :!Ct] ; Cmd+t
       [:w :!Cw] ; Cmd+w
       [:q :!Cq] ; Cmd+q
-      [:r :!Cr] ; Cmd+r
+      [:r [:hs "reloadAnything"]]
       [:c :!STC4] ; Screenshot to clipboard
       [:s :!SC4] ; Screenshot to filesystem
      ]
