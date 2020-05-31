@@ -7,6 +7,7 @@ tap 'homebrew/bundle'
 
 # Binaries
 brew 'mackup'
+brew 'mas' # Mac App Store manager
 
 # Development
 brew 'php'
@@ -23,10 +24,43 @@ brew 'goku'
 # Apps
 cask '1password'
 cask 'alfred'
+cask 'bartender'
+cask 'bettertouchtool'
+cask 'bitbar'
+cask 'brave-browser'
 cask 'discord'
+cask 'docker'
 cask 'dropbox'
+cask 'fluid'
 cask 'github'
+cask 'google-chrome'
 cask 'hammerspoon'
+cask 'iterm2'
 cask 'karabiner-elements'
+cask 'moom'
+cask 'notion'
+cask 'postman'
+cask 'rocket'
 cask 'sequel-pro'
+cask 'sketch'
 cask 'slack'
+cask 'spotify'
+cask 'steam'
+cask 'sublime-merge'
+cask 'sublime-text'
+cask 'tableplus'
+cask 'telegram-desktop'
+cask 'twitch'
+
+# Mac App Store
+mas 'Bear', id: 1091189122
+mas 'DaisyDisk', id: 411643860
+mas 'Drafts', id: 1435957248
+mas 'Due', id: 524373870
+mas 'Fantastical', id: 975937182
+mas 'LINE', id: 539883307
+mas 'Menu World Time', id: 1446377255
+mas 'Omnifocus', id: 1346203938
+mas 'Pocket', id: 568494494
+mas 'Spark', id: 1176895641
+mas 'Tweetbot', id: 1384080005
