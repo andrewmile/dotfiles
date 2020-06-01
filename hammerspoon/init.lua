@@ -13,7 +13,7 @@ slack = 'com.tinyspeck.slackmacgap'
 spotify = 'com.spotify.client'
 sublime = 'com.sublimetext.3'
 tableplus = 'com.tinyapp.TablePlus'
-trello = 'com.fluidapp.FluidApp.Trello'
+trello = 'com.fluidapp.FluidApp2.Trello'
 vscode = 'com.microsoft.VSCode'
 
 gokuWatcher = hs.pathwatcher.new(os.getenv('HOME') .. '/.config/karabiner.edn/', function ()
