@@ -318,12 +318,15 @@ hs.urlevent.bind('openMode', function(listener, params)
             end)
         end
     elseif (appIs(omnifocus)) then
-        if (params.key == 't') then
-            -- open forecast
-            hs.eventtap.keyStroke({'cmd'}, '4')
+        if (params.key == 'f') then
+            -- open flagged
+            hs.eventtap.keyStroke({'cmd'}, '5')
         elseif (params.key == 'r') then
             -- open routines
             hs.eventtap.keyStroke({'cmd'}, '7')
+        elseif (params.key == 't') then
+            -- open forecast
+            hs.eventtap.keyStroke({'cmd'}, '4')
         end
     elseif (appIs(githubDesktop)) then
         if (params.key == 'c') then
