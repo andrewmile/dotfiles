@@ -336,6 +336,10 @@ hs.urlevent.bind('openMode', function(listener, params)
             -- show history
             hs.eventtap.keyStroke({'cmd'}, '2')
         end
+    elseif (appIs(sublime)) then
+        if (params.key == 'r') then
+            hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'o')
+        end
     end
 end)
 
