@@ -128,6 +128,8 @@ hs.urlevent.bind('openAnything', function()
         triggerAlfredWorkflow('com.drgrib.bear', 'search bear')
     elseif appIs(githubDesktop) then
         hs.eventtap.keyStroke({'cmd'}, 't')
+    elseif appIs(drafts) then
+        hs.eventtap.keyStroke({'cmd', 'shift'}, 'f')
     end
 end)
 
