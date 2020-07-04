@@ -306,8 +306,6 @@ end)
 hs.urlevent.bind('openMode', function(listener, params)
     if (appIs(bear)) then
         if (params.key == 't') then
-            -- hs.notify.new({title = 'Date', informativeText = os.date('%Y.%m.%d')}):send()
-            -- open -g hammerspoon://%s
             hs.execute('open -g bear://x-callback-url/open-note?title=' .. os.date('%Y.%m.%d') ..'&show_window=yes&new_window=no')
         end
     elseif (appIs(slack)) then
