@@ -329,7 +329,10 @@ hs.urlevent.bind('openMode', function(listener, params)
             hs.eventtap.keyStroke({'cmd'}, '4')
         end
     elseif (appIs(githubDesktop)) then
-        if (params.key == 'c') then
+        if (params.key == 'b') then
+            -- open branch
+            hs.eventtap.keyStroke({'cmd'}, 'b')
+        elseif (params.key == 'c') then
             -- show changes
             hs.eventtap.keyStroke({'cmd'}, '1')
         elseif (params.key == 'v') then

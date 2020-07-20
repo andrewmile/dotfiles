@@ -213,6 +213,7 @@
    {
      :des "Open Mode"
      :rules [:open-mode
+       [:b [:hs "openMode?key=b"]]
        [:c [:hs "openMode?key=c"]]
        [:e [:hs "openMode?key=e"]]
        [:f [:hs "openMode?key=f"]]
