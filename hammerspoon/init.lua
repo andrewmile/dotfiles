@@ -308,6 +308,10 @@ hs.urlevent.bind('openMode', function(listener, params)
         if (params.key == 't') then
             hs.execute('open -g bear://x-callback-url/open-note?title=' .. os.date('%Y.%m.%d') ..'&show_window=yes&new_window=no')
         end
+    elseif (appIs(chrome)) then
+        if (params.key == 'a') then
+            hs.eventtap.keyStroke({'cmd', 'shift'}, 'm')
+        end
     elseif (appIs(slack)) then
         if (params.key == 'g') then
             -- open general
