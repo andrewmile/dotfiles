@@ -270,7 +270,12 @@ hs.urlevent.bind('appendAnything', function(listener, params)
 end)
 
 hs.urlevent.bind('insertAnything', function(listener, params)
-    if appIs(slack) then
+    if appIs(chrome) then
+        if (params.key == 'c') then
+            -- insert credentials
+            hs.eventtap.keyStroke({'cmd'}, '\\')
+        end
+    elseif appIs(slack) then
         emoji = mapKeyToEmoji(params.key)
         hs.eventtap.keyStrokes(emoji)
     elseif (appIs(sublime)) then
