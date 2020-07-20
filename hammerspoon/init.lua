@@ -340,6 +340,11 @@ hs.urlevent.bind('openMode', function(listener, params)
         if (params.key == 'r') then
             hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'o')
         end
+    elseif (appIs(tableplus)) then
+        if (params.key == 'e') then
+            -- open editor
+            hs.eventtap.keyStroke({'cmd'}, 'e')
+        end
     end
 end)
 
