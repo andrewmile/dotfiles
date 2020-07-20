@@ -378,3 +378,11 @@ hs.urlevent.bind('copyAnything', function()
         hs.eventtap.keyStroke({'cmd', 'option', 'control'}, 'y')
     end
 end)
+
+hs.urlevent.bind('makeAnything', function()
+    if appIs(sublime) then
+        hs.eventtap.keyStroke({'cmd', 'option'}, 'n')
+    elseif appIs(finder) then
+        hs.eventtap.keyStroke({'cmd', 'shift'}, 'n')
+    end
+end)
