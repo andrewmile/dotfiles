@@ -84,7 +84,7 @@
         [:s [:launch "Spotify.app"]]
         [:t :!Ospacebar] ; iTerm
         [:v [:launch "GitHub\\ Desktop.app"]]
-        [:w [:launch "Tinkerwell.app"]]
+        [:w [:launch "Drafts.app"]]
         [:x [:launch "Discord.app"]]
         [:z [:launch "Trello.app"]]
       ]
