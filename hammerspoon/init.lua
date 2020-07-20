@@ -357,6 +357,11 @@ hs.urlevent.bind('openMode', function(listener, params)
             -- open editor
             hs.eventtap.keyStroke({'cmd'}, 'e')
         end
+    elseif (appIs(trello)) then
+        if (params.key == 'c') then
+            -- open card
+            hs.eventtap.keyStroke({}, 'f')
+        end
     end
 end)
 
