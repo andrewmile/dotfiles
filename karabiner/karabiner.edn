@@ -95,9 +95,8 @@
       :des "Semicolon mode for performing actions"
       :rules [:semicolon-mode
         [:a :!Ca] ; Select all
+        [:d :!CSd] ; duplicate line
         [:g :!!g] ; Omnifocus quick entry
-        [:e :!!e] ; Edit with
-        [:d :!!d] ; Edit done
         [:s [:hs "saveAnything"]] ; Save
         ; [:v]
         [:x :!Tc] ; ctrl+c
@@ -106,6 +105,8 @@
     {
      :des "Quote mode for running commands"
      :rules [:quote-mode
+      [:d :!!d] ; Edit done
+      [:e :!!e] ; Edit with
       [:f :!SOCf] ; Add selected text to BitBar
       [:w :!SCw] ; Close all windows
      ]
