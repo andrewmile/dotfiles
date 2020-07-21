@@ -31,6 +31,7 @@
     :command-mode {:key :period}
     :insert-mode {:key :i}
     :open-mode {:key :o}
+    :relocate-mode {:key :r}
     :x-mode {:key :x}
     :z-mode {:key :z}
   }
@@ -163,6 +164,13 @@
      ]
     }
     {
+     :des "Relocate Mode"
+     :rules [:relocate-mode
+       [:j [:hs "relocateDown"]]
+       [:k [:hs "relocateUp"]]
+     ]
+   }
+   {
      :des "X mode for Vim selections"
      :rules [:x-mode
        [:h :!Sleft_arrow] ; select one character back

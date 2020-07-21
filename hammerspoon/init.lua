@@ -408,3 +408,19 @@ hs.urlevent.bind('makeAnything', function()
         hs.eventtap.keyStroke({'cmd', 'shift'}, 'n')
     end
 end)
+
+hs.urlevent.bind('relocateDown', function()
+    if appIs(sublime) then
+        hs.eventtap.keyStroke({'cmd', 'control'}, 'down')
+    elseif appIs(bear) then
+        hs.eventtap.keyStroke({'cmd', 'option'}, 'down')
+    end
+end)
+
+hs.urlevent.bind('relocateUp', function()
+    if appIs(sublime) then
+        hs.eventtap.keyStroke({'cmd', 'control'}, 'up')
+    elseif appIs(bear) then
+        hs.eventtap.keyStroke({'cmd', 'option'}, 'up')
+    end
+end)
