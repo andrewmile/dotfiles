@@ -351,6 +351,8 @@ hs.urlevent.bind('openMode', function(listener, params)
     elseif (appIs(sublime)) then
         if (params.key == 'r') then
             hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'o')
+        elseif (params.key == 's') then
+            hs.eventtap.keyStroke({'cmd', 'shift'}, 's')
         end
     elseif (appIs(tableplus)) then
         if (params.key == 'e') then
