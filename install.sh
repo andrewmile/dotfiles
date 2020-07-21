@@ -24,6 +24,8 @@ fi
 
 rm $HOME/.zshrc
 ln -s "$dotfiles/.zshrc" "$HOME/.zshrc"
+ln -s "$dotfiles/.xsh" "$HOME/.xsh"
+ln -s "$dotfiles/aliases" "$HOME/aliases"
 source $HOME/.zshrc
 
 ln -s "$dotfiles/iterm2/cobalt2.zsh-theme" "$HOME/.oh-my-zsh/themes/cobalt2.zsh-theme"

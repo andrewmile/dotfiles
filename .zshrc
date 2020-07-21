@@ -109,6 +109,6 @@ alias bs="npm browser-sync start --config .browsersync.js"
 #export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 
 
-source ~/.xsh
+# source ~/.xsh
 source ~/aliases/github.sh
 source ~/aliases/git.sh
