@@ -57,6 +57,7 @@ source $ZSH/oh-my-zsh.sh
 #export PATH="$(brew --prefix homebrew/php/php72)/bin:$PATH"
 export PATH=/usr/local/bin:"$(brew --prefix php)/bin:$PATH"
 export PATH=~/.composer/vendor/bin:$PATH:~/Library/Python/2.7/bin:~/bin
+export PATH=~/.npm-packages/bin:$PATH
 export PATH="$PATH:$HOME/.bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
