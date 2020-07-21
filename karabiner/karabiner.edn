@@ -32,6 +32,7 @@
     :insert-mode {:key :i}
     :open-mode {:key :o}
     :relocate-mode {:key :r}
+    :redo-mode {:key :u}
     :x-mode {:key :x}
     :z-mode {:key :z}
   }
@@ -203,6 +204,12 @@
      :rules [:append-mode
        [:comma [:hs "appendAnything?key=comma"]]
        [:semicolon [:hs "appendAnything?key=semicolon"]]
+     ]
+   }
+   {
+     :des "Redo Mode"
+     :rules [:redo-mode
+       [:caps_lock :!CSz]
      ]
    }
    {
