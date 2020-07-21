@@ -55,15 +55,15 @@
         [:j [:hs "goToPreviousTab"]]
         [:k [:hs "goToNextTab"]]
         [:l [:hs "navigateForward"]]
-        [:m [:hs "makeAnything"]]
-        ; [:n [:hs ""]]
+        [:m [:hs "toggleSidebar"]]
+        [:n [:hs "makeAnything"]]
         [:o [:hs "openAnything"]]
         [:p :!Cv]
         [:u :!Cz]
         [:y [:hs "copyAnything"]]
         [:quote :!!quote] ; scroll mode
         [:return_or_enter :caps_lock]
-        [:comma [:hs "toggleSidebar"]]
+        ; [:comma [:hs ""]]
         [:period [:hs "openCommandPalette"]]
         [:slash :!Cf] ; normal find
       ]
