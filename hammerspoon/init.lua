@@ -220,6 +220,8 @@ function runCommandInSublime(key)
         hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'p') -- rerun last test
     elseif (key == 't') then
         hs.eventtap.keyStroke({'cmd', 'ctrl'}, 't') -- test current method
+    elseif (key == 'v') then
+        hs.eventtap.leftClick({ x=900, y=1000 }) -- focus bottom panel
     end
 end
 
