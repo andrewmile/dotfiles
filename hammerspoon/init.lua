@@ -220,8 +220,6 @@ function runCommandInSublime(key)
         hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'p') -- rerun last test
     elseif (key == 't') then
         hs.eventtap.keyStroke({'cmd', 'ctrl'}, 't') -- test current method
-    elseif (key == 'v') then
-        hs.eventtap.leftClick({ x=900, y=1000 }) -- focus bottom panel
     end
 end
 
@@ -351,7 +349,9 @@ hs.urlevent.bind('openMode', function(listener, params)
             hs.eventtap.keyStroke({'cmd'}, '2')
         end
     elseif (appIs(sublime)) then
-        if (params.key == 'r') then
+        if (params.key == 'b') then
+            hs.eventtap.leftClick({ x=900, y=1000 }) -- focus bottom panel
+        elseif (params.key == 'r') then
             hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'o')
         elseif (params.key == 's') then
             hs.eventtap.keyStroke({'cmd', 'shift'}, 's')
