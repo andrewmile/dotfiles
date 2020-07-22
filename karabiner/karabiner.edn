@@ -142,7 +142,7 @@
        [:g :!CSOg] ; global google search
        [:r :!TSt] ; open selection hints in new tab
        [:s :!TSs] ; open selection hints
-       [:t :!CSOt] ; search open tabs
+       [:t [:hs "searchMode?key=t"]]
        [:w :!CSOw] ; search open windows
        [:z :!CSOz] ; global amazon search
      ]

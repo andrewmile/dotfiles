@@ -426,3 +426,17 @@ hs.urlevent.bind('relocateUp', function()
         hs.eventtap.keyStroke({'cmd', 'option'}, 'up')
     end
 end)
+
+hs.urlevent.bind('searchMode', function(listener, params)
+    if appIs(sublime) then
+        if (params.key == 't') then
+            hs.eventtap.keyStroke({'shift', 'option'}, 'p')
+        end
+    elseif appIs(chrome) then
+        if (params.key == 't') then
+            hs.eventtap.keyStroke({'shift'}, 't')
+        end
+    else
+        hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 't')
+    end
+end)
