@@ -435,10 +435,18 @@ hs.urlevent.bind('searchMode', function(listener, params)
             hs.eventtap.keyStroke({'shift', 'option'}, 'p')
         end
     elseif appIs(chrome) then
-        if (params.key == 't') then
+        if (params.key == 's') then
+            hs.eventtap.keyStroke({'control', 'shift'}, 's')
+        elseif (params.key == 't') then
             hs.eventtap.keyStroke({'shift'}, 't')
         end
     else
-        hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 't')
+        if (params.key == 's') then
+            -- search selections with vimac
+            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 's')
+        elseif (params.key == 't)') then
+            -- search tabs with witch
+            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 't')
+        end
     end
 end)
