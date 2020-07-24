@@ -433,12 +433,17 @@ hs.urlevent.bind('searchMode', function(listener, params)
     if appIs(sublime) then
         if (params.key == 't') then
             hs.eventtap.keyStroke({'shift', 'option'}, 'p')
+        elseif (params.key == 'w') then
+            hs.eventtap.keyStroke({'cmd', 'shift'}, 'o')
         end
     elseif appIs(chrome) then
         if (params.key == 's') then
             hs.eventtap.keyStroke({'control', 'shift'}, 's')
         elseif (params.key == 't') then
             hs.eventtap.keyStroke({'shift'}, 't')
+        else
+            -- search windows with witch
+            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'w')
         end
     else
         if (params.key == 's') then
@@ -447,6 +452,9 @@ hs.urlevent.bind('searchMode', function(listener, params)
         elseif (params.key == 't)') then
             -- search tabs with witch
             hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 't')
+        elseif (params.key == 'w') then
+            -- search windows with witch
+            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'w')
         end
     end
 end)

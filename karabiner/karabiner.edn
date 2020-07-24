@@ -144,7 +144,7 @@
        [:r :!TSt] ; open selection hints in new tab
        [:s [:hs "searchMode?key=s"]]
        [:t [:hs "searchMode?key=t"]]
-       [:w :!CSOw] ; search open windows
+       [:w [:hs "searchMode?key=w"]]
        [:z :!CSOz] ; global amazon search
      ]
    }
