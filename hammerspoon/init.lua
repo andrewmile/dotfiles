@@ -431,7 +431,9 @@ end)
 
 hs.urlevent.bind('searchMode', function(listener, params)
     if appIs(sublime) then
-        if (params.key == 't') then
+        if (params.key == 's') then
+            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, ';')
+        elseif (params.key == 't') then
             hs.eventtap.keyStroke({'shift', 'option'}, 'p')
         elseif (params.key == 'w') then
             hs.eventtap.keyStroke({'cmd', 'shift'}, 'o')
