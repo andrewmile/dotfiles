@@ -1,3 +1,5 @@
+hs.loadSpoon('Private')
+
 bear = 'net.shinyfrog.bear'
 chrome = 'com.google.Chrome'
 discord = 'com.hnc.Discord'
@@ -24,6 +26,39 @@ end):start()
 hs.loadSpoon('ReloadConfiguration')
 spoon.ReloadConfiguration:start()
 hs.notify.new({title = 'Hammerspoon', informativeText = 'Config loaded'}):send()
+
+local function matches_project_file(path, patterns)
+    for projectKey, project in pairs(projects) do
+        for patternKey, pattern in pairs(patterns) do
+            if string.match(path, project .. pattern) then
+                return true
+            end
+        end
+    end
+
+    return false
+end
+
+local function is_newly_created_file(flag)
+    return flag.itemIsFile and flag.itemCreated and not flag.itemRemoved and not flag.itemRenamed
+end
+
+openFileWatcher = hs.pathwatcher.new(os.getenv('HOME') .. '/Code', function (paths, flagTables)
+    patterns = {
+        "/app/%a+.php",
+        "/app/Http/Controllers/%a+.php",
+        "/database/factories/%a+.php",
+        "/tests/.+%a+.php",
+    }
+
+    for pathKey, path in pairs(paths) do
+        if (is_newly_created_file(flagTables[pathKey]) and matches_project_file(path, patterns)) then
+            hs.execute('/usr/local/bin/subl ' .. path)
+            return;
+        end
+    end
+
+end):start()
 
 local function has_value(tab, val)
     for index, value in ipairs(tab) do
