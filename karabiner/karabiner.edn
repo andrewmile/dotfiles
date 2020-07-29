@@ -95,7 +95,7 @@
       :des "Semicolon mode for performing actions"
       :rules [:semicolon-mode
         [:a :!Ca] ; Select all
-        [:d :!CSd] ; duplicate line in Sublime
+        [:d [:hs "duplicateAnything"]]
         [:f :!Cd] ; highlight next selection in Sublime
         [:g :!!g] ; Omnifocus quick entry
         [:s [:hs "saveAnything"]] ; Save

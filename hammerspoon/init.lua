@@ -445,6 +445,16 @@ hs.urlevent.bind('makeAnything', function()
         hs.eventtap.keyStroke({'cmd', 'option'}, 'n')
     elseif appIs(finder) then
         hs.eventtap.keyStroke({'cmd', 'shift'}, 'n')
+    elseif appIs(tableplus) then
+        hs.eventtap.keyStroke({'cmd'}, 'i')
+    end
+end)
+
+hs.urlevent.bind('duplicateAnything', function()
+    if appIs(sublime) then
+        hs.eventtap.keyStroke({'cmd', 'shift'}, 'd')
+    elseif appIs(tableplus) then
+        hs.eventtap.keyStroke({'cmd'}, 'd')
     end
 end)
 
