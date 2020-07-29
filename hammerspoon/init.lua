@@ -357,7 +357,7 @@ hs.urlevent.bind('openMode', function(listener, params)
             -- open general
             hs.eventtap.keyStroke({'cmd'}, 'k')
             hs.eventtap.keyStrokes('general')
-            hs.timer.doAfter(.1, function()
+            hs.timer.doAfter(.2, function()
                 hs.eventtap.keyStroke({}, 'return')
             end)
         end
