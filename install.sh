@@ -100,6 +100,10 @@ ln -s "$dotfiles/.mackup.cfg" "${HOME}/.mackup.cfg"
 # link vimrc
 ln -s "$dotfiles/vim/vimrc" "${HOME}/.vim/vimrc"
 
+# link global .gitignore
+ln -s "$dotfiles/gitignore" "${HOME}/.gitignore"
+git config --global core.excludesfile "${HOME}/.gitignore"
+
 echo "installing global npm packages"
 npm install -g @vue/cli
 npm install -g eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
