@@ -351,6 +351,11 @@ hs.urlevent.bind('openMode', function(listener, params)
     elseif (appIs(chrome)) then
         if (params.key == 'a') then
             hs.eventtap.keyStroke({'cmd', 'shift'}, 'm')
+        elseif (params.key == 't') then
+            hs.eventtap.keyStroke({'shift'}, 't')
+        else
+            -- search windows with witch
+            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'w')
         end
     elseif (appIs(slack)) then
         if (params.key == 'g') then
@@ -390,6 +395,10 @@ hs.urlevent.bind('openMode', function(listener, params)
             hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'o')
         elseif (params.key == 's') then
             hs.eventtap.keyStroke({'cmd', 'shift'}, 's')
+        elseif (params.key == 't') then
+            hs.eventtap.keyStroke({'shift', 'option'}, 'p')
+        elseif (params.key == 'w') then
+            hs.eventtap.keyStroke({'cmd', 'shift'}, 'o')
         end
     elseif (appIs(tableplus)) then
         if (params.key == 'a') then
@@ -402,6 +411,14 @@ hs.urlevent.bind('openMode', function(listener, params)
         if (params.key == 'c') then
             -- open card
             hs.eventtap.keyStroke({}, 'f')
+        end
+    else
+        if (params.key == 't)') then
+            -- search tabs with witch
+            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 't')
+        elseif (params.key == 'w') then
+            -- search windows with witch
+            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'w')
         end
     end
 end)
@@ -480,30 +497,15 @@ hs.urlevent.bind('searchMode', function(listener, params)
     if appIs(sublime) then
         if (params.key == 's') then
             hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, ';')
-        elseif (params.key == 't') then
-            hs.eventtap.keyStroke({'shift', 'option'}, 'p')
-        elseif (params.key == 'w') then
-            hs.eventtap.keyStroke({'cmd', 'shift'}, 'o')
         end
     elseif appIs(chrome) then
         if (params.key == 's') then
             hs.eventtap.keyStroke({'control', 'shift'}, 's')
-        elseif (params.key == 't') then
-            hs.eventtap.keyStroke({'shift'}, 't')
-        else
-            -- search windows with witch
-            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'w')
         end
     else
         if (params.key == 's') then
             -- search selections with vimac
             hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 's')
-        elseif (params.key == 't)') then
-            -- search tabs with witch
-            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 't')
-        elseif (params.key == 'w') then
-            -- search windows with witch
-            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'w')
         end
     end
 end)

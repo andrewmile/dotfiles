@@ -241,6 +241,7 @@
        [:s [:hs "openMode?key=s"]]
        [:t [:hs "openMode?key=t"]]
        [:v [:hs "openMode?key=v"]]
+       [:w [:hs "openMode?key=w"]]
      ]
    }
   ]
