@@ -392,12 +392,16 @@ hs.urlevent.bind('openMode', function(listener, params)
         if (params.key == 'b') then
             hs.eventtap.leftClick({ x=900, y=1000 }) -- focus bottom panel
         elseif (params.key == 'r') then
+            -- open project
             hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'o')
         elseif (params.key == 's') then
+            -- reveal in sidebar
             hs.eventtap.keyStroke({'cmd', 'shift'}, 's')
         elseif (params.key == 't') then
+            -- open tab
             hs.eventtap.keyStroke({'shift', 'option'}, 'p')
         elseif (params.key == 'w') then
+            -- open window
             hs.eventtap.keyStroke({'cmd', 'shift'}, 'o')
         end
     elseif (appIs(tableplus)) then
