@@ -11,6 +11,7 @@ iterm = 'com.googlecode.iterm2'
 notion = 'notion.id'
 omnifocus = 'com.omnigroup.OmniFocus3.MacAppStore'
 preview = 'com.apple.Preview'
+postman = 'com.postmanlabs.mac'
 slack = 'com.tinyspeck.slackmacgap'
 spotify = 'com.spotify.client'
 sublime = 'com.sublimetext.3'
@@ -187,6 +188,8 @@ hs.urlevent.bind('toggleSidebar', function()
         hs.eventtap.keyStroke({'cmd'}, '\\')
     elseif appIs(bear) then
         hs.eventtap.keyStroke({'control'}, '1')
+    elseif appIs(postman) then
+        hs.eventtap.keyStroke({'cmd'}, '\\')
     end
 end)
 
@@ -243,6 +246,11 @@ hs.urlevent.bind('runCommand', function(listener, params)
         runCommandInSublime(params.key)
     elseif appIs(slack) then
         addEmojiReactionToLastMessage(params.key)
+    elseif appIs(postman) then
+        if (params.key == 'r') then
+            -- send requeest
+            hs.eventtap.keyStroke({'cmd'}, 'return')
+        end
     end
 end)
 
@@ -308,7 +316,7 @@ hs.urlevent.bind('insertAnything', function(listener, params)
     if appIs(chrome) then
         if (params.key == 'c') then
             -- insert credentials
-            hs.eventtap.keyStroke({'cmd'}, '\\')
+            hs.eventtap.keyStroke({'ctrl', 'option', 'cmd'}, 'p')
         end
     elseif appIs(slack) then
         emoji = mapKeyToEmoji(params.key)
