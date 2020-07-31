@@ -65,6 +65,7 @@
         [:y [:hs "copyAnything"]]
         [:quote :!!quote] ; scroll mode
         [:return_or_enter :caps_lock]
+        [:spacebar [:hs "toggleMain"]]
         ; [:comma [:hs ""]]
         [:period [:hs "openCommandPalette"]]
         [:slash :!Cf] ; normal find

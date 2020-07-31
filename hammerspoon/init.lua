@@ -521,3 +521,9 @@ hs.urlevent.bind('searchMode', function(listener, params)
         end
     end
 end)
+
+hs.urlevent.bind('toggleMain', function()
+    if appIs(sublime) then
+        hs.eventtap.keyStroke({'cmd'}, '/')
+    end
+end)
