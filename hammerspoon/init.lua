@@ -28,6 +28,18 @@ hs.loadSpoon('ReloadConfiguration')
 spoon.ReloadConfiguration:start()
 hs.notify.new({title = 'Hammerspoon', informativeText = 'Config loaded'}):send()
 
+-- When the input device changes reconnect the Yeti
+hs.audiodevice.watcher.setCallback(function(event)
+    if (event == 'dIn ') then
+        yeti = hs.audiodevice.findInputByName('Yeti Stereo Microphone')
+        if (yeti and yeti:name() ~= hs.audiodevice.defaultInputDevice():name()) then
+            yeti:setDefaultInputDevice()
+            hs.notify.new({title = 'Input Connected', informativeText = yeti:name()}):send()
+        end
+    end
+end)
+hs.audiodevice.watcher.start()
+
 local function matches_project_file(path, patterns)
     for projectKey, project in pairs(projects) do
         for patternKey, pattern in pairs(patterns) do
