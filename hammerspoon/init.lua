@@ -350,6 +350,9 @@ hs.urlevent.bind('insertAnything', function(listener, params)
         elseif (params.key == 's') then
             -- import namespace
             hs.eventtap.keyStroke({}, 'f1')
+        elseif (params.key == 'x') then
+            -- insert debug
+            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'x')
         end
     elseif (appIs(trello)) then
         if (params.key == 'd') then

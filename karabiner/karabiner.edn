@@ -225,6 +225,7 @@
        [:s [:hs "insertAnything?key=s"]]
        [:t [:hs "insertAnything?key=t"]]
        [:w [:hs "insertAnything?key=w"]]
+       [:x [:hs "insertAnything?key=x"]]
      ]
    }
    {
