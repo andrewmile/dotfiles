@@ -177,8 +177,10 @@
      :des "X mode for Vim selections"
      :rules [:x-mode
        [:h :!Sleft_arrow] ; select one character back
-       [:j :!Sdown_arrow] ; select one line down
-       [:k :!Sup_arrow] ; select one line up
+       ; [:j :!Sdown_arrow] ; select one line down
+       ; [:k :!Sup_arrow] ; select one line up
+       [:j [:hs "debugSomething?key=j"]]
+       [:k [:hs "debugSomething?key=k"]]
        [:l :!Sright_arrow] ; select one character forward
        [:i :!CSleft_arrow] ; select to start of line
      ]
@@ -243,6 +245,7 @@
        [:t [:hs "openSomething?key=t"]]
        [:v [:hs "openSomething?key=v"]]
        [:w [:hs "openSomething?key=w"]]
+       [:x [:hs "openSomething?key=x"]]
      ]
    }
    {

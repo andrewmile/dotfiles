@@ -376,6 +376,8 @@ hs.urlevent.bind('openSomething', function(listener, params)
             hs.eventtap.keyStroke({'cmd', 'shift'}, 'm')
         elseif (params.key == 't') then
             hs.eventtap.keyStroke({'shift'}, 't')
+        elseif (params.key == 'x') then
+            hs.eventtap.keyStroke({'cmd', 'option'}, 'j')
         else
             -- search windows with witch
             hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'w')
@@ -558,5 +560,15 @@ hs.urlevent.bind('deleteAnything', function()
         hs.eventtap.keyStroke({'control'}, 'c')
     elseif appIs(finder) then
         hs.eventtap.keyStroke({'cmd'}, 'delete')
+    end
+end)
+
+hs.urlevent.bind('debugSomething', function(listener, params)
+    if appIs(chrome) then
+        if (params.key == 'j') then
+            hs.eventtap.keyStroke({'cmd'}, '[')
+        elseif (params.key == 'k') then
+            hs.eventtap.keyStroke({'cmd'}, ']')
+        end
     end
 end)
