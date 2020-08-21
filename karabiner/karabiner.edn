@@ -97,10 +97,10 @@
       :rules [:semicolon-mode
         [:a :!Ca] ; Select all
         [:d [:hs "duplicateAnything"]]
-        [:f :!Cd] ; highlight next selection in Sublime
+        ; [:f]
         [:g :!!g] ; Omnifocus quick entry
         [:s [:hs "saveAnything"]] ; Save
-        ; [:v]
+        [:v :!Cd] ; highlight next selection in Sublime
         [:x :!Tc] ; ctrl+c
       ]
     }
