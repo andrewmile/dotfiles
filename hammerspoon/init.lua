@@ -363,7 +363,7 @@ hs.urlevent.bind('insertAnything', function(listener, params)
     end
 end)
 
-hs.urlevent.bind('openThing', function(listener, params)
+hs.urlevent.bind('openSomething', function(listener, params)
     if (appIs(bear)) then
         if (params.key == 't') then
             hs.execute('open -g bear://x-callback-url/open-note?title=' .. os.date('%Y.%m.%d') ..'&show_window=yes&new_window=no')

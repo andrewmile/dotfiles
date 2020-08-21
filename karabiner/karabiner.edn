@@ -231,17 +231,17 @@
      :des "Open Mode"
      :rules [:open-mode
        [:caps_lock [:hs "openMode?key=s"]]
-       [:a [:hs "openThing?key=a"]]
-       [:b [:hs "openThing?key=b"]]
-       [:c [:hs "openThing?key=c"]]
-       [:e [:hs "openThing?key=e"]]
-       [:f [:hs "openThing?key=f"]]
-       [:g [:hs "openThing?key=g"]]
-       [:r [:hs "openThing?key=r"]]
-       [:s [:hs "openThing?key=s"]]
-       [:t [:hs "openThing?key=t"]]
-       [:v [:hs "openThing?key=v"]]
-       [:w [:hs "openThing?key=w"]]
+       [:a [:hs "openSomething?key=a"]]
+       [:b [:hs "openSomething?key=b"]]
+       [:c [:hs "openSomething?key=c"]]
+       [:e [:hs "openSomething?key=e"]]
+       [:f [:hs "openSomething?key=f"]]
+       [:g [:hs "openSomething?key=g"]]
+       [:r [:hs "openSomething?key=r"]]
+       [:s [:hs "openSomething?key=s"]]
+       [:t [:hs "openSomething?key=t"]]
+       [:v [:hs "openSomething?key=v"]]
+       [:w [:hs "openSomething?key=w"]]
      ]
    }
    {
