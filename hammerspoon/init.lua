@@ -411,6 +411,8 @@ hs.urlevent.bind('openThing', function(listener, params)
     elseif (appIs(sublime)) then
         if (params.key == 'b') then
             hs.eventtap.leftClick({ x=900, y=1000 }) -- focus bottom panel
+        elseif (params.key == 'f') then
+            hs.eventtap.keyStroke({'cmd'}, 'r')
         elseif (params.key == 'r') then
             -- open project
             hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'o')
