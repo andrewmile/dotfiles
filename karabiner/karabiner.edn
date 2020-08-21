@@ -144,9 +144,6 @@
        [:a :!CSf] ; find all
        [:g :!CSOg] ; global google search
        [:r :!TSt] ; open selection hints in new tab
-       [:s [:hs "searchMode?key=s"]]
-       [:t [:hs "searchMode?key=t"]]
-       [:w [:hs "searchMode?key=w"]]
        [:z :!CSOz] ; global amazon search
      ]
    }
@@ -233,17 +230,18 @@
    {
      :des "Open Mode"
      :rules [:open-mode
-       [:a [:hs "openMode?key=a"]]
-       [:b [:hs "openMode?key=b"]]
-       [:c [:hs "openMode?key=c"]]
-       [:e [:hs "openMode?key=e"]]
-       [:f [:hs "openMode?key=f"]]
-       [:g [:hs "openMode?key=g"]]
-       [:r [:hs "openMode?key=r"]]
-       [:s [:hs "openMode?key=s"]]
-       [:t [:hs "openMode?key=t"]]
-       [:v [:hs "openMode?key=v"]]
-       [:w [:hs "openMode?key=w"]]
+       [:caps_lock [:hs "openMode?key=s"]]
+       [:a [:hs "openThing?key=a"]]
+       [:b [:hs "openThing?key=b"]]
+       [:c [:hs "openThing?key=c"]]
+       [:e [:hs "openThing?key=e"]]
+       [:f [:hs "openThing?key=f"]]
+       [:g [:hs "openThing?key=g"]]
+       [:r [:hs "openThing?key=r"]]
+       [:s [:hs "openThing?key=s"]]
+       [:t [:hs "openThing?key=t"]]
+       [:v [:hs "openThing?key=v"]]
+       [:w [:hs "openThing?key=w"]]
      ]
    }
    {

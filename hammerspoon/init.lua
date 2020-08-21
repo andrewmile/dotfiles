@@ -363,7 +363,7 @@ hs.urlevent.bind('insertAnything', function(listener, params)
     end
 end)
 
-hs.urlevent.bind('openMode', function(listener, params)
+hs.urlevent.bind('openThing', function(listener, params)
     if (appIs(bear)) then
         if (params.key == 't') then
             hs.execute('open -g bear://x-callback-url/open-note?title=' .. os.date('%Y.%m.%d') ..'&show_window=yes&new_window=no')
@@ -517,20 +517,14 @@ hs.urlevent.bind('relocateUp', function()
     end
 end)
 
-hs.urlevent.bind('searchMode', function(listener, params)
+hs.urlevent.bind('openMode', function(listener, params)
     if appIs(sublime) then
-        if (params.key == 's') then
-            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, ';')
-        end
+        hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, ';')
     elseif appIs(chrome) then
-        if (params.key == 's') then
-            hs.eventtap.keyStroke({'control', 'shift'}, 's')
-        end
+        hs.eventtap.keyStroke({'control', 'shift'}, 's')
     else
-        if (params.key == 's') then
-            -- search selections with vimac
-            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 's')
-        end
+        -- search selections with vimac
+        hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 's')
     end
 end)
 
