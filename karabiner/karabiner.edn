@@ -24,6 +24,7 @@
     :append-mode {:key :a}
     :comma-mode {:key :comma}
     :copy-mode {:key :y}
+    :change-mode {:key :c}
     :semicolon-mode {:key :semicolon}
     :quote-mode {:key :quote}
     :spacebar-mode {:key :spacebar}
@@ -243,6 +244,14 @@
        [:t [:hs "openMode?key=t"]]
        [:v [:hs "openMode?key=v"]]
        [:w [:hs "openMode?key=w"]]
+     ]
+   }
+   {
+     :des "Change Mode"
+     :rules [:change-mode
+       [:k [:hs "changeThing?key=k"]]
+       [:l [:hs "changeThing?key=l"]]
+       [:u [:hs "changeThing?key=u"]]
      ]
    }
   ]

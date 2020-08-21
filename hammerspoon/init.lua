@@ -539,3 +539,15 @@ hs.urlevent.bind('toggleMain', function()
         hs.eventtap.keyStroke({'cmd'}, '/')
     end
 end)
+
+hs.urlevent.bind('changeThing', function(listener, params)
+    if appIs(sublime) then
+        if (params.key == 'k') then
+            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'k')
+        elseif (params.key == 'l') then
+            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'l')
+        elseif (params.key == 'u') then
+            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'u')
+        end
+    end
+end)
