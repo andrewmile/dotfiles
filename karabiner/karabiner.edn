@@ -102,7 +102,7 @@
         [:g :!!g] ; Omnifocus quick entry
         [:s [:hs "saveAnything"]] ; Save
         [:v :!Cd] ; highlight next selection in Sublime
-        [:x :!Tc] ; ctrl+c
+        [:x [:hs "deleteAnything"]]
       ]
     }
     {

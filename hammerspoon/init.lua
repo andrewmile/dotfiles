@@ -550,3 +550,13 @@ hs.urlevent.bind('changeThing', function(listener, params)
         end
     end
 end)
+
+hs.urlevent.bind('deleteAnything', function()
+    if appIs(sublime) then
+        hs.eventtap.keyStroke({'cmd', 'option'}, 'delete')
+    elseif appIs(iterm) then
+        hs.eventtap.keyStroke({'control'}, 'c')
+    elseif appIs(finder) then
+        hs.eventtap.keyStroke({'cmd'}, 'delete')
+    end
+end)
