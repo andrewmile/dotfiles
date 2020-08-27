@@ -560,6 +560,8 @@ hs.urlevent.bind('deleteAnything', function()
         hs.eventtap.keyStroke({'control'}, 'c')
     elseif appIs(finder) then
         hs.eventtap.keyStroke({'cmd'}, 'delete')
+    elseif appIs(chrome) then
+        hs.eventtap.keyStroke({'cmd'}, 'w')
     end
 end)
 
