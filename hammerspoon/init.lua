@@ -2,6 +2,7 @@ hs.loadSpoon('Private')
 
 bear = 'net.shinyfrog.bear'
 chrome = 'com.google.Chrome'
+dash = 'com.kapeli.dashdoc'
 discord = 'com.hnc.Discord'
 drafts = 'com.agiletortoise.Drafts-OSX'
 fantastical = 'com.flexibits.fantastical'
@@ -178,6 +179,8 @@ hs.urlevent.bind('openAnything', function()
         hs.eventtap.keyStroke({'cmd'}, 't')
     elseif appIs(drafts) then
         hs.eventtap.keyStroke({'cmd', 'shift'}, 'f')
+    elseif appIs(dash) then
+        hs.eventtap.keyStroke({'cmd'}, 'f')
     end
 end)
 
@@ -232,6 +235,8 @@ end)
 hs.urlevent.bind('goToPreviousTab', function()
     if appIs(tableplus) then
         hs.eventtap.keyStroke({'cmd'}, '[')
+    elseif appIs(dash) then
+        hs.eventtap.keyStroke({'option'}, 'down')
     else
         hs.eventtap.keyStroke({'cmd', 'shift'}, '[')
     end
@@ -240,6 +245,8 @@ end)
 hs.urlevent.bind('goToNextTab', function()
     if appIs(tableplus) then
         hs.eventtap.keyStroke({'cmd'}, ']')
+    elseif appIs(dash) then
+        hs.eventtap.keyStroke({'option'}, 'up')
     else
         hs.eventtap.keyStroke({'cmd', 'shift'}, ']')
     end

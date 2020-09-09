@@ -133,8 +133,8 @@
       [:o :!TOCo] ; Moom: Move to top right
       [:n :!TOCn] ; Moom: Move to bottom left
       [:period :!TOCperiod] ; Moom: Move to bottom right
-      ; [:t :]
-      ; [:w :]
+      [:t :!Ct] ; Cmd+t
+      [:w :!Cw] ; Cmd+w
       ; [:q :]
       ; [:r : ]
       [:c :!STC4] ; Screenshot to clipboard
