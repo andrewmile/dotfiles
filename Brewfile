@@ -60,6 +60,7 @@ mas 'DaisyDisk', id: 411643860
 mas 'Drafts', id: 1435957248
 mas 'Due', id: 524373870
 mas 'Fantastical', id: 975937182
+mas 'Giphy Capture', id: 668208984
 mas 'iStat Menus', id: 1319778037
 mas 'LINE', id: 539883307
 mas 'Menu World Time', id: 1446377255
