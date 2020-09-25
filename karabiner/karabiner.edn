@@ -56,7 +56,6 @@
         [:p :!Cv]
         [:u :!Cz]
         [:y [:hs "copyAnything"]]
-        [:quote :!!quote] ; scroll mode
         [:return_or_enter :caps_lock]
         [:spacebar [:hs "toggleMain"]]
         ; [:comma [:hs ""]]
@@ -99,6 +98,7 @@
         [:v :!Cd] ; highlight next selection in Sublime
         [:w :!Cw] ; Cmd+t
         [:x [:hs "deleteAnything"]]
+        [:z :!!quote] ; scroll mode
       ]
     }
     {
