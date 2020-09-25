@@ -549,7 +549,7 @@ hs.urlevent.bind('openMode', function(listener, params)
     end
 end)
 
-hs.urlevent.bind('toggleMain', function()
+hs.urlevent.bind('togglePrimary', function()
     if appIs(sublime) then
         hs.eventtap.keyStroke({'cmd'}, '/')
     end

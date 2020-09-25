@@ -57,7 +57,7 @@
         [:u :!Cz]
         [:y [:hs "copyAnything"]]
         [:return_or_enter :caps_lock]
-        [:spacebar [:hs "toggleMain"]]
+        [:spacebar [:hs "togglePrimary"]]
         ; [:comma [:hs ""]]
         [:period [:hs "openCommandPalette"]]
         [:slash :!Cf] ; normal find
