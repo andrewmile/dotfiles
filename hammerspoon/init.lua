@@ -165,6 +165,7 @@ hs.urlevent.bind('openAnything', function()
         triggerAlfredSearch('o')
     elseif appIncludes({discord, slack}) then
         hs.eventtap.keyStroke({'cmd'}, 'k')
+        hs.eventtap.keyStroke({}, 'down')
     elseif appIs(omnifocus) then
         hs.eventtap.keyStroke({'cmd'}, 'o')
     elseif appIs(trello) then
