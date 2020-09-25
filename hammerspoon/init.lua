@@ -1,5 +1,9 @@
 hs.loadSpoon('Private')
+hs.loadSpoon('ModalMgr')
 
+mode = 'normal'
+
+activitymonitor = 'com.apple.ActivityMonitor'
 bear = 'net.shinyfrog.bear'
 chrome = 'com.google.Chrome'
 dash = 'com.kapeli.dashdoc'
@@ -9,6 +13,8 @@ fantastical = 'com.flexibits.fantastical'
 finder = 'com.apple.finder'
 githubDesktop = 'com.github.GitHubClient'
 iterm = 'com.googlecode.iterm2'
+keynote = 'com.apple.iWork.Keynote'
+messages = 'com.apple.iChat'
 mindnode = 'com.ideasoncanvas.mindnode.macos'
 notion = 'notion.id'
 omnifocus = 'com.omnigroup.OmniFocus3.MacAppStore'
@@ -17,6 +23,7 @@ postman = 'com.postmanlabs.mac'
 slack = 'com.tinyspeck.slackmacgap'
 spotify = 'com.spotify.client'
 sublime = 'com.sublimetext.3'
+systempreferences = 'com.apple.systempreferences'
 tableplus = 'com.tinyapp.TablePlus'
 trello = 'com.fluidapp.FluidApp2.Trello'
 vscode = 'com.microsoft.VSCode'
@@ -613,4 +620,48 @@ hs.urlevent.bind('moveWindow', function(listener, params)
     else
         hs.grid.set(hs.window.focusedWindow(), windowPositions[params.key])
     end
+end)
+
+local modeMenuBar = hs.menubar.new():setTitle('Normal');
+
+spoon.ModalMgr:new('app')
+local modal = spoon.ModalMgr.modal_list['app']
+modal:bind('', 'escape', 'Deactivate appM', function() spoon.ModalMgr:deactivate({'app'}) end)
+
+local modeText = hs.styledtext.new('App', {
+    color = {hex = '#FFFFFF', alpha = 1},
+    backgroundColor = {hex = '#0000FF', alpha = 1},
+})
+modal.entered = function()
+  mode = 'app'
+    modeMenuBar:setTitle(modeText)
+end
+modal.exited = function()
+  mode = 'normal'
+  modeMenuBar:setTitle('Normal')
+end
+
+
+hsapp_list = {
+    {key = 'a', app = activitymonitor},
+    {key = 'k', app = keynote},
+    {key = 'm', app = messages},
+    {key = 'n', app = notion},
+    {key = 'p', app = postman},
+    {key = 's', app = systempreferences},
+}
+
+for _, v in ipairs(hsapp_list) do
+    local located_name = hs.application.nameForBundleID(v.app)
+    if located_name then
+        modal:bind('', v.key, located_name, function()
+            hs.application.launchOrFocusByBundleID(v.app)
+            spoon.ModalMgr:deactivate({'app'})
+        end)
+    end
+end
+
+hs.urlevent.bind('appMode', function()
+    spoon.ModalMgr:deactivateAll()
+    spoon.ModalMgr:activate({'app'}, '#0000FF', false)
 end)

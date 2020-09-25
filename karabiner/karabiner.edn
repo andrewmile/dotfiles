@@ -66,7 +66,8 @@
     {
       :des "App mode"
       :rules [:app-mode
-        [:caps_lock :!!n] ; Show notification center
+        ; [:caps_lock :!!n] ; Show notification center
+        [:caps_lock [:hs "appMode"]]
         [:a [:launch "Slack.app"]]
         [:b [:launch "Google\\ Chrome.app"]]
         [:c :!!c] ; Fantastical
