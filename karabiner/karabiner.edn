@@ -13,6 +13,7 @@
 ; ## | optional any
 
 {
+  :simlayer-threshold 150
   :templates {
    :launch "open -a %s"
    :hs "open -g hammerspoon://%s"
@@ -38,7 +39,6 @@
     :x-mode {:key :x}
     :z-mode {:key :z}
   }
-  :simlayer-threshold 150
   :main [
     {
       :des "Primary Mode"
