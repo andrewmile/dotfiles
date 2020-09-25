@@ -551,7 +551,7 @@ hs.urlevent.bind('toggleMain', function()
     end
 end)
 
-hs.urlevent.bind('changeThing', function(listener, params)
+hs.urlevent.bind('changeSomething', function(listener, params)
     if appIs(sublime) then
         if (params.key == 'k') then
             hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'k')

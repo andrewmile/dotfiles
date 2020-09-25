@@ -235,9 +235,9 @@
    {
      :des "Change Mode"
      :rules [:change-mode
-       [:k [:hs "changeThing?key=k"]]
-       [:l [:hs "changeThing?key=l"]]
-       [:u [:hs "changeThing?key=u"]]
+       [:k [:hs "changeSomething?key=k"]]
+       [:l [:hs "changeSomething?key=l"]]
+       [:u [:hs "changeSomething?key=u"]]
      ]
    }
   ]
