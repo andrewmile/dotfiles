@@ -201,24 +201,11 @@
        [:slash :!!f] ; find
      ]
     }
-    {
-     :des "Move Lines"
-     :rules [
-      [:!Cj :!TCdown_arrow] ; Move line down
-      [:!Ck :!TCup_arrow] ; Move line up
-     ]
-   }
    {
      :des "Append Mode"
      :rules [:append-mode
        [:comma [:hs "appendAnything?key=comma"]]
        [:semicolon [:hs "appendAnything?key=semicolon"]]
-     ]
-   }
-   {
-     :des "Redo Mode"
-     :rules [:redo-mode
-       [:caps_lock :!CSz]
      ]
    }
    {
