@@ -9,6 +9,7 @@ fantastical = 'com.flexibits.fantastical'
 finder = 'com.apple.finder'
 githubDesktop = 'com.github.GitHubClient'
 iterm = 'com.googlecode.iterm2'
+mindnode = 'com.ideasoncanvas.mindnode.macos'
 notion = 'notion.id'
 omnifocus = 'com.omnigroup.OmniFocus3.MacAppStore'
 preview = 'com.apple.Preview'
@@ -206,6 +207,9 @@ hs.urlevent.bind('toggleSidebar', function()
         hs.eventtap.keyStroke({'control'}, '1')
     elseif appIs(postman) then
         hs.eventtap.keyStroke({'cmd'}, '\\')
+    elseif appIs(mindnode) then
+        hs.eventtap.keyStroke({'cmd'}, '6')
+        hs.eventtap.keyStroke({'cmd'}, '7')
     end
 end)
 
