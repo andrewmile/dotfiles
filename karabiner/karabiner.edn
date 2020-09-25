@@ -217,7 +217,7 @@
    {
      :des "Open Mode"
      :rules [:open-mode
-       [:caps_lock [:hs "openMode?key=s"]]
+       [:caps_lock [:hs "openMode"]]
        [:a [:hs "openSomething?key=a"]]
        [:b [:hs "openSomething?key=b"]]
        [:c [:hs "openSomething?key=c"]]
