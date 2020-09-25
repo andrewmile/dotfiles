@@ -27,7 +27,7 @@
     :change-mode {:key :c}
     :semicolon-mode {:key :semicolon}
     :quote-mode {:key :quote}
-    :spacebar-mode {:key :spacebar}
+    :toggle-mode {:key :spacebar}
     :search-mode {:key :slash}
     :command-mode {:key :period}
     :insert-mode {:key :i}
@@ -106,6 +106,7 @@
         [:s [:hs "saveAnything"]] ; Save
         [:t :!Ct] ; Cmd+t
         [:v :!Cd] ; highlight next selection in Sublime
+        [:w :!Cw] ; Cmd+t
         [:x [:hs "deleteAnything"]]
       ]
     }
@@ -119,12 +120,8 @@
      ]
     }
     {
-     :des "Spacebar mode for window management"
-     :rules [:spacebar-mode
-      [:t :!Ct] ; Cmd+t
-      [:w :!Cw] ; Cmd+w
-      ; [:q :]
-      ; [:r : ]
+     :des "Toggle mode"
+     :rules [:toggle-mode
       [:c :!STC4] ; Screenshot to clipboard
       [:s :!SC4] ; Screenshot to filesystem
      ]
