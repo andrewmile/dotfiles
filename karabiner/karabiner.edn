@@ -34,6 +34,7 @@
     :open-mode {:key :o}
     :relocate-mode {:key :r}
     :redo-mode {:key :u}
+    :window-mode {:key :w}
     :x-mode {:key :x}
     :z-mode {:key :z}
   }
@@ -120,17 +121,6 @@
     {
      :des "Spacebar mode for window management"
      :rules [:spacebar-mode
-      [:d [:hs "moveWindow?key=display"]]
-      [:f [:hs "moveWindow?key=full"]]
-      [:g [:hs "moveWindow?key=center"]]
-      [:h [:hs "moveWindow?key=left"]]
-      [:j [:hs "moveWindow?key=bottom"]]
-      [:k [:hs "moveWindow?key=top"]]
-      [:l [:hs "moveWindow?key=right"]]
-      [:u [:hs "moveWindow?key=topLeft"]]
-      [:o [:hs "moveWindow?key=topRight"]]
-      [:n [:hs "moveWindow?key=bottomLeft"]]
-      [:period [:hs "moveWindow?key=bottomRight"]]
       [:t :!Ct] ; Cmd+t
       [:w :!Cw] ; Cmd+w
       ; [:q :]
@@ -138,6 +128,22 @@
       [:c :!STC4] ; Screenshot to clipboard
       [:s :!SC4] ; Screenshot to filesystem
      ]
+   }
+   {
+    :des "Window mode"
+    :rules [:window-mode
+     [:m [:hs "moveWindow?key=display"]]
+     [:semicolon [:hs "moveWindow?key=full"]]
+     [:i [:hs "moveWindow?key=center"]]
+     [:h [:hs "moveWindow?key=left"]]
+     [:j [:hs "moveWindow?key=bottom"]]
+     [:k [:hs "moveWindow?key=top"]]
+     [:l [:hs "moveWindow?key=right"]]
+     [:u [:hs "moveWindow?key=topLeft"]]
+     [:o [:hs "moveWindow?key=topRight"]]
+     [:n [:hs "moveWindow?key=bottomLeft"]]
+     [:period [:hs "moveWindow?key=bottomRight"]]
+    ]
    }
    {
      :des "Search mode"
