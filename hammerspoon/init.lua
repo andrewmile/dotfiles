@@ -93,7 +93,7 @@ function appIncludes(bundles)
 end
 
 function focusedWindowIs(bundle)
-    return hs.window:focusedWindow():application():bundleID() == bundle
+    return hs.window.focusedWindow():application():bundleID() == bundle
 end
 
 function getSelectedText(copying)
