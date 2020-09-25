@@ -124,6 +124,7 @@
      :rules [:toggle-mode
       [:c :!STC4] ; Screenshot to clipboard
       [:s :!SC4] ; Screenshot to filesystem
+      [:w :!Ch] ; Cmd+h
      ]
    }
    {
