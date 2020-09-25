@@ -39,15 +39,6 @@
     :z-mode {:key :z}
   }
   :simlayer-threshold 150
-  :applications {
-    :bear ["^net\\.shinyfrog\\.bear$"]
-    :chrome ["^com\\.google\\.Chrome$"]
-    :finder ["^com\\.apple\\.finder$"]
-    :notion ["^notion\\.id$"]
-    :slack ["^com\\.tinyspeck\\.slackmacgap$"]
-    :spotify ["^com\\.spotify\\.client$"]
-    :trello ["^com\\.fluidapp\\.FluidApp\\.Trello$"]
-  }
   :main [
     {
       :des "Primary Mode"
