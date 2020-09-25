@@ -121,7 +121,7 @@
    {
     :des "Window mode"
     :rules [:window-mode
-     [:m [:hs "moveWindow?key=display"]]
+     [:quote [:hs "moveWindow?key=display"]]
      [:semicolon [:hs "moveWindow?key=full"]]
      [:i [:hs "moveWindow?key=center"]]
      [:h [:hs "moveWindow?key=left"]]
