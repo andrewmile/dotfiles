@@ -36,8 +36,8 @@
     :relocate-mode {:key :r}
     :redo-mode {:key :u}
     :window-mode {:key :w}
-    :x-mode {:key :x}
-    :z-mode {:key :z}
+    :debug-mode {:key :x}
+    :vim-mode {:key :z}
   }
   :main [
     {
@@ -170,26 +170,22 @@
      ]
    }
    {
-     :des "X mode for Vim selections"
-     :rules [:x-mode
-       [:h :!Sleft_arrow] ; select one character back
-       ; [:j :!Sdown_arrow] ; select one line down
-       ; [:k :!Sup_arrow] ; select one line up
+     :des "Debug mode and Vim movements"
+     :rules [:debug-mode
+       [:h :!Oleft_arrow] ; move one word back
        [:j [:hs "debugSomething?key=j"]]
        [:k [:hs "debugSomething?key=k"]]
-       [:l :!Sright_arrow] ; select one character forward
-       [:i :!CSleft_arrow] ; select to start of line
+       [:l :!Oright_arrow] ; move one character forward
      ]
    }
    {
-     :des "Z mode for Vim movements"
-     :rules [:z-mode
+     :des "Vim mode"
+     :rules [:vim-mode
        [:h :left_arrow] ; go back one character
        [:j :down_arrow] ; go down one line
        [:k :up_arrow] ; go up one line
        [:l :right_arrow] ; go forward one character
        [:i :!Cleft_arrow] ; go to start of line
-       [:slash :!!f] ; find
      ]
     }
    {
