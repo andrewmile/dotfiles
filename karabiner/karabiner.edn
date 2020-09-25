@@ -120,19 +120,17 @@
     {
      :des "Spacebar mode for window management"
      :rules [:spacebar-mode
-      [:m :!TOCm] ; Moom
-      [:d :!TOCd] ; Moom: Move to right display
-      [:f :!TOCf] ; Moom: Fullscreen
-      [:g :!TOCg] ; Moom: Center screen
-      [:return_or_enter :!TOCreturn_or_enter] ; Moom: Reset
-      [:h :!TOCh] ; Moom: Move half screen left
-      [:j :!TOCj] ; Moom: Move half screen bottom
-      [:k :!TOCk] ; Moom: Move half screen top
-      [:l :!TOl] ; Moom: Move half screen right
-      [:u :!TOCu] ; Moom: Move to top left
-      [:o :!TOCo] ; Moom: Move to top right
-      [:n :!TOCn] ; Moom: Move to bottom left
-      [:period :!TOCperiod] ; Moom: Move to bottom right
+      [:d [:hs "moveWindow?key=display"]]
+      [:f [:hs "moveWindow?key=full"]]
+      [:g [:hs "moveWindow?key=center"]]
+      [:h [:hs "moveWindow?key=left"]]
+      [:j [:hs "moveWindow?key=bottom"]]
+      [:k [:hs "moveWindow?key=top"]]
+      [:l [:hs "moveWindow?key=right"]]
+      [:u [:hs "moveWindow?key=topLeft"]]
+      [:o [:hs "moveWindow?key=topRight"]]
+      [:n [:hs "moveWindow?key=bottomLeft"]]
+      [:period [:hs "moveWindow?key=bottomRight"]]
       [:t :!Ct] ; Cmd+t
       [:w :!Cw] ; Cmd+w
       ; [:q :]
