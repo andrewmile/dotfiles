@@ -222,6 +222,7 @@
    {
      :des "Insert Mode"
      :rules [:insert-mode
+       [:a [:hs "insertAnything?key=a"]]
        [:c [:hs "insertAnything?key=c"]]
        [:d [:hs "insertAnything?key=d"]]
        [:e [:hs "insertAnything?key=e"]]

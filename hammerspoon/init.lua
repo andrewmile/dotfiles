@@ -341,7 +341,9 @@ hs.urlevent.bind('insertAnything', function(listener, params)
         emoji = mapKeyToEmoji(params.key)
         hs.eventtap.keyStrokes(emoji)
     elseif (appIs(sublime)) then
-        if (params.key == 'c') then
+        if (params.key == 'a') then
+            hs.eventtap.keyStrokes('->')
+        elseif (params.key == 'c') then
             -- insert constructor
             hs.eventtap.keyStroke({}, 'f2')
         elseif (params.key == 'd') then
