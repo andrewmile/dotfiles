@@ -18,18 +18,18 @@
    :hs "open -g hammerspoon://%s"
   }
   :layers {
-    :hyper-mode {:key :caps_lock :alone {:key :escape}}
+    :primary-mode {:key :caps_lock :alone {:key :escape}}
   }
   :simlayers {
     :append-mode {:key :a}
-    :comma-mode {:key :comma}
+    :app-mode {:key :comma}
     :copy-mode {:key :y}
     :change-mode {:key :c}
-    :semicolon-mode {:key :semicolon}
-    :quote-mode {:key :quote}
+    :global-mode {:key :semicolon}
+    :share-mode {:key :quote}
     :toggle-mode {:key :spacebar}
-    :search-mode {:key :slash}
-    :command-mode {:key :period}
+    :find-mode {:key :slash}
+    :execute-mode {:key :period}
     :insert-mode {:key :i}
     :open-mode {:key :o}
     :relocate-mode {:key :r}
@@ -50,8 +50,8 @@
   }
   :main [
     {
-      :des "Hyper Mode"
-      :rules [:hyper-mode
+      :des "Primary Mode"
+      :rules [:primary-mode
         [:semicolon :!!semicolon] ; open Alfred
         [:a :!!a] ; get app bundle ID from Alfred
         [:h [:hs "navigateBack"]]
@@ -74,8 +74,8 @@
       ]
     }
     {
-      :des "Comma mode to launch apps"
-      :rules [:comma-mode
+      :des "App mode"
+      :rules [:app-mode
         [:caps_lock :!!n] ; Show notification center
         [:a [:launch "Slack.app"]]
         [:b [:launch "Google\\ Chrome.app"]]
@@ -95,8 +95,8 @@
       ]
     }
     {
-      :des "Semicolon mode for performing actions"
-      :rules [:semicolon-mode
+      :des "Global mode"
+      :rules [:global-mode
         [:a :!Ca] ; Select all
         [:d [:hs "duplicateAnything"]]
         ; [:f]
@@ -111,8 +111,8 @@
       ]
     }
     {
-     :des "Quote mode for running commands"
-     :rules [:quote-mode
+     :des "Share mode"
+     :rules [:share-mode
       [:d :!!d] ; Edit done
       [:e :!!e] ; Edit with
       [:f :!SOCf] ; Add selected text to BitBar
@@ -144,8 +144,8 @@
     ]
    }
    {
-     :des "Search mode"
-     :rules [:search-mode
+     :des "Find mode"
+     :rules [:find-mode
        [:a :!CSf] ; find all
        [:g :!CSOg] ; global google search
        [:r :!TSt] ; open selection hints in new tab
@@ -153,8 +153,8 @@
      ]
    }
    {
-     :des "Command mode"
-     :rules [:command-mode
+     :des "Execute mode"
+     :rules [:execute-mode
        [:a [:hs "runCommand?key=a"]]
        [:f [:hs "runCommand?key=f"]]
        [:g [:hs "runCommand?key=g"]]
