@@ -237,6 +237,16 @@ function chain(commands)
     end
 end
 
+function openSlackChannel(channel)
+    return function()
+        hs.eventtap.keyStroke({'cmd'}, 'k')
+        hs.eventtap.keyStrokes(channel)
+        hs.timer.doAfter(.2, function()
+            hs.eventtap.keyStroke({}, 'return')
+        end)
+    end
+end
+
 open = {
     primary = {
         bear = alfredWorkflow('com.drgrib.bear', 'search bear'),
@@ -256,11 +266,69 @@ open = {
         sublime = combo({'cmd'}, 'p'),
         tableplus = combo({'cmd'}, 'p'),
         trello = keys('b'),
-    }
+    },
+    a = {
+        chrome = combo({'cmd', 'shift'}, 'm'), -- profile
+        tableplus = combo({'cmd', 'shift'}, 'k'), -- connection
+    },
+    b = {
+        sublime = function()
+            hs.eventtap.leftClick({ x=900, y=1000 }) -- focus bottom panel
+        end,
+        githubDesktop = combo({'cmd'}, 'b'), -- branch
+    },
+    c = {
+        trello = combo({}, 'f'), -- card
+        githubDesktop = combo({'cmd'}, '1'), -- changes
+    },
+    e = {
+        tableplus = combo({'cmd'}, 'e'), -- editor
+    },
+    f = {
+        omnifocus = combo({'cmd'}, '5'), -- flagged
+        sublime = combo({'cmd'}, 'r'), -- symbol
+    },
+    g = {
+        slack = openSlackChannel('general'),
+    },
+    r = {
+        omnifocus = combo({'cmd'}, '7'), -- routines
+        sublime = combo({'cmd', 'ctrl'}, 'o'), -- project / repo
+    },
+    s = {
+        sublime = combo({'cmd', 'shift'}, 's'), -- reveal in sidebar
+    },
+    t = {
+        default = combo({'cmd', 'shift', 'option'}, 't'), -- search tabs with witch
+        bear = function()
+            hs.execute('open -g bear://x-callback-url/open-note?title=' .. os.date('%Y.%m.%d') ..'&show_window=yes&new_window=no') -- open today's work journal
+        end,
+        chrome = combo({'shift'}, 't'), -- search tabs with vimium
+        omnifocus = combo({'cmd'}, '4'), -- forecast
+        sublime = combo({'shift', 'option'}, 'p'), -- tab
+    },
+    v = {
+        githubDesktop = combo({'cmd'}, '2'), -- history
+    },
+    x = {
+        chrome = combo({'cmd', 'option'}, 'j'), -- console
+    },
+    w = {
+        default = combo({'cmd', 'shift', 'option'}, 'w'), -- search windows with witch
+        sublime = combo({'cmd', 'shift'}, 'o'), -- window
+    },
 }
 
 hs.urlevent.bind('openAnything', function()
     open.primary[frontApp()]()
+end)
+
+hs.urlevent.bind('openSomething', function(listener, params)
+    command = open[params.key][frontApp()]
+    if (command == nil) then
+        command = open[params.key]['default']
+    end
+    command()
 end)
 
 hs.urlevent.bind('reloadAnything', function()
@@ -453,94 +521,6 @@ hs.urlevent.bind('insertAnything', function(listener, params)
         elseif (params.key == 'c') then
             -- insert checklist
             hs.eventtap.keyStrokes('-')
-        end
-    end
-end)
-
-hs.urlevent.bind('openSomething', function(listener, params)
-    if (appIs(bear)) then
-        if (params.key == 't') then
-            hs.execute('open -g bear://x-callback-url/open-note?title=' .. os.date('%Y.%m.%d') ..'&show_window=yes&new_window=no')
-        end
-    elseif (appIs(chrome)) then
-        if (params.key == 'a') then
-            hs.eventtap.keyStroke({'cmd', 'shift'}, 'm')
-        elseif (params.key == 't') then
-            hs.eventtap.keyStroke({'shift'}, 't')
-        elseif (params.key == 'x') then
-            hs.eventtap.keyStroke({'cmd', 'option'}, 'j')
-        else
-            -- search windows with witch
-            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'w')
-        end
-    elseif (appIs(slack)) then
-        if (params.key == 'g') then
-            -- open general
-            hs.eventtap.keyStroke({'cmd'}, 'k')
-            hs.eventtap.keyStrokes('general')
-            hs.timer.doAfter(.2, function()
-                hs.eventtap.keyStroke({}, 'return')
-            end)
-        end
-    elseif (appIs(omnifocus)) then
-        if (params.key == 'f') then
-            -- open flagged
-            hs.eventtap.keyStroke({'cmd'}, '5')
-        elseif (params.key == 'r') then
-            -- open routines
-            hs.eventtap.keyStroke({'cmd'}, '7')
-        elseif (params.key == 't') then
-            -- open forecast
-            hs.eventtap.keyStroke({'cmd'}, '4')
-        end
-    elseif (appIs(githubDesktop)) then
-        if (params.key == 'b') then
-            -- open branch
-            hs.eventtap.keyStroke({'cmd'}, 'b')
-        elseif (params.key == 'c') then
-            -- show changes
-            hs.eventtap.keyStroke({'cmd'}, '1')
-        elseif (params.key == 'v') then
-            -- show history
-            hs.eventtap.keyStroke({'cmd'}, '2')
-        end
-    elseif (appIs(sublime)) then
-        if (params.key == 'b') then
-            hs.eventtap.leftClick({ x=900, y=1000 }) -- focus bottom panel
-        elseif (params.key == 'f') then
-            hs.eventtap.keyStroke({'cmd'}, 'r')
-        elseif (params.key == 'r') then
-            -- open project
-            hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'o')
-        elseif (params.key == 's') then
-            -- reveal in sidebar
-            hs.eventtap.keyStroke({'cmd', 'shift'}, 's')
-        elseif (params.key == 't') then
-            -- open tab
-            hs.eventtap.keyStroke({'shift', 'option'}, 'p')
-        elseif (params.key == 'w') then
-            -- open window
-            hs.eventtap.keyStroke({'cmd', 'shift'}, 'o')
-        end
-    elseif (appIs(tableplus)) then
-        if (params.key == 'a') then
-            hs.eventtap.keyStroke({'cmd', 'shift'}, 'k')
-        elseif (params.key == 'e') then
-            -- open editor
-            hs.eventtap.keyStroke({'cmd'}, 'e')
-        end
-    elseif (appIs(trello)) then
-        if (params.key == 'c') then
-            -- open card
-            hs.eventtap.keyStroke({}, 'f')
-        end
-    else
-        if (params.key == 't') then
-            -- search tabs with witch
-            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 't')
-        elseif (params.key == 'w') then
-            -- search windows with witch
-            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'w')
         end
     end
 end)
