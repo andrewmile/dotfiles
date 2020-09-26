@@ -28,6 +28,33 @@ tableplus = 'com.tinyapp.TablePlus'
 trello = 'com.fluidapp.FluidApp2.Trello'
 vscode = 'com.microsoft.VSCode'
 
+apps = {
+    activitymonitor = 'com.apple.ActivityMonitor',
+    bear = 'net.shinyfrog.bear',
+    chrome = 'com.google.Chrome',
+    dash = 'com.kapeli.dashdoc',
+    discord = 'com.hnc.Discord',
+    drafts = 'com.agiletortoise.Drafts-OSX',
+    fantastical = 'com.flexibits.fantastical',
+    finder = 'com.apple.finder',
+    githubDesktop = 'com.github.GitHubClient',
+    iterm = 'com.googlecode.iterm2',
+    keynote = 'com.apple.iWork.Keynote',
+    messages = 'com.apple.iChat',
+    mindnode = 'com.ideasoncanvas.mindnode.macos',
+    notion = 'notion.id',
+    omnifocus = 'com.omnigroup.OmniFocus3.MacAppStore',
+    preview = 'com.apple.Preview',
+    postman = 'com.postmanlabs.mac',
+    slack = 'com.tinyspeck.slackmacgap',
+    spotify = 'com.spotify.client',
+    sublime = 'com.sublimetext.3',
+    systempreferences = 'com.apple.systempreferences',
+    tableplus = 'com.tinyapp.TablePlus',
+    trello = 'com.fluidapp.FluidApp2.Trello',
+    vscode = 'com.microsoft.VSCode',
+}
+
 gokuWatcher = hs.pathwatcher.new(os.getenv('HOME') .. '/.config/karabiner.edn/', function ()
     output = hs.execute('/usr/local/bin/goku')
     hs.notify.new({title = 'Karabiner Config', informativeText = output}):send()
@@ -90,6 +117,18 @@ local function has_value(tab, val)
     end
 
     return false
+end
+
+function invertTable(source)
+    local inverted = {}
+    for key, value in pairs(source) do
+        inverted[value] = key
+    end
+    return inverted
+end
+
+function frontApp()
+    return invertTable(apps)[hs.application.frontmostApplication():bundleID()]
 end
 
 function appIs(bundle)
@@ -166,31 +205,62 @@ hs.urlevent.bind('closeWindow', function()
     end
 end)
 
-hs.urlevent.bind('openAnything', function()
-    if appIncludes({notion, sublime, tableplus}) then
-        hs.eventtap.keyStroke({'cmd'}, 'p')
-    elseif appIs(finder) then
-        triggerAlfredSearch('o')
-    elseif appIncludes({discord, slack}) then
-        hs.eventtap.keyStroke({'cmd'}, 'k')
-        hs.eventtap.keyStroke({}, 'down')
-    elseif appIs(omnifocus) then
-        hs.eventtap.keyStroke({'cmd'}, 'o')
-    elseif appIs(trello) then
-        hs.eventtap.keyStrokes('b')
-    elseif appIs(spotify) then
-        triggerAlfredWorkflow('com.vdesabou.spotify.mini.player', 'spot_mini')
-    elseif appIs(chrome) then
-        triggerAlfredSearch('bm')
-    elseif appIs(bear) then
-        triggerAlfredWorkflow('com.drgrib.bear', 'search bear')
-    elseif appIs(githubDesktop) then
-        hs.eventtap.keyStroke({'cmd'}, 't')
-    elseif appIs(drafts) then
-        hs.eventtap.keyStroke({'cmd', 'shift'}, 'f')
-    elseif appIs(dash) then
-        hs.eventtap.keyStroke({'cmd'}, 'f')
+function combo(modifiers, key)
+    return function()
+        hs.eventtap.keyStroke(modifiers, key)
     end
+end
+
+function keys(keys)
+    return function()
+        hs.eventtap.keyStrokes(keys)
+    end
+end
+
+function alfredWorkflow(workflow, trigger)
+    return function()
+        triggerAlfredWorkflow(workflow, trigger)
+    end
+end
+
+function alfredSearch(keys)
+    return function()
+        triggerAlfredSearch(keys)
+    end
+end
+
+function chain(commands)
+    return function ()
+        for _, command in pairs(commands) do
+            command()
+        end
+    end
+end
+
+open = {
+    primary = {
+        bear = alfredWorkflow('com.drgrib.bear', 'search bear'),
+        chrome = alfredSearch('bm'),
+        dash = combo({'cmd'}, 'f'),
+        discord = combo({'cmd'}, 'k'),
+        drafts = combo({'cmd', 'shift'}, 'f'),
+        finder = alfredSearch('o'),
+        notion = combo({'cmd'}, 'p'),
+        omnifocus = combo({'cmd'}, 'o'),
+        githubDesktop = combo({'cmd'}, 't'),
+        slack = chain({
+            combo({'cmd'}, 'k'),
+            combo({}, 'down'),
+        }),
+        spotify = alfredWorkflow('com.vdesabou.spotify.mini.player', 'spot_mini'),
+        sublime = combo({'cmd'}, 'p'),
+        tableplus = combo({'cmd'}, 'p'),
+        trello = keys('b'),
+    }
+}
+
+hs.urlevent.bind('openAnything', function()
+    open.primary[frontApp()]()
 end)
 
 hs.urlevent.bind('reloadAnything', function()
