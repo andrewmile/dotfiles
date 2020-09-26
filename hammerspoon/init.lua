@@ -535,7 +535,7 @@ hs.urlevent.bind('openSomething', function(listener, params)
             hs.eventtap.keyStroke({}, 'f')
         end
     else
-        if (params.key == 't)') then
+        if (params.key == 't') then
             -- search tabs with witch
             hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 't')
         elseif (params.key == 'w') then
