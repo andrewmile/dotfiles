@@ -664,12 +664,7 @@ windowPositions = {
 }
 
 hs.urlevent.bind('moveWindow', function(listener, params)
-    if (params.key == 'display') then
-        hs.grid.set(hs.window.focusedWindow(), windowPositions.full)
-        hs.window.focusedWindow():moveToScreen(hs.screen.mainScreen():next())
-    else
-        hs.grid.set(hs.window.focusedWindow(), windowPositions[params.key])
-    end
+    hs.grid.set(hs.window.focusedWindow(), windowPositions[params.key])
 end)
 
 local modeMenuBar = hs.menubar.new():setTitle('Normal');
@@ -714,4 +709,11 @@ end
 hs.urlevent.bind('appMode', function()
     spoon.ModalMgr:deactivateAll()
     spoon.ModalMgr:activate({'app'}, '#0000FF', false)
+end)
+
+hs.urlevent.bind('toggle', function(listener, params)
+    if (params.key == 'd') then
+        hs.grid.set(hs.window.focusedWindow(), windowPositions.full)
+        hs.window.focusedWindow():moveToScreen(hs.screen.mainScreen():next())
+    end
 end)

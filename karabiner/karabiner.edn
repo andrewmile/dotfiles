@@ -115,6 +115,7 @@
      :des "Toggle mode"
      :rules [:toggle-mode
       [:c :!STC4] ; Screenshot to clipboard
+      [:d [:hs "toggle?key=d"]]
       [:s :!SC4] ; Screenshot to filesystem
       [:w :!Ch] ; Cmd+h
      ]
@@ -122,7 +123,6 @@
    {
     :des "Window mode"
     :rules [:window-mode
-     [:quote [:hs "moveWindow?key=display"]]
      [:semicolon [:hs "moveWindow?key=full"]]
      [:i [:hs "moveWindow?key=center"]]
      [:h [:hs "moveWindow?key=left"]]
