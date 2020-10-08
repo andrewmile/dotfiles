@@ -315,6 +315,7 @@ open = {
     },
     w = {
         default = combo({'cmd', 'shift', 'option'}, 'w'), -- search windows with witch
+        spotify = alfredWorkflow('com.vdesabou.spotify.mini.player', 'lyrics'),
         sublime = combo({'cmd', 'shift'}, 'o'), -- window
     },
 }
