@@ -20,6 +20,7 @@ notion = 'notion.id'
 omnifocus = 'com.omnigroup.OmniFocus3.MacAppStore'
 preview = 'com.apple.Preview'
 postman = 'com.postmanlabs.mac'
+sketch = 'com.bohemiancoding.sketch3'
 slack = 'com.tinyspeck.slackmacgap'
 spotify = 'com.spotify.client'
 sublime = 'com.sublimetext.3'
@@ -46,6 +47,7 @@ apps = {
     omnifocus = 'com.omnigroup.OmniFocus3.MacAppStore',
     preview = 'com.apple.Preview',
     postman = 'com.postmanlabs.mac',
+    sketch = 'com.bohemiancoding.sketch3',
     slack = 'com.tinyspeck.slackmacgap',
     spotify = 'com.spotify.client',
     sublime = 'com.sublimetext.3',
@@ -356,6 +358,9 @@ hs.urlevent.bind('toggleSidebar', function()
     elseif appIs(mindnode) then
         hs.eventtap.keyStroke({'cmd'}, '6')
         hs.eventtap.keyStroke({'cmd'}, '7')
+    elseif appIs(sketch) then
+        hs.eventtap.keyStroke({'cmd', 'option'}, '1')
+        hs.eventtap.keyStroke({'cmd', 'option'}, '2')
     end
 end)
 
