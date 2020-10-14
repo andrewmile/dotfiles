@@ -24,6 +24,7 @@ sketch = 'com.bohemiancoding.sketch3'
 slack = 'com.tinyspeck.slackmacgap'
 spotify = 'com.spotify.client'
 sublime = 'com.sublimetext.3'
+sublimemerge = 'com.sublimemerge'
 systempreferences = 'com.apple.systempreferences'
 tableplus = 'com.tinyapp.TablePlus'
 trello = 'com.fluidapp.FluidApp2.Trello'
@@ -51,6 +52,7 @@ apps = {
     slack = 'com.tinyspeck.slackmacgap',
     spotify = 'com.spotify.client',
     sublime = 'com.sublimetext.3',
+    sublimemerge = 'com.sublimemerge',
     systempreferences = 'com.apple.systempreferences',
     tableplus = 'com.tinyapp.TablePlus',
     trello = 'com.fluidapp.FluidApp2.Trello',
@@ -345,6 +347,8 @@ end)
 hs.urlevent.bind('toggleSidebar', function()
     if appIs(sublime) then
         hs.eventtap.keyStroke({'cmd'}, 'b')
+    elseif appIs(sublimemerge) then
+        hs.eventtap.keyStroke({'cmd'}, 'k')
     elseif appIncludes({finder, omnifocus}) then
         hs.eventtap.keyStroke({'cmd', 'option'}, 's')
     elseif appIs(drafts) then
@@ -409,7 +413,7 @@ hs.urlevent.bind('goToNextTab', function()
 end)
 
 hs.urlevent.bind('openCommandPalette', function()
-    if appIs(sublime) then
+    if appIncludes({sublime, sublimemerge}) then
         hs.eventtap.keyStroke({'cmd', 'shift'}, 'p')
     else
         triggerAlfredWorkflow('com.tedwise.menubarsearch', 'menubarsearch')
@@ -419,6 +423,8 @@ end)
 hs.urlevent.bind('runCommand', function(listener, params)
     if appIs(sublime) then
         runCommandInSublime(params.key)
+    elseif appIs(sublimemerge) then
+        runCommandInSublimeMerge(params.key)
     elseif appIs(slack) then
         addEmojiReactionToLastMessage(params.key)
     elseif appIs(postman) then
@@ -438,6 +444,12 @@ function runCommandInSublime(key)
         hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'p') -- rerun last test
     elseif (key == 't') then
         hs.eventtap.keyStroke({'cmd', 'ctrl'}, 't') -- test current method
+    end
+end
+
+function runCommandInSublimeMerge(key)
+    if (key == 'c') then
+        hs.eventtap.keyStroke({'cmd'}, 'return') -- commit
     end
 end
 
@@ -534,6 +546,8 @@ end)
 hs.urlevent.bind('saveAnything', function()
     if appIs(trello) then
         hs.eventtap.keyStroke({'cmd'}, 'return')
+    elseif appIs(sublimemerge) then
+        hs.eventtap.keyStroke({'cmd', 'shift', 'option', 'ctrl'}, 's')
     else
         hs.eventtap.keyStroke({'cmd'}, 's')
     end

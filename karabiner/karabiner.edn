@@ -79,7 +79,7 @@
         [:r [:launch "Bear.app"]]
         [:s [:launch "Spotify.app"]]
         [:t :!Ospacebar] ; iTerm
-        [:v [:launch "GitHub\\ Desktop.app"]]
+        [:v [:launch "Sublime\\ Merge.app"]]
         [:w [:launch "Drafts.app"]]
         [:x [:launch "Discord.app"]]
         [:z [:launch "Trello.app"]]
@@ -148,6 +148,7 @@
      :des "Execute mode"
      :rules [:execute-mode
        [:a [:hs "runCommand?key=a"]]
+       [:c [:hs "runCommand?key=c"]]
        [:f [:hs "runCommand?key=f"]]
        [:g [:hs "runCommand?key=g"]]
        [:r [:hs "runCommand?key=r"]]
