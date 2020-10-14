@@ -268,6 +268,7 @@ open = {
         }),
         spotify = alfredWorkflow('com.vdesabou.spotify.mini.player', 'spot_mini'),
         sublime = combo({'cmd'}, 'p'),
+        sublimemerge = combo({'cmd', 'shift'}, 'o'),
         tableplus = combo({'cmd'}, 'p'),
         trello = keys('b'),
     },
