@@ -334,7 +334,9 @@ hs.urlevent.bind('openSomething', function(listener, params)
     if (command == nil) then
         command = open[params.key]['default']
     end
-    command()
+    if (command ~= nil) then
+        command()
+    end
 end)
 
 hs.urlevent.bind('reloadAnything', function()
