@@ -311,6 +311,7 @@ open = {
         end,
         chrome = combo({'shift'}, 't'), -- search tabs with vimium
         omnifocus = combo({'cmd'}, '4'), -- forecast
+        slack = combo({'cmd', 'shift'}, 't'), -- threads
         sublime = combo({'shift', 'option'}, 'p'), -- tab
     },
     v = {
