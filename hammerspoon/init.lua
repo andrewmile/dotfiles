@@ -281,6 +281,7 @@ open = {
             hs.eventtap.leftClick({ x=900, y=1000 }) -- focus bottom panel
         end,
         githubDesktop = combo({'cmd'}, 'b'), -- branch
+        sublimemerge = combo({'cmd'}, 'b'), -- branch
     },
     c = {
         trello = combo({}, 'f'), -- card
