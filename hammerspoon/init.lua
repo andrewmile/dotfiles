@@ -303,7 +303,7 @@ open = {
     t = {
         default = combo({'cmd', 'shift', 'option'}, 't'), -- search tabs with witch
         bear = function()
-            hs.execute('open -g bear://x-callback-url/open-note?title=' .. os.date('%Y.%m.%d') ..'&show_window=yes&new_window=no') -- open today's work journal
+            hs.urlevent.openURL('bear://x-callback-url/open-note?title=' .. os.date('%Y.%m.%d') ..'&show_window=yes&new_window=no') -- open today's work journal
         end,
         chrome = combo({'shift'}, 't'), -- search tabs with vimium
         omnifocus = combo({'cmd'}, '4'), -- forecast
