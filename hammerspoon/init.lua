@@ -262,10 +262,7 @@ open = {
         notion = combo({'cmd'}, 'p'),
         omnifocus = combo({'cmd'}, 'o'),
         githubDesktop = combo({'cmd'}, 't'),
-        slack = chain({
-            combo({'cmd'}, 'k'),
-            combo({}, 'down'),
-        }),
+        slack = combo({'cmd'}, 'k'),
         spotify = alfredWorkflow('com.vdesabou.spotify.mini.player', 'spot_mini'),
         sublime = combo({'cmd'}, 'p'),
         sublimemerge = combo({'cmd', 'shift'}, 'o'),
