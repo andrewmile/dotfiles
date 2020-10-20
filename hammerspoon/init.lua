@@ -243,11 +243,7 @@ end
 
 function openSlackChannel(channel)
     return function()
-        hs.eventtap.keyStroke({'cmd'}, 'k')
-        hs.eventtap.keyStrokes(channel)
-        hs.timer.doAfter(.2, function()
-            hs.eventtap.keyStroke({}, 'return')
-        end)
+        hs.urlevent.openURL('slack://channel?' .. slackChannels[channel])
     end
 end
 
@@ -281,10 +277,12 @@ open = {
         sublimemerge = combo({'cmd'}, 'b'), -- branch
     },
     c = {
-        trello = combo({}, 'f'), -- card
         githubDesktop = combo({'cmd'}, '1'), -- changes
+        slack = openSlackChannel('client'),
+        trello = combo({}, 'f'), -- card
     },
     e = {
+        slack = openSlackChannel('external'),
         tableplus = combo({'cmd'}, 'e'), -- editor
     },
     f = {
@@ -299,6 +297,7 @@ open = {
         sublime = combo({'cmd', 'ctrl'}, 'o'), -- project / repo
     },
     s = {
+        slack = openSlackChannel('internal'),
         sublime = combo({'cmd', 'shift'}, 's'), -- reveal in sidebar
     },
     t = {
