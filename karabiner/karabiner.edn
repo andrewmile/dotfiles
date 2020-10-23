@@ -201,16 +201,16 @@
    {
      :des "Insert Mode"
      :rules [:insert-mode
-       [:a [:hs "insertAnything?key=a"]]
-       [:c [:hs "insertAnything?key=c"]]
-       [:d [:hs "insertAnything?key=d"]]
-       [:e [:hs "insertAnything?key=e"]]
-       [:f [:hs "insertAnything?key=f"]]
-       [:g [:hs "insertAnything?key=g"]]
-       [:s [:hs "insertAnything?key=s"]]
-       [:t [:hs "insertAnything?key=t"]]
-       [:w [:hs "insertAnything?key=w"]]
-       [:x [:hs "insertAnything?key=x"]]
+       [:a [:hs "hyper?method=insert&target=a"]]
+       [:c [:hs "hyper?method=insert&target=c"]]
+       [:d [:hs "hyper?method=insert&target=d"]]
+       [:e [:hs "hyper?method=insert&target=e"]]
+       [:f [:hs "hyper?method=insert&target=f"]]
+       [:g [:hs "hyper?method=insert&target=g"]]
+       [:s [:hs "hyper?method=insert&target=s"]]
+       [:t [:hs "hyper?method=insert&target=t"]]
+       [:w [:hs "hyper?method=insert&target=w"]]
+       [:x [:hs "hyper?method=insert&target=x"]]
      ]
    }
    {

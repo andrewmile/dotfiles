@@ -438,6 +438,49 @@ hyperKeys = {
             sublime = combo({'cmd'}, ';'), -- append semicolon
         },
     },
+    insert = {
+        a = {
+            sublime = keys('->'),
+        },
+        c = {
+            chrome = combo({'ctrl', 'option', 'cmd'}, 'p'), -- credentials
+            sublime = combo({}, 'f2'), -- constructor
+            trello = keys('-'), -- checklist
+        },
+        d = {
+            sublime = combo({}, 'f3'), -- import dependency
+            trello = chain({
+                -- edit description
+                keys('e'),
+                combo({}, 'right'),
+            }),
+        },
+        e = {
+            sublime = combo({}, 'f4'), -- expand fully qualified name
+        },
+        f = {
+            sublime = chain({
+                keys('closure'),
+                combo({}, 'tab'),
+            }),
+        },
+        g = {
+            slack = keys(':thumbsup:'),
+        },
+        s = {
+            slack = keys(':smile:'),
+            sublime = combo({}, 'f1') -- import namespace
+        },
+        t = {
+            slack = keys(':tada:'),
+        },
+        w = {
+            slack = keys(':wave:'),
+        },
+        x = {
+            sublime = combo({'cmd', 'shift', 'option'}, 'x') -- debug
+        },
+    },
 }
 
 hs.urlevent.bind('navigateForward', function()
@@ -482,50 +525,6 @@ hs.urlevent.bind('copyMode', function(listener, params)
             Application('Google Chrome').windows[0].activeTab.url()
         ]])
         hs.pasteboard.setContents('[' .. pageTitle .. '](' .. pageUrl .. ')')
-    end
-end)
-
-hs.urlevent.bind('insertAnything', function(listener, params)
-    if appIs(chrome) then
-        if (params.key == 'c') then
-            -- insert credentials
-            hs.eventtap.keyStroke({'ctrl', 'option', 'cmd'}, 'p')
-        end
-    elseif appIs(slack) then
-        emoji = mapKeyToEmoji(params.key)
-        hs.eventtap.keyStrokes(emoji)
-    elseif (appIs(sublime)) then
-        if (params.key == 'a') then
-            hs.eventtap.keyStrokes('->')
-        elseif (params.key == 'c') then
-            -- insert constructor
-            hs.eventtap.keyStroke({}, 'f2')
-        elseif (params.key == 'd') then
-            -- import dependency
-            hs.eventtap.keyStroke({}, 'f3')
-        elseif (params.key == 'e') then
-            -- expand fully qualified name
-            hs.eventtap.keyStroke({}, 'f4')
-        elseif (params.key == 'f') then
-            -- insert function
-            hs.eventtap.keyStrokes('closure')
-            hs.eventtap.keyStroke({}, 'tab')
-        elseif (params.key == 's') then
-            -- import namespace
-            hs.eventtap.keyStroke({}, 'f1')
-        elseif (params.key == 'x') then
-            -- insert debug
-            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'x')
-        end
-    elseif (appIs(trello)) then
-        if (params.key == 'd') then
-            -- edit description
-            hs.eventtap.keyStrokes('e')
-            hs.eventtap.keyStroke({}, 'right')
-        elseif (params.key == 'c') then
-            -- insert checklist
-            hs.eventtap.keyStrokes('-')
-        end
     end
 end)
 
