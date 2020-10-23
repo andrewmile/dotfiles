@@ -32,6 +32,7 @@
     :find-mode {:key :slash}
     :execute-mode {:key :period}
     :insert-mode {:key :i}
+    :make-mode {:key :n}
     :open-mode {:key :o}
     :relocate-mode {:key :r}
     :redo-mode {:key :u}
@@ -210,6 +211,12 @@
        [:t [:hs "insertAnything?key=t"]]
        [:w [:hs "insertAnything?key=w"]]
        [:x [:hs "insertAnything?key=x"]]
+     ]
+   }
+   {
+     :des "Make mode"
+     :rules [:make-mode
+       [:r [:hs "makeSomething?key=r"]]
      ]
    }
    {

@@ -600,6 +600,14 @@ hs.urlevent.bind('makeAnything', function()
     end
 end)
 
+hs.urlevent.bind('makeSomething', function(listener, params)
+    if appIs(sublimemerge) then
+        if (params.key == 'r') then
+            hs.eventtap.keyStroke({'cmd', 'shift'}, 'n')
+        end
+    end
+end)
+
 hs.urlevent.bind('duplicateAnything', function()
     if appIs(sublime) then
         hs.eventtap.keyStroke({'cmd', 'shift'}, 'd')
