@@ -498,6 +498,10 @@ hyperKeys = {
             sublime = combo({'cmd', 'shift'}, 'd'),
             tableplus = combo({'cmd'}, 'd'),
         },
+        refresh = {
+            omnifocus = combo({'cmd'}, 'k'),
+            default = combo({'cmd'}, 'r'),
+        },
     },
 }
 
@@ -523,14 +527,6 @@ hs.urlevent.bind('hyper', function(_, params)
 
     if (command ~= nil) then
         command()
-    end
-end)
-
-hs.urlevent.bind('reloadAnything', function()
-    if appIs(omnifocus) then
-        hs.eventtap.keyStroke({'cmd'}, 'k')
-    else
-        hs.eventtap.keyStroke({'cmd'}, 'r')
     end
 end)
 

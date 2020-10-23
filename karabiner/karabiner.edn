@@ -94,7 +94,7 @@
         ; [:f]
         [:g :!!g] ; Omnifocus quick entry
         [:q :!Cq] ; Cmd+q
-        [:r [:hs "reloadAnything"]]
+        [:r [:hs "hyper?method=common&target=refresh"]]
         [:s [:hs "hyper?method=common&target=save"]]
         [:t :!Ct] ; Cmd+t
         [:v :!Cd] ; highlight next selection in Sublime
