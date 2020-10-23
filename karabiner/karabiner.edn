@@ -16,7 +16,7 @@
   :simlayer-threshold 150
   :templates {
    :launch "open -a %s"
-   :hs "open -g hammerspoon://%s"
+   :hs "open -g hammerspoon://\"%s\""
   }
   :layers {
     :primary-mode {:key :caps_lock :alone {:key :escape}}
