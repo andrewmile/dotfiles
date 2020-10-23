@@ -23,7 +23,7 @@
   }
   :simlayers {
     :append-mode {:key :a}
-    :app-mode {:key :comma}
+    :launch-mode {:key :comma}
     :copy-mode {:key :y}
     :change-mode {:key :c}
     :global-mode {:key :semicolon}
@@ -65,8 +65,8 @@
       ]
     }
     {
-      :des "App mode"
-      :rules [:app-mode
+      :des "Launch mode"
+      :rules [:launch-mode
         ; [:caps_lock :!!n] ; Show notification center
         [:caps_lock [:hs "appMode"]]
         [:a [:launch "Slack.app"]]
