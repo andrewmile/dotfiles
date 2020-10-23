@@ -116,7 +116,7 @@
      :des "Toggle mode"
      :rules [:toggle-mode
       [:c :!STC4] ; Screenshot to clipboard
-      [:d [:hs "toggle?key=d"]]
+      [:d [:hs "hyper?method=toggle&target=display"]]
       [:s :!SC4] ; Screenshot to filesystem
       [:w :!Ch] ; Cmd+h
      ]

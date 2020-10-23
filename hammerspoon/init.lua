@@ -299,6 +299,13 @@ function copyChromeUrlAsMarkdown()
     end
 end
 
+function moveWindowToNextDisplay()
+    return function()
+        hs.grid.set(hs.window.focusedWindow(), windowPositions.full)
+        hs.window.focusedWindow():moveToScreen(hs.screen.mainScreen():next())
+    end
+end
+
 hyperKeys = {
     open = {
         primary = {
@@ -401,6 +408,9 @@ hyperKeys = {
                 combo({'cmd', 'option'}, '1'),
                 combo({'cmd', 'option'}, '2'),
             }),
+        },
+        display = {
+            default = moveWindowToNextDisplay(),
         },
     },
     make = {
@@ -689,11 +699,4 @@ end
 hs.urlevent.bind('appMode', function()
     spoon.ModalMgr:deactivateAll()
     spoon.ModalMgr:activate({'app'}, '#0000FF', false)
-end)
-
-hs.urlevent.bind('toggle', function(listener, params)
-    if (params.key == 'd') then
-        hs.grid.set(hs.window.focusedWindow(), windowPositions.full)
-        hs.window.focusedWindow():moveToScreen(hs.screen.mainScreen():next())
-    end
 end)
