@@ -323,6 +323,26 @@ hyperKeys = {
             sublime = combo({'cmd', 'shift'}, 'o'), -- window
         },
     },
+    toggle = {
+        sidebar = {
+            sublime = combo({'cmd'}, 'b'),
+            sublimemerge = combo({'cmd'}, 'k'),
+            finder = combo({'cmd', 'option'}, 's'),
+            omnifocus = combo({'cmd', 'option'}, 's'),
+            drafts = combo({'cmd'}, '1'),
+            notion = combo({'cmd'}, '\\'),
+            bear = combo({'control'}, '1'),
+            postman = combo({'cmd'}, '\\'),
+            mindnode = chain({
+                combo({'cmd'}, '6'),
+                combo({'cmd'}, '7'),
+            }),
+            sketch = chain({
+                combo({'cmd', 'option'}, '1'),
+                combo({'cmd', 'option'}, '2'),
+            }),
+        },
+    },
 }
 
 hs.urlevent.bind('hyper', function(_, params)
@@ -341,30 +361,6 @@ hs.urlevent.bind('reloadAnything', function()
         hs.eventtap.keyStroke({'cmd'}, 'k')
     else
         hs.eventtap.keyStroke({'cmd'}, 'r')
-    end
-end)
-
-hs.urlevent.bind('toggleSidebar', function()
-    if appIs(sublime) then
-        hs.eventtap.keyStroke({'cmd'}, 'b')
-    elseif appIs(sublimemerge) then
-        hs.eventtap.keyStroke({'cmd'}, 'k')
-    elseif appIncludes({finder, omnifocus}) then
-        hs.eventtap.keyStroke({'cmd', 'option'}, 's')
-    elseif appIs(drafts) then
-        hs.eventtap.keyStroke({'cmd'}, '1')
-    elseif appIs(notion) then
-        hs.eventtap.keyStroke({'cmd'}, '\\')
-    elseif appIs(bear) then
-        hs.eventtap.keyStroke({'control'}, '1')
-    elseif appIs(postman) then
-        hs.eventtap.keyStroke({'cmd'}, '\\')
-    elseif appIs(mindnode) then
-        hs.eventtap.keyStroke({'cmd'}, '6')
-        hs.eventtap.keyStroke({'cmd'}, '7')
-    elseif appIs(sketch) then
-        hs.eventtap.keyStroke({'cmd', 'option'}, '1')
-        hs.eventtap.keyStroke({'cmd', 'option'}, '2')
     end
 end)
 

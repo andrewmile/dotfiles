@@ -51,7 +51,7 @@
         [:j [:hs "goToPreviousTab"]]
         [:k [:hs "goToNextTab"]]
         [:l [:hs "navigateForward"]]
-        [:m [:hs "toggleSidebar"]]
+        [:m [:hs "hyper?mode=toggle&method=sidebar"]]
         [:n [:hs "makeAnything"]]
         [:o [:hs "hyper?mode=open&method=primary"]]
         [:p :!Cv]
