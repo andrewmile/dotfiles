@@ -494,6 +494,10 @@ hyperKeys = {
                 combo({}, 'escape'),
             }),
         },
+        duplicate = {
+            sublime = combo({'cmd', 'shift'}, 'd'),
+            tableplus = combo({'cmd'}, 'd'),
+        },
     },
 }
 
@@ -567,14 +571,6 @@ hs.urlevent.bind('copyAnything', function()
         hs.eventtap.keyStrokes('yy')
     elseif appIs(vscode) then
         hs.eventtap.keyStroke({'cmd', 'option', 'control'}, 'y')
-    end
-end)
-
-hs.urlevent.bind('duplicateAnything', function()
-    if appIs(sublime) then
-        hs.eventtap.keyStroke({'cmd', 'shift'}, 'd')
-    elseif appIs(tableplus) then
-        hs.eventtap.keyStroke({'cmd'}, 'd')
     end
 end)
 

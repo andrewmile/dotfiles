@@ -90,7 +90,7 @@
       :des "Common mode"
       :rules [:common-mode
         [:a :!Ca] ; Select all
-        [:d [:hs "duplicateAnything"]]
+        [:d [:hs "hyper?method=common&target=duplicate"]]
         ; [:f]
         [:g :!!g] ; Omnifocus quick entry
         [:q :!Cq] ; Cmd+q
