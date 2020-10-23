@@ -56,7 +56,7 @@
         [:o [:hs "hyper?method=open&target=primary"]]
         [:p :!Cv]
         [:u :!Cz]
-        [:y [:hs "copyAnything"]]
+        [:y [:hs "hyper?method=copy&target=primary"]]
         [:return_or_enter :caps_lock]
         [:spacebar [:hs "hyper?method=toggle&target=primary"]]
         ; [:comma [:hs ""]]

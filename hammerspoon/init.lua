@@ -257,6 +257,36 @@ function slackReaction(emoji)
     end
 end
 
+function copy(callback)
+    return function()
+        text = getSelectedText(true)
+        if text then
+            -- Already in clipboard, do not reset
+        else
+            callback()
+        end
+    end
+end
+
+function copySpotifyCurrentTrack()
+    return function()
+        hs.osascript.applescript([[
+            tell application "Spotify"
+                set theTrack to name of the current track
+                set theArtist to artist of the current track
+                set theAlbum to album of the current track
+                set track_id to id of current track
+            end tell
+            set AppleScript's text item delimiters to ":"
+            set track_id to third text item of track_id
+            set AppleScript's text item delimiters to {""}
+            set realurl to ("https://open.spotify.com/track/" & track_id)
+            set theString to theTrack & " by " & theArtist & ": " & realurl
+            set the clipboard to theString
+        ]])
+    end
+end
+
 hyperKeys = {
     open = {
         primary = {
@@ -546,6 +576,14 @@ hyperKeys = {
             chrome = combo({'cmd'}, ']'), -- network tab
         },
     },
+    copy = {
+        primary = {
+            spotify = copy(copySpotifyCurrentTrack()),
+            bear = copy(combo({'cmd', 'option', 'shift'}, 'l')),
+            chrome = copy(combo('yy')),
+            vscode = copy(combo({'cmd', 'option', 'control'}, 'y')),
+        },
+    },
 }
 
 hs.urlevent.bind('navigateForward', function()
@@ -582,34 +620,6 @@ hs.urlevent.bind('copyMode', function(listener, params)
             Application('Google Chrome').windows[0].activeTab.url()
         ]])
         hs.pasteboard.setContents('[' .. pageTitle .. '](' .. pageUrl .. ')')
-    end
-end)
-
-hs.urlevent.bind('copyAnything', function()
-    text = getSelectedText(true)
-    if text then
-        -- Already in clipboard, do not reset
-    elseif appIs(spotify) then
-        hs.osascript.applescript([[
-            tell application "Spotify"
-                set theTrack to name of the current track
-                set theArtist to artist of the current track
-                set theAlbum to album of the current track
-                set track_id to id of current track
-            end tell
-            set AppleScript's text item delimiters to ":"
-            set track_id to third text item of track_id
-            set AppleScript's text item delimiters to {""}
-            set realurl to ("https://open.spotify.com/track/" & track_id)
-            set theString to theTrack & " by " & theArtist & ": " & realurl
-            set the clipboard to theString
-        ]])
-    elseif appIs(bear) then
-        hs.eventtap.keyStroke({'cmd', 'option', 'shift'}, 'l')
-    elseif appIs(chrome) then
-        hs.eventtap.keyStrokes('yy')
-    elseif appIs(vscode) then
-        hs.eventtap.keyStroke({'cmd', 'option', 'control'}, 'y')
     end
 end)
 
