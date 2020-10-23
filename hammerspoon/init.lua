@@ -371,6 +371,16 @@ hyperKeys = {
             slack = combo({'cmd'}, ']'),
             notion = combo({'cmd'}, ']'),
         },
+        up = {
+            default = combo({'cmd', 'shift'}, ']'),
+            tableplus = combo({'cmd'}, ']'),
+            dash = combo({'option'}, 'up'),
+        },
+        down = {
+            default = combo({'cmd', 'shift'}, '['),
+            tableplus = combo({'cmd'}, '['),
+            dash = combo({'option'}, 'down'),
+        },
     },
 }
 
@@ -404,26 +414,6 @@ hs.urlevent.bind('reloadAnything', function()
         hs.eventtap.keyStroke({'cmd'}, 'k')
     else
         hs.eventtap.keyStroke({'cmd'}, 'r')
-    end
-end)
-
-hs.urlevent.bind('goToPreviousTab', function()
-    if appIs(tableplus) then
-        hs.eventtap.keyStroke({'cmd'}, '[')
-    elseif appIs(dash) then
-        hs.eventtap.keyStroke({'option'}, 'down')
-    else
-        hs.eventtap.keyStroke({'cmd', 'shift'}, '[')
-    end
-end)
-
-hs.urlevent.bind('goToNextTab', function()
-    if appIs(tableplus) then
-        hs.eventtap.keyStroke({'cmd'}, ']')
-    elseif appIs(dash) then
-        hs.eventtap.keyStroke({'option'}, 'up')
-    else
-        hs.eventtap.keyStroke({'cmd', 'shift'}, ']')
     end
 end)
 

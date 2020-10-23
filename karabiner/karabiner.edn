@@ -48,8 +48,8 @@
         [:a :!!a] ; get app bundle ID from Alfred
         [:h [:hs "hyper?method=navigate&target=back"]]
         [:i :!!i] ; Alfred clipboard
-        [:j [:hs "goToPreviousTab"]]
-        [:k [:hs "goToNextTab"]]
+        [:j [:hs "hyper?method=navigate&target=down"]]
+        [:k [:hs "hyper?method=navigate&target=up"]]
         [:l [:hs "hyper?method=navigate&target=forward"]]
         [:m [:hs "hyper?method=toggle&target=sidebar"]]
         [:n [:hs "hyper?method=make&target=primary"]]
