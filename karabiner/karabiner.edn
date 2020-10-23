@@ -99,7 +99,7 @@
         [:t :!Ct] ; Cmd+t
         [:v :!Cd] ; highlight next selection in Sublime
         [:w :!Cw] ; Cmd+t
-        [:x [:hs "deleteAnything"]]
+        [:x [:hs "hyper?method=common&target=delete"]]
         [:z :!!quote] ; scroll mode
       ]
     }

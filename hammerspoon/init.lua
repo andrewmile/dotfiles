@@ -502,6 +502,12 @@ hyperKeys = {
             omnifocus = combo({'cmd'}, 'k'),
             default = combo({'cmd'}, 'r'),
         },
+        delete = {
+            sublime = combo({'cmd', 'option'}, 'delete'),
+            iterm = combo({'control'}, 'c'),
+            finder = combo({'cmd'}, 'delete'),
+            chrome = combo({'cmd'}, 'w'),
+        },
     },
 }
 
@@ -612,18 +618,6 @@ hs.urlevent.bind('changeSomething', function(listener, params)
         elseif (params.key == 'u') then
             hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'u')
         end
-    end
-end)
-
-hs.urlevent.bind('deleteAnything', function()
-    if appIs(sublime) then
-        hs.eventtap.keyStroke({'cmd', 'option'}, 'delete')
-    elseif appIs(iterm) then
-        hs.eventtap.keyStroke({'control'}, 'c')
-    elseif appIs(finder) then
-        hs.eventtap.keyStroke({'cmd'}, 'delete')
-    elseif appIs(chrome) then
-        hs.eventtap.keyStroke({'cmd'}, 'w')
     end
 end)
 
