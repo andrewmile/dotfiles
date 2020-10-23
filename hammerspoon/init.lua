@@ -382,6 +382,13 @@ hyperKeys = {
             dash = combo({'option'}, 'down'),
         },
     },
+    execute = {
+        primary = {
+            sublime = combo({'cmd', 'shift'}, 'p'),
+            sublimemerge = combo({'cmd', 'shift'}, 'p'),
+            default = alfredWorkflow('com.tedwise.menubarsearch', 'menubarsearch'),
+        },
+    },
 }
 
 hs.urlevent.bind('navigateForward', function()
@@ -414,14 +421,6 @@ hs.urlevent.bind('reloadAnything', function()
         hs.eventtap.keyStroke({'cmd'}, 'k')
     else
         hs.eventtap.keyStroke({'cmd'}, 'r')
-    end
-end)
-
-hs.urlevent.bind('openCommandPalette', function()
-    if appIncludes({sublime, sublimemerge}) then
-        hs.eventtap.keyStroke({'cmd', 'shift'}, 'p')
-    else
-        triggerAlfredWorkflow('com.tedwise.menubarsearch', 'menubarsearch')
     end
 end)
 

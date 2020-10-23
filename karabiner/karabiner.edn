@@ -60,7 +60,7 @@
         [:return_or_enter :caps_lock]
         [:spacebar [:hs "togglePrimary"]]
         ; [:comma [:hs ""]]
-        [:period [:hs "openCommandPalette"]]
+        [:period [:hs "hyper?method=execute&target=primary"]]
         [:slash :!Cf] ; normal find
       ]
     }
