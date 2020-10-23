@@ -58,7 +58,7 @@
         [:u :!Cz]
         [:y [:hs "copyAnything"]]
         [:return_or_enter :caps_lock]
-        [:spacebar [:hs "togglePrimary"]]
+        [:spacebar [:hs "hyper?method=toggle&target=primary"]]
         ; [:comma [:hs ""]]
         [:period [:hs "hyper?method=execute&target=primary"]]
         [:slash :!Cf] ; normal find

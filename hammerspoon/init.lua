@@ -339,6 +339,9 @@ hyperKeys = {
         },
     },
     toggle = {
+        primary = {
+            sublime = combo({'cmd'}, '/'),
+        },
         sidebar = {
             sublime = combo({'cmd'}, 'b'),
             sublimemerge = combo({'cmd'}, 'k'),
@@ -588,12 +591,6 @@ hs.urlevent.bind('copyAnything', function()
         hs.eventtap.keyStrokes('yy')
     elseif appIs(vscode) then
         hs.eventtap.keyStroke({'cmd', 'option', 'control'}, 'y')
-    end
-end)
-
-hs.urlevent.bind('togglePrimary', function()
-    if appIs(sublime) then
-        hs.eventtap.keyStroke({'cmd'}, '/')
     end
 end)
 
