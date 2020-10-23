@@ -538,6 +538,14 @@ hyperKeys = {
             sublime = combo({'cmd', 'shift', 'option'}, 'u'), -- uppercase
         },
     },
+    debug = {
+        j = {
+            chrome = combo({'cmd'}, '['), -- sources tabe
+        },
+        k = {
+            chrome = combo({'cmd'}, ']'), -- network tab
+        },
+    },
 }
 
 hs.urlevent.bind('navigateForward', function()
@@ -602,16 +610,6 @@ hs.urlevent.bind('copyAnything', function()
         hs.eventtap.keyStrokes('yy')
     elseif appIs(vscode) then
         hs.eventtap.keyStroke({'cmd', 'option', 'control'}, 'y')
-    end
-end)
-
-hs.urlevent.bind('debugSomething', function(listener, params)
-    if appIs(chrome) then
-        if (params.key == 'j') then
-            hs.eventtap.keyStroke({'cmd'}, '[')
-        elseif (params.key == 'k') then
-            hs.eventtap.keyStroke({'cmd'}, ']')
-        end
     end
 end)
 

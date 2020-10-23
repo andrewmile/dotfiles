@@ -176,8 +176,8 @@
      :des "Debug mode and Vim movements"
      :rules [:debug-mode
        [:h :!Oleft_arrow] ; move one word back
-       [:j [:hs "debugSomething?key=j"]]
-       [:k [:hs "debugSomething?key=k"]]
+       [:j [:hs "hyper?method=debug&target=j"]]
+       [:k [:hs "hyper?method=debug&target=k"]]
        [:l :!Oright_arrow] ; move one character forward
      ]
    }
