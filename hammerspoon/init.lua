@@ -509,6 +509,16 @@ hyperKeys = {
             chrome = combo({'cmd'}, 'w'),
         },
     },
+    relocate = {
+        down = {
+            bear = combo({'cmd', 'option'}, 'down'),
+            sublime = combo({'cmd', 'control'}, 'down'),
+        },
+        up = {
+            bear = combo({'cmd', 'option'}, 'up'),
+            sublime = combo({'cmd', 'control'}, 'up'),
+        },
+    },
 }
 
 hs.urlevent.bind('navigateForward', function()
@@ -573,22 +583,6 @@ hs.urlevent.bind('copyAnything', function()
         hs.eventtap.keyStrokes('yy')
     elseif appIs(vscode) then
         hs.eventtap.keyStroke({'cmd', 'option', 'control'}, 'y')
-    end
-end)
-
-hs.urlevent.bind('relocateDown', function()
-    if appIs(sublime) then
-        hs.eventtap.keyStroke({'cmd', 'control'}, 'down')
-    elseif appIs(bear) then
-        hs.eventtap.keyStroke({'cmd', 'option'}, 'down')
-    end
-end)
-
-hs.urlevent.bind('relocateUp', function()
-    if appIs(sublime) then
-        hs.eventtap.keyStroke({'cmd', 'control'}, 'up')
-    elseif appIs(bear) then
-        hs.eventtap.keyStroke({'cmd', 'option'}, 'up')
     end
 end)
 

@@ -168,8 +168,8 @@
     {
      :des "Relocate Mode"
      :rules [:relocate-mode
-       [:j [:hs "relocateDown"]]
-       [:k [:hs "relocateUp"]]
+       [:j [:hs "hyper?method=relocate&target=down"]]
+       [:k [:hs "hyper?method=relocate&target=up"]]
      ]
    }
    {
