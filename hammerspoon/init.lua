@@ -430,6 +430,14 @@ hyperKeys = {
             slack = slackReaction(':wave:'),
         },
     },
+    append = {
+        comma = {
+            sublime = combo({'cmd', 'option'}, ','), -- append comma
+        },
+        semicolon = {
+            sublime = combo({'cmd'}, ';'), -- append semicolon
+        },
+    },
 }
 
 hs.urlevent.bind('navigateForward', function()
@@ -474,18 +482,6 @@ hs.urlevent.bind('copyMode', function(listener, params)
             Application('Google Chrome').windows[0].activeTab.url()
         ]])
         hs.pasteboard.setContents('[' .. pageTitle .. '](' .. pageUrl .. ')')
-    end
-end)
-
-hs.urlevent.bind('appendAnything', function(listener, params)
-    if (appIs(sublime)) then
-        if (params.key == 'comma') then
-            -- append comma
-            hs.eventtap.keyStroke({'cmd', 'option'}, ',')
-        elseif (params.key == 'semicolon') then
-            -- append semicolon
-            hs.eventtap.keyStroke({'cmd'}, ';')
-        end
     end
 end)
 

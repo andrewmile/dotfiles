@@ -194,8 +194,8 @@
    {
      :des "Append Mode"
      :rules [:append-mode
-       [:comma [:hs "appendAnything?key=comma"]]
-       [:semicolon [:hs "appendAnything?key=semicolon"]]
+       [:comma [:hs "hyper?method=append&target=comma"]]
+       [:semicolon [:hs "hyper?method=append&target=semicolon"]]
      ]
    }
    {
