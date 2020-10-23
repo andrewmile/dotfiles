@@ -148,15 +148,15 @@
    {
      :des "Execute mode"
      :rules [:execute-mode
-       [:a [:hs "runCommand?key=a"]]
-       [:c [:hs "runCommand?key=c"]]
-       [:f [:hs "runCommand?key=f"]]
-       [:g [:hs "runCommand?key=g"]]
-       [:r [:hs "runCommand?key=r"]]
-       [:s [:hs "runCommand?key=s"]]
-       [:t [:hs "runCommand?key=t"]]
-       [:v [:hs "runCommand?key=v"]]
-       [:w [:hs "runCommand?key=w"]]
+       [:a [:hs "hyper?method=execute&target=a"]]
+       [:c [:hs "hyper?method=execute&target=c"]]
+       [:f [:hs "hyper?method=execute&target=f"]]
+       [:g [:hs "hyper?method=execute&target=g"]]
+       [:r [:hs "hyper?method=execute&target=r"]]
+       [:s [:hs "hyper?method=execute&target=s"]]
+       [:t [:hs "hyper?method=execute&target=t"]]
+       [:v [:hs "hyper?method=execute&target=v"]]
+       [:w [:hs "hyper?method=execute&target=w"]]
      ]
     }
     {

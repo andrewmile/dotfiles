@@ -247,6 +247,16 @@ function openSlackChannel(channel)
     end
 end
 
+function slackReaction(emoji)
+    return function()
+        hs.eventtap.keyStroke({'cmd', 'shift'}, '\\')
+        hs.eventtap.keyStrokes(emoji)
+        hs.timer.doAfter(1, function ()
+            hs.eventtap.keyStroke({}, 'return')
+        end)
+    end
+end
+
 hyperKeys = {
     open = {
         primary = {
@@ -388,6 +398,37 @@ hyperKeys = {
             sublimemerge = combo({'cmd', 'shift'}, 'p'),
             default = alfredWorkflow('com.tedwise.menubarsearch', 'menubarsearch'),
         },
+        a = {
+            sublime = combo({'cmd', 'ctrl'}, 'a'), -- run all tests
+        },
+        c = {
+            sublimemerge = combo({'cmd'}, 'return'), -- commit
+        },
+        f = {
+            sublime = combo({'cmd', 'ctrl'}, 'f'), -- test current file
+            sublimemerge = combo({'cmd', 'option'}, 'down'), -- pull
+        },
+        g = {
+            slack = slackReaction(':thumbsup:'),
+        },
+        r = {
+            sublime = combo({'cmd', 'ctrl'}, 'p'), -- rerun last test
+            postman = combo({'cmd'}, 'return'), -- send request
+        },
+        s = {
+            slack = slackReaction(':smile:'),
+            sublimemerge = chain({
+                combo({'cmd', 'option'}, 'up'), -- push
+                combo({}, 'return'),
+            }),
+        },
+        t = {
+            slack = slackReaction(':tada:'),
+            sublime = combo({'cmd', 'ctrl'}, 't'), -- test current method
+        },
+        w = {
+            slack = slackReaction(':wave:'),
+        },
     },
 }
 
@@ -423,66 +464,6 @@ hs.urlevent.bind('reloadAnything', function()
         hs.eventtap.keyStroke({'cmd'}, 'r')
     end
 end)
-
-hs.urlevent.bind('runCommand', function(listener, params)
-    if appIs(sublime) then
-        runCommandInSublime(params.key)
-    elseif appIs(sublimemerge) then
-        runCommandInSublimeMerge(params.key)
-    elseif appIs(slack) then
-        addEmojiReactionToLastMessage(params.key)
-    elseif appIs(postman) then
-        if (params.key == 'r') then
-            -- send requeest
-            hs.eventtap.keyStroke({'cmd'}, 'return')
-        end
-    end
-end)
-
-function runCommandInSublime(key)
-    if (key == 'a') then
-        hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'a') -- run all tests
-    elseif (key == 'f') then
-        hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'f') -- test current file
-    elseif (key == 'r') then
-        hs.eventtap.keyStroke({'cmd', 'ctrl'}, 'p') -- rerun last test
-    elseif (key == 't') then
-        hs.eventtap.keyStroke({'cmd', 'ctrl'}, 't') -- test current method
-    end
-end
-
-function runCommandInSublimeMerge(key)
-    if (key == 'c') then
-        hs.eventtap.keyStroke({'cmd'}, 'return') -- commit
-    elseif (key == 'f') then
-        hs.eventtap.keyStroke({'cmd', 'option'}, 'down') -- pull
-    elseif (key == 's') then
-        hs.eventtap.keyStroke({'cmd', 'option'}, 'up') -- push
-        hs.eventtap.keyStroke({}, 'return')
-    end
-end
-
-function addEmojiReactionToLastMessage(key)
-    emoji = mapKeyToEmoji(key)
-
-    hs.eventtap.keyStroke({'cmd', 'shift'}, '\\')
-    hs.eventtap.keyStrokes(emoji)
-    hs.timer.doAfter(1, function ()
-        hs.eventtap.keyStroke({}, 'return')
-    end)
-end
-
-function mapKeyToEmoji(key)
-    if (key == 'g') then
-        return ':thumbsup:'
-    elseif (key == 's') then
-        return ':smile:'
-    elseif (key == 't') then
-        return ':tada:'
-    elseif (key == 'w') then
-        return ':wave:'
-    end
-end
 
 hs.urlevent.bind('copyMode', function(listener, params)
     if appIs(chrome) then
