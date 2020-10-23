@@ -240,9 +240,9 @@
    {
      :des "Change Mode"
      :rules [:change-mode
-       [:k [:hs "changeSomething?key=k"]]
-       [:l [:hs "changeSomething?key=l"]]
-       [:u [:hs "changeSomething?key=u"]]
+       [:k [:hs "hyper?method=change&target=k"]]
+       [:l [:hs "hyper?method=change&target=l"]]
+       [:u [:hs "hyper?method=change&target=u"]]
      ]
    }
   ]

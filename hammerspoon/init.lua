@@ -527,6 +527,17 @@ hyperKeys = {
             sublime = combo({'cmd', 'control'}, 'up'),
         },
     },
+    change = {
+        k = {
+            sublime = combo({'cmd', 'shift', 'option'}, 'k'), -- snake case
+        },
+        l = {
+            sublime = combo({'cmd', 'shift', 'option'}, 'l'), -- lowercase
+        },
+        u = {
+            sublime = combo({'cmd', 'shift', 'option'}, 'u'), -- uppercase
+        },
+    },
 }
 
 hs.urlevent.bind('navigateForward', function()
@@ -591,18 +602,6 @@ hs.urlevent.bind('copyAnything', function()
         hs.eventtap.keyStrokes('yy')
     elseif appIs(vscode) then
         hs.eventtap.keyStroke({'cmd', 'option', 'control'}, 'y')
-    end
-end)
-
-hs.urlevent.bind('changeSomething', function(listener, params)
-    if appIs(sublime) then
-        if (params.key == 'k') then
-            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'k')
-        elseif (params.key == 'l') then
-            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'l')
-        elseif (params.key == 'u') then
-            hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 'u')
-        end
     end
 end)
 
