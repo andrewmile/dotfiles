@@ -247,91 +247,90 @@ function openSlackChannel(channel)
     end
 end
 
-open = {
-    primary = {
-        bear = alfredWorkflow('com.drgrib.bear', 'search bear'),
-        chrome = alfredSearch('bm'),
-        dash = combo({'cmd'}, 'f'),
-        discord = combo({'cmd'}, 'k'),
-        drafts = combo({'cmd', 'shift'}, 'f'),
-        finder = alfredSearch('o'),
-        notion = combo({'cmd'}, 'p'),
-        omnifocus = combo({'cmd'}, 'o'),
-        githubDesktop = combo({'cmd'}, 't'),
-        slack = combo({'cmd'}, 'k'),
-        spotify = alfredWorkflow('com.vdesabou.spotify.mini.player', 'spot_mini'),
-        sublime = combo({'cmd'}, 'p'),
-        sublimemerge = combo({'cmd', 'shift'}, 'o'),
-        tableplus = combo({'cmd'}, 'p'),
-        trello = keys('b'),
-    },
-    a = {
-        chrome = combo({'cmd', 'shift'}, 'm'), -- profile
-        tableplus = combo({'cmd', 'shift'}, 'k'), -- connection
-    },
-    b = {
-        sublime = function()
-            hs.eventtap.leftClick({ x=900, y=1000 }) -- focus bottom panel
-        end,
-        githubDesktop = combo({'cmd'}, 'b'), -- branch
-        sublimemerge = combo({'cmd'}, 'b'), -- branch
-    },
-    c = {
-        githubDesktop = combo({'cmd'}, '1'), -- changes
-        slack = openSlackChannel('client'),
-        trello = combo({}, 'f'), -- card
-    },
-    e = {
-        slack = openSlackChannel('external'),
-        tableplus = combo({'cmd'}, 'e'), -- editor
-    },
-    f = {
-        omnifocus = combo({'cmd'}, '5'), -- flagged
-        sublime = combo({'cmd'}, 'r'), -- symbol
-    },
-    g = {
-        slack = openSlackChannel('general'),
-    },
-    r = {
-        omnifocus = combo({'cmd'}, '7'), -- routines
-        sublime = combo({'cmd', 'ctrl'}, 'o'), -- project / repo
-    },
-    s = {
-        slack = openSlackChannel('internal'),
-        sublime = combo({'cmd', 'shift'}, 's'), -- reveal in sidebar
-    },
-    t = {
-        default = combo({'cmd', 'shift', 'option'}, 't'), -- search tabs with witch
-        bear = function()
-            hs.urlevent.openURL('bear://x-callback-url/open-note?title=' .. os.date('%Y.%m.%d') ..'&show_window=yes&new_window=no') -- open today's work journal
-        end,
-        chrome = combo({'shift'}, 't'), -- search tabs with vimium
-        omnifocus = combo({'cmd'}, '4'), -- forecast
-        slack = combo({'cmd', 'shift'}, 't'), -- threads
-        sublime = combo({'shift', 'option'}, 'p'), -- tab
-    },
-    v = {
-        githubDesktop = combo({'cmd'}, '2'), -- history
-    },
-    x = {
-        chrome = combo({'cmd', 'option'}, 'j'), -- console
-    },
-    w = {
-        default = combo({'cmd', 'shift', 'option'}, 'w'), -- search windows with witch
-        spotify = alfredWorkflow('com.vdesabou.spotify.mini.player', 'lyrics'),
-        sublime = combo({'cmd', 'shift'}, 'o'), -- window
+hyperKeys = {
+    open = {
+        primary = {
+            bear = alfredWorkflow('com.drgrib.bear', 'search bear'),
+            chrome = alfredSearch('bm'),
+            dash = combo({'cmd'}, 'f'),
+            discord = combo({'cmd'}, 'k'),
+            drafts = combo({'cmd', 'shift'}, 'f'),
+            finder = alfredSearch('o'),
+            notion = combo({'cmd'}, 'p'),
+            omnifocus = combo({'cmd'}, 'o'),
+            githubDesktop = combo({'cmd'}, 't'),
+            slack = combo({'cmd'}, 'k'),
+            spotify = alfredWorkflow('com.vdesabou.spotify.mini.player', 'spot_mini'),
+            sublime = combo({'cmd'}, 'p'),
+            sublimemerge = combo({'cmd', 'shift'}, 'o'),
+            tableplus = combo({'cmd'}, 'p'),
+            trello = keys('b'),
+        },
+        a = {
+            chrome = combo({'cmd', 'shift'}, 'm'), -- profile
+            tableplus = combo({'cmd', 'shift'}, 'k'), -- connection
+        },
+        b = {
+            sublime = function()
+                hs.eventtap.leftClick({ x=900, y=1000 }) -- focus bottom panel
+            end,
+            githubDesktop = combo({'cmd'}, 'b'), -- branch
+            sublimemerge = combo({'cmd'}, 'b'), -- branch
+        },
+        c = {
+            githubDesktop = combo({'cmd'}, '1'), -- changes
+            slack = openSlackChannel('client'),
+            trello = combo({}, 'f'), -- card
+        },
+        e = {
+            slack = openSlackChannel('external'),
+            tableplus = combo({'cmd'}, 'e'), -- editor
+        },
+        f = {
+            omnifocus = combo({'cmd'}, '5'), -- flagged
+            sublime = combo({'cmd'}, 'r'), -- symbol
+        },
+        g = {
+            slack = openSlackChannel('general'),
+        },
+        r = {
+            omnifocus = combo({'cmd'}, '7'), -- routines
+            sublime = combo({'cmd', 'ctrl'}, 'o'), -- project / repo
+        },
+        s = {
+            slack = openSlackChannel('internal'),
+            sublime = combo({'cmd', 'shift'}, 's'), -- reveal in sidebar
+        },
+        t = {
+            default = combo({'cmd', 'shift', 'option'}, 't'), -- search tabs with witch
+            bear = function()
+                hs.urlevent.openURL('bear://x-callback-url/open-note?title=' .. os.date('%Y.%m.%d') ..'&show_window=yes&new_window=no') -- open today's work journal
+            end,
+            chrome = combo({'shift'}, 't'), -- search tabs with vimium
+            omnifocus = combo({'cmd'}, '4'), -- forecast
+            slack = combo({'cmd', 'shift'}, 't'), -- threads
+            sublime = combo({'shift', 'option'}, 'p'), -- tab
+        },
+        v = {
+            githubDesktop = combo({'cmd'}, '2'), -- history
+        },
+        x = {
+            chrome = combo({'cmd', 'option'}, 'j'), -- console
+        },
+        w = {
+            default = combo({'cmd', 'shift', 'option'}, 'w'), -- search windows with witch
+            spotify = alfredWorkflow('com.vdesabou.spotify.mini.player', 'lyrics'),
+            sublime = combo({'cmd', 'shift'}, 'o'), -- window
+        },
     },
 }
 
-hs.urlevent.bind('openAnything', function()
-    open.primary[frontApp()]()
-end)
-
-hs.urlevent.bind('openSomething', function(listener, params)
-    command = open[params.key][frontApp()]
+hs.urlevent.bind('hyper', function(_, params)
+    command = hyperKeys[params.mode][params.method][frontApp()]
     if (command == nil) then
-        command = open[params.key]['default']
+        command = hyperKeys[params.mode][params.method]['default']
     end
+
     if (command ~= nil) then
         command()
     end
