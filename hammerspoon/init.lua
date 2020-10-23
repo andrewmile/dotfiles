@@ -350,7 +350,43 @@ hyperKeys = {
             tableplus = combo({'cmd'}, 'i'),
         },
     },
+    navigate = {
+        back = {
+            bear = combo({'cmd', 'option'}, 'left'),
+            spotify = combo({'cmd', 'option'}, 'left'),
+            sublime = combo({'control'}, '-'),
+            finder = combo({'cmd'}, '['),
+            chrome = combo({'cmd'}, '['),
+            trello = combo({'cmd'}, '['),
+            slack = combo({'cmd'}, '['),
+            notion = combo({'cmd'}, '['),
+        },
+        forward = {
+            bear = combo({'cmd', 'option'}, 'right'),
+            spotify = combo({'cmd', 'option'}, 'right'),
+            sublime = combo({'cmd', 'option'}, 'down'),
+            finder =  combo({'cmd'}, ']'),
+            chrome = combo({'cmd'}, ']'),
+            trello = combo({'cmd'}, ']'),
+            slack = combo({'cmd'}, ']'),
+            notion = combo({'cmd'}, ']'),
+        },
+    },
 }
+
+hs.urlevent.bind('navigateForward', function()
+    -- @todo
+    if focusedWindowIs(fantastical) then
+        hs.eventtap.keyStroke({}, 'right')
+    end
+end)
+
+hs.urlevent.bind('navigateBack', function()
+    -- @todo
+    if focusedWindowIs(fantastical) then
+        hs.eventtap.keyStroke({}, 'left')
+    end
+end)
 
 hs.urlevent.bind('hyper', function(_, params)
     command = hyperKeys[params.method][params.target][frontApp()]
@@ -368,30 +404,6 @@ hs.urlevent.bind('reloadAnything', function()
         hs.eventtap.keyStroke({'cmd'}, 'k')
     else
         hs.eventtap.keyStroke({'cmd'}, 'r')
-    end
-end)
-
-hs.urlevent.bind('navigateBack', function()
-    if focusedWindowIs(fantastical) then
-        hs.eventtap.keyStroke({}, 'left')
-    elseif appIncludes({bear, spotify}) then
-        hs.eventtap.keyStroke({'cmd', 'option'}, 'left')
-    elseif appIs(sublime) then
-        hs.eventtap.keyStroke({'control'}, '-')
-    elseif appIncludes({finder, chrome, trello, slack, notion}) then
-        hs.eventtap.keyStroke({'cmd'}, '[')
-    end
-end)
-
-hs.urlevent.bind('navigateForward', function()
-    if focusedWindowIs(fantastical) then
-        hs.eventtap.keyStroke({}, 'right')
-    elseif appIncludes({bear, spotify}) then
-        hs.eventtap.keyStroke({'cmd', 'option'}, 'right')
-    elseif appIs(sublime) then
-        hs.eventtap.keyStroke({'cmd', 'option'}, 'down')
-    elseif appIncludes({finder, chrome, trello, slack, notion}) then
-        hs.eventtap.keyStroke({'cmd'}, ']')
     end
 end)
 
