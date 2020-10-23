@@ -453,8 +453,6 @@ function runCommandInSublimeMerge(key)
         hs.eventtap.keyStroke({'cmd'}, 'return') -- commit
     elseif (key == 'f') then
         hs.eventtap.keyStroke({'cmd', 'option'}, 'down') -- pull
-        hs.eventtap.keyStroke({}, 'up')
-        hs.eventtap.keyStroke({}, 'return')
     elseif (key == 's') then
         hs.eventtap.keyStroke({'cmd', 'option'}, 'up') -- push
         hs.eventtap.keyStroke({}, 'return')
