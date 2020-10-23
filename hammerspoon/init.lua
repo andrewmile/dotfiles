@@ -276,6 +276,11 @@ hyperKeys = {
             tableplus = combo({'cmd'}, 'p'),
             trello = keys('b'),
         },
+        options = {
+            default = combo({'cmd', 'shift', 'option'}, 's'), -- search selections with vimac
+            sublime = combo({'cmd', 'shift', 'option'}, ';'),
+            chrome = combo({'control', 'shift'}, 's'),
+        },
         a = {
             chrome = combo({'cmd', 'shift'}, 'm'), -- profile
             tableplus = combo({'cmd', 'shift'}, 'k'), -- connection
@@ -583,17 +588,6 @@ hs.urlevent.bind('copyAnything', function()
         hs.eventtap.keyStrokes('yy')
     elseif appIs(vscode) then
         hs.eventtap.keyStroke({'cmd', 'option', 'control'}, 'y')
-    end
-end)
-
-hs.urlevent.bind('openMode', function(listener, params)
-    if appIs(sublime) then
-        hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, ';')
-    elseif appIs(chrome) then
-        hs.eventtap.keyStroke({'control', 'shift'}, 's')
-    else
-        -- search selections with vimac
-        hs.eventtap.keyStroke({'cmd', 'shift', 'option'}, 's')
     end
 end)
 

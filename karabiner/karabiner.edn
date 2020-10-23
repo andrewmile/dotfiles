@@ -222,7 +222,7 @@
    {
      :des "Open Mode"
      :rules [:open-mode
-       [:caps_lock [:hs "openMode"]]
+       [:caps_lock [:hs "hyper?method=open&target=options"]]
        [:a [:hs "hyper?method=open&target=a"]]
        [:b [:hs "hyper?method=open&target=b"]]
        [:c [:hs "hyper?method=open&target=c"]]
