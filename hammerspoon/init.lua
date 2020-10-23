@@ -481,6 +481,17 @@ hyperKeys = {
             sublime = combo({'cmd', 'shift', 'option'}, 'x') -- debug
         },
     },
+    common = {
+        save = {
+            default = combo({'cmd'}, 's'),
+            trello = combo({'cmd'}, 'return'), -- description
+            sublimemerge = combo({'cmd', 'shift', 'option', 'ctrl'}, 's'), -- push
+            sublime = chain({
+                combo({'cmd'}, 's'),
+                combo({}, 'escape'),
+            }),
+        },
+    },
 }
 
 hs.urlevent.bind('navigateForward', function()
@@ -525,19 +536,6 @@ hs.urlevent.bind('copyMode', function(listener, params)
             Application('Google Chrome').windows[0].activeTab.url()
         ]])
         hs.pasteboard.setContents('[' .. pageTitle .. '](' .. pageUrl .. ')')
-    end
-end)
-
-hs.urlevent.bind('saveAnything', function()
-    if appIs(trello) then
-        hs.eventtap.keyStroke({'cmd'}, 'return')
-    elseif appIs(sublimemerge) then
-        hs.eventtap.keyStroke({'cmd', 'shift', 'option', 'ctrl'}, 's')
-    elseif appIs(sublime) then
-        hs.eventtap.keyStroke({'cmd'}, 's')
-        hs.eventtap.keyStroke({}, 'escape')
-    else
-        hs.eventtap.keyStroke({'cmd'}, 's')
     end
 end)
 

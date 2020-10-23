@@ -26,7 +26,7 @@
     :launch-mode {:key :comma}
     :copy-mode {:key :y}
     :change-mode {:key :c}
-    :global-mode {:key :semicolon}
+    :common-mode {:key :semicolon}
     :share-mode {:key :quote}
     :toggle-mode {:key :spacebar}
     :find-mode {:key :slash}
@@ -87,15 +87,15 @@
       ]
     }
     {
-      :des "Global mode"
-      :rules [:global-mode
+      :des "Common mode"
+      :rules [:common-mode
         [:a :!Ca] ; Select all
         [:d [:hs "duplicateAnything"]]
         ; [:f]
         [:g :!!g] ; Omnifocus quick entry
         [:q :!Cq] ; Cmd+q
         [:r [:hs "reloadAnything"]]
-        [:s [:hs "saveAnything"]] ; Save
+        [:s [:hs "hyper?method=common&target=save"]]
         [:t :!Ct] ; Cmd+t
         [:v :!Cd] ; highlight next selection in Sublime
         [:w :!Cw] ; Cmd+t
