@@ -343,6 +343,13 @@ hyperKeys = {
             }),
         },
     },
+    make = {
+        primary = {
+            sublime = combo({'cmd', 'option'}, 'n'),
+            finder = combo({'cmd', 'shift'}, 'n'),
+            tableplus = combo({'cmd'}, 'i'),
+        },
+    },
 }
 
 hs.urlevent.bind('hyper', function(_, params)
@@ -582,16 +589,6 @@ hs.urlevent.bind('copyAnything', function()
         hs.eventtap.keyStrokes('yy')
     elseif appIs(vscode) then
         hs.eventtap.keyStroke({'cmd', 'option', 'control'}, 'y')
-    end
-end)
-
-hs.urlevent.bind('makeAnything', function()
-    if appIs(sublime) then
-        hs.eventtap.keyStroke({'cmd', 'option'}, 'n')
-    elseif appIs(finder) then
-        hs.eventtap.keyStroke({'cmd', 'shift'}, 'n')
-    elseif appIs(tableplus) then
-        hs.eventtap.keyStroke({'cmd'}, 'i')
     end
 end)
 

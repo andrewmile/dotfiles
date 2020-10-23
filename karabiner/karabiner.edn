@@ -52,7 +52,7 @@
         [:k [:hs "goToNextTab"]]
         [:l [:hs "navigateForward"]]
         [:m [:hs "hyper?method=toggle&target=sidebar"]]
-        [:n [:hs "makeAnything"]]
+        [:n [:hs "hyper?method=make&target=primary"]]
         [:o [:hs "hyper?method=open&target=primary"]]
         [:p :!Cv]
         [:u :!Cz]
