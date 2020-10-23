@@ -346,9 +346,9 @@ hyperKeys = {
 }
 
 hs.urlevent.bind('hyper', function(_, params)
-    command = hyperKeys[params.mode][params.method][frontApp()]
+    command = hyperKeys[params.method][params.target][frontApp()]
     if (command == nil) then
-        command = hyperKeys[params.mode][params.method]['default']
+        command = hyperKeys[params.method][params.target]['default']
     end
 
     if (command ~= nil) then
