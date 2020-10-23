@@ -287,6 +287,18 @@ function copySpotifyCurrentTrack()
     end
 end
 
+function copyChromeUrlAsMarkdown()
+    return function()
+        isSuccess, pageTitle = hs.osascript.javascript([[
+            Application('Google Chrome').windows[0].activeTab.name()
+        ]])
+        isSuccess, pageUrl = hs.osascript.javascript([[
+            Application('Google Chrome').windows[0].activeTab.url()
+        ]])
+        hs.pasteboard.setContents('[' .. pageTitle .. '](' .. pageUrl .. ')')
+    end
+end
+
 hyperKeys = {
     open = {
         primary = {
@@ -583,6 +595,9 @@ hyperKeys = {
             chrome = copy(combo('yy')),
             vscode = copy(combo({'cmd', 'option', 'control'}, 'y')),
         },
+        d = {
+            chrome = copyChromeUrlAsMarkdown(),
+        }
     },
 }
 
@@ -608,18 +623,6 @@ hs.urlevent.bind('hyper', function(_, params)
 
     if (command ~= nil) then
         command()
-    end
-end)
-
-hs.urlevent.bind('copyMode', function(listener, params)
-    if appIs(chrome) then
-        isSuccess, pageTitle = hs.osascript.javascript([[
-            Application('Google Chrome').windows[0].activeTab.name()
-        ]])
-        isSuccess, pageUrl = hs.osascript.javascript([[
-            Application('Google Chrome').windows[0].activeTab.url()
-        ]])
-        hs.pasteboard.setContents('[' .. pageTitle .. '](' .. pageUrl .. ')')
     end
 end)
 

@@ -162,7 +162,7 @@
     {
      :des "Copy mode"
      :rules [:copy-mode
-       [:d [:hs "copyMode?key=d"]]
+       [:d [:hs "hyper?method=copy&target=d"]]
      ]
     }
     {
