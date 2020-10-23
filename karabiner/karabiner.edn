@@ -216,7 +216,7 @@
    {
      :des "Make mode"
      :rules [:make-mode
-       [:r [:hs "makeSomething?key=r"]]
+       [:r [:hs "hyper?method=make&target=r"]]
      ]
    }
    {

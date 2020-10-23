@@ -359,6 +359,9 @@ hyperKeys = {
             finder = combo({'cmd', 'shift'}, 'n'),
             tableplus = combo({'cmd'}, 'i'),
         },
+        r = {
+            sublimemerge = combo({'cmd', 'shift'}, 'n') -- repo
+        },
     },
     navigate = {
         back = {
@@ -564,14 +567,6 @@ hs.urlevent.bind('copyAnything', function()
         hs.eventtap.keyStrokes('yy')
     elseif appIs(vscode) then
         hs.eventtap.keyStroke({'cmd', 'option', 'control'}, 'y')
-    end
-end)
-
-hs.urlevent.bind('makeSomething', function(listener, params)
-    if appIs(sublimemerge) then
-        if (params.key == 'r') then
-            hs.eventtap.keyStroke({'cmd', 'shift'}, 'n')
-        end
     end
 end)
 
