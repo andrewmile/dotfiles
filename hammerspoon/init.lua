@@ -556,6 +556,9 @@ hs.urlevent.bind('saveAnything', function()
         hs.eventtap.keyStroke({'cmd'}, 'return')
     elseif appIs(sublimemerge) then
         hs.eventtap.keyStroke({'cmd', 'shift', 'option', 'ctrl'}, 's')
+    elseif appIs(sublime) then
+        hs.eventtap.keyStroke({'cmd'}, 's')
+        hs.eventtap.keyStroke({}, 'escape')
     else
         hs.eventtap.keyStroke({'cmd'}, 's')
     end
