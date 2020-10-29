@@ -148,6 +148,7 @@
    {
      :des "Execute mode"
      :rules [:execute-mode
+       [:caps_lock [:hs "hyper?method=execute&target=options"]]
        [:a [:hs "hyper?method=execute&target=a"]]
        [:c [:hs "hyper?method=execute&target=c"]]
        [:f [:hs "hyper?method=execute&target=f"]]

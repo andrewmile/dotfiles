@@ -461,6 +461,9 @@ hyperKeys = {
             sublimemerge = combo({'cmd', 'shift'}, 'p'),
             default = alfredWorkflow('com.tedwise.menubarsearch', 'menubarsearch'),
         },
+        options = {
+            slack = combo({'cmd', 'shift'}, '\\'),
+        },
         a = {
             slack = slackReaction(':thanks'),
             sublime = combo({'cmd', 'ctrl'}, 'a'), -- run all tests
