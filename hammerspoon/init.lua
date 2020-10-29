@@ -481,10 +481,7 @@ hyperKeys = {
         },
         s = {
             slack = slackReaction(':smile:'),
-            sublimemerge = chain({
-                combo({'cmd', 'option'}, 'up'), -- push
-                combo({}, 'return'),
-            }),
+            sublimemerge = combo({'cmd', 'option'}, 'up'), -- push
         },
         t = {
             slack = slackReaction(':tada:'),
@@ -549,7 +546,7 @@ hyperKeys = {
         save = {
             default = combo({'cmd'}, 's'),
             trello = combo({'cmd'}, 'return'), -- description
-            sublimemerge = combo({'cmd', 'shift', 'option', 'ctrl'}, 's'), -- push
+            sublimemerge = combo({'cmd', 'shift', 'option', 'ctrl'}, 's'), -- stage
             sublime = chain({
                 combo({'cmd'}, 's'),
                 combo({}, 'escape'),
