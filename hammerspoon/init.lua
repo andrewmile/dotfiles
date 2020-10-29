@@ -462,6 +462,7 @@ hyperKeys = {
             default = alfredWorkflow('com.tedwise.menubarsearch', 'menubarsearch'),
         },
         a = {
+            slack = slackReaction(':thanks'),
             sublime = combo({'cmd', 'ctrl'}, 'a'), -- run all tests
         },
         c = {
