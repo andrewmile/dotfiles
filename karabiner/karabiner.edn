@@ -59,7 +59,7 @@
         [:y [:hs "hyper?method=copy&target=primary"]]
         [:return_or_enter :caps_lock]
         [:spacebar [:hs "hyper?method=toggle&target=primary"]]
-        ; [:comma [:hs ""]]
+        [:comma :!CTOSn] ; notification center
         [:period [:hs "hyper?method=execute&target=primary"]]
         [:slash :!Cf] ; normal find
       ]
