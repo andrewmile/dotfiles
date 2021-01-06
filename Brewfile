@@ -70,5 +70,6 @@ mas 'Menu World Time', id: 1446377255
 mas 'MindNode', id: 1289197285
 mas 'Omnifocus', id: 1346203938
 mas 'Pocket', id: 568494494
+mas 'Reeder', id: 1529448980
 mas 'Spark', id: 1176895641
 mas 'Tweetbot', id: 1384080005
