@@ -117,6 +117,7 @@
      :rules [:toggle-mode
       [:c :!STC4] ; Screenshot to clipboard
       [:d [:hs "hyper?method=toggle&target=display"]]
+      [:r [:hs "hyper?method=toggle&target=r"]]
       [:s :!SC4] ; Screenshot to filesystem
       [:w :!Ch] ; Cmd+h
      ]
@@ -227,6 +228,7 @@
        [:a [:hs "hyper?method=open&target=a"]]
        [:b [:hs "hyper?method=open&target=b"]]
        [:c [:hs "hyper?method=open&target=c"]]
+       [:d [:hs "hyper?method=open&target=d"]]
        [:e [:hs "hyper?method=open&target=e"]]
        [:f [:hs "hyper?method=open&target=f"]]
        [:g [:hs "hyper?method=open&target=g"]]
