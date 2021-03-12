@@ -20,6 +20,7 @@ brew 'luarocks'
 brew 'mysql@5.7'
 brew 'nginx'
 brew 'node'
+brew 'nvm'
 brew 'redis'
 brew 'yarn'
 
