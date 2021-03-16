@@ -177,6 +177,7 @@ hyper:app(slack)
         forward = combo({'cmd'}, ']'),
     })
     :mode('execute', {
+        primary = keys('r'), -- pick emoji for selected message
         options = combo({'cmd', 'shift'}, '\\'),
         a = slackReaction(':thanks'),
         g = slackReaction(':thumbsup:'),
