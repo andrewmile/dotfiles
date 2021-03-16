@@ -11,6 +11,7 @@ brew 'mas' # Mac App Store manager
 
 # Development
 brew 'php'
+brew 'php@7.4'
 brew 'php@7.3'
 brew 'php@7.2'
 brew 'composer'
