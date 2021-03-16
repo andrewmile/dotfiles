@@ -57,7 +57,7 @@
         [:p :!Cv]
         [:u :!Cz]
         [:y [:hs "hyper?method=copy&target=primary"]]
-        [:return_or_enter :caps_lock]
+        [:return_or_enter :!CTOSquote] ; vimac scroll mode
         [:spacebar [:hs "hyper?method=toggle&target=primary"]]
         [:comma :!CTOSn] ; notification center
         [:period [:hs "hyper?method=execute&target=primary"]]
