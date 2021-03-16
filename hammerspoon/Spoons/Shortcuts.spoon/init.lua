@@ -134,6 +134,11 @@ hyper:app(omnifocus)
         refresh = combo({'cmd'}, 'k'),
     })
 
+hyper:app(onePassword)
+    :mode('copy', {
+        c = combo({'cmd', 'shift'}, 'c'),
+    })
+
 hyper:app(postman)
     :mode('toggle', {
         sidebar = combo({'cmd'}, '\\'),

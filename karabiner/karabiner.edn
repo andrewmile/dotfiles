@@ -164,6 +164,7 @@
     {
      :des "Copy mode"
      :rules [:copy-mode
+       [:c [:hs "hyper?method=copy&target=c"]]
        [:d [:hs "hyper?method=copy&target=d"]]
      ]
     }
