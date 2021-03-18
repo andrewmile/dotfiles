@@ -123,9 +123,18 @@ hyper:app(notion)
 hyper:app(omnifocus)
     :mode('open', {
         primary = combo({'cmd'}, 'o'),
-        f = combo({'cmd'}, '5'), -- flagged
-        r = combo({'cmd'}, '7'), -- routines
-        t = combo({'cmd'}, '4'), -- forecast
+        f = chain({
+            combo({'cmd'}, '5'), -- flagged
+            combo({'cmd', 'option'}, '2'), -- go to outline
+        }),
+        r = chain({
+            combo({'cmd'}, '7'), -- routines
+            combo({'cmd', 'option'}, '2'), -- go to outline
+        }),
+        t = chain({
+            combo({'cmd'}, '4'), -- forecast
+            combo({'cmd', 'option'}, '2'), -- go to outline
+        }),
     })
     :mode('toggle', {
         sidebar = combo({'cmd', 'option'}, 's'),
