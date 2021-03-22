@@ -217,6 +217,9 @@ hyper:app(spotify)
     :mode('copy', {
         primary = copy(copySpotifyCurrentTrack()),
     })
+    :mode('find', {
+        primary = combo({'cmd'}, 'l'),
+    })
 
 hyper:app(sublime)
     :mode('open', {
@@ -366,6 +369,9 @@ hyper:app('default')
     :mode('common', {
         save = combo({'cmd'}, 's'),
         refresh = combo({'cmd'}, 'r'),
+    })
+    :mode('find', {
+        primary = combo({'cmd'}, 'f'),
     })
 
 hs.urlevent.bind('navigateForward', function()

@@ -61,7 +61,7 @@
         [:spacebar [:hs "hyper?method=toggle&target=primary"]]
         [:comma :!CTOSn] ; notification center
         [:period [:hs "hyper?method=execute&target=primary"]]
-        [:slash :!Cf] ; normal find
+        [:slash [:hs "hyper?method=find&target=primary"]]
       ]
     }
     {
