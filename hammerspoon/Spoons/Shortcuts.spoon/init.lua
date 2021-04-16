@@ -349,6 +349,17 @@ hyper:app(vscode)
     :mode('copy', {
         primary = copy(combo({'cmd', 'option', 'control'}, 'y')),
     })
+    :mode('open', {
+        primary = combo({'cmd'}, 'p'),
+        r = combo({'cmd', 'ctrl'}, 'o'), -- project / repo
+    })
+    :mode('execute', {
+        primary = combo({'cmd', 'shift'}, 'p'),
+    })
+    :mode('toggle', {
+        primary = combo({'cmd'}, '/'),
+        sidebar = combo({'cmd', 'shift'}, 'e'),
+    })
 
 hyper:app('default')
     :mode('open', {
