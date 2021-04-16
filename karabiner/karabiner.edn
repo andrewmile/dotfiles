@@ -17,6 +17,7 @@
   :templates {
    :launch "open -a %s"
    :hs "open -g hammerspoon://\"%s\""
+   :hyper "open -g hammerspoon://hyper?method=%s\\&target=%s"
   }
   :layers {
     :primary-mode {:key :caps_lock :alone {:key :escape}}
@@ -46,22 +47,22 @@
       :rules [:primary-mode
         [:semicolon :!!semicolon] ; open Alfred
         [:a :!!a] ; get app bundle ID from Alfred
-        [:h [:hs "hyper?method=navigate&target=back"]]
+        [:h [:hyper "navigate" "back"]]
         [:i :!!i] ; Alfred clipboard
-        [:j [:hs "hyper?method=navigate&target=down"]]
-        [:k [:hs "hyper?method=navigate&target=up"]]
-        [:l [:hs "hyper?method=navigate&target=forward"]]
-        [:m [:hs "hyper?method=toggle&target=sidebar"]]
-        [:n [:hs "hyper?method=make&target=primary"]]
-        [:o [:hs "hyper?method=open&target=primary"]]
+        [:j [:hyper "navigate" "down"]]
+        [:k [:hyper "navigate" "up"]]
+        [:l [:hyper "navigate" "forward"]]
+        [:m [:hyper "toggle" "sidebar"]]
+        [:n [:hyper "make" "primary"]]
+        [:o [:hyper "open" "primary"]]
         [:p :!Cv]
         [:u :!Cz]
-        [:y [:hs "hyper?method=copy&target=primary"]]
+        [:y [:hyper "copy" "primary"]]
         [:return_or_enter :!CTOSquote] ; vimac scroll mode
-        [:spacebar [:hs "hyper?method=toggle&target=primary"]]
+        [:spacebar [:hyper "toggle" "primary"]]
         [:comma :!CTOSn] ; notification center
-        [:period [:hs "hyper?method=execute&target=primary"]]
-        [:slash [:hs "hyper?method=find&target=primary"]]
+        [:period [:hyper "execute" "primary"]]
+        [:slash [:hyper "find" "primary"]]
       ]
     }
     {
@@ -90,16 +91,16 @@
       :des "Common mode"
       :rules [:common-mode
         [:a :!Ca] ; Select all
-        [:d [:hs "hyper?method=common&target=duplicate"]]
+        [:d [:hyper "common" "duplicate"]]
         ; [:f]
         [:g :!!g] ; Omnifocus quick entry
         [:q :!Cq] ; Cmd+q
-        [:r [:hs "hyper?method=common&target=refresh"]]
-        [:s [:hs "hyper?method=common&target=save"]]
+        [:r [:hyper "common" "refresh"]]
+        [:s [:hyper "common" "save"]]
         [:t :!Ct] ; Cmd+t
         [:v :!Cd] ; highlight next selection in Sublime
         [:w :!Cw] ; Cmd+t
-        [:x [:hs "hyper?method=common&target=delete"]]
+        [:x [:hyper "common" "delete"]]
         [:z :!!quote] ; scroll mode
       ]
     }
@@ -116,8 +117,8 @@
      :des "Toggle mode"
      :rules [:toggle-mode
       [:c :!STC4] ; Screenshot to clipboard
-      [:d [:hs "hyper?method=toggle&target=display"]]
-      [:r [:hs "hyper?method=toggle&target=r"]]
+      [:d [:hyper "toggle" "display"]]
+      [:r [:hyper "toggle" "r"]]
       [:s :!SC4] ; Screenshot to filesystem
       [:w :!Ch] ; Cmd+h
      ]
@@ -149,38 +150,38 @@
    {
      :des "Execute mode"
      :rules [:execute-mode
-       [:caps_lock [:hs "hyper?method=execute&target=options"]]
-       [:a [:hs "hyper?method=execute&target=a"]]
-       [:c [:hs "hyper?method=execute&target=c"]]
-       [:f [:hs "hyper?method=execute&target=f"]]
-       [:g [:hs "hyper?method=execute&target=g"]]
-       [:r [:hs "hyper?method=execute&target=r"]]
-       [:s [:hs "hyper?method=execute&target=s"]]
-       [:t [:hs "hyper?method=execute&target=t"]]
-       [:v [:hs "hyper?method=execute&target=v"]]
-       [:w [:hs "hyper?method=execute&target=w"]]
+       [:caps_lock [:hyper "execute" "options"]]
+       [:a [:hyper "execute" "a"]]
+       [:c [:hyper "execute" "c"]]
+       [:f [:hyper "execute" "f"]]
+       [:g [:hyper "execute" "g"]]
+       [:r [:hyper "execute" "r"]]
+       [:s [:hyper "execute" "s"]]
+       [:t [:hyper "execute" "t"]]
+       [:v [:hyper "execute" "v"]]
+       [:w [:hyper "execute" "w"]]
      ]
     }
     {
      :des "Copy mode"
      :rules [:copy-mode
-       [:c [:hs "hyper?method=copy&target=c"]]
-       [:d [:hs "hyper?method=copy&target=d"]]
+       [:c [:hyper "copy" "c"]]
+       [:d [:hyper "copy" "d"]]
      ]
     }
     {
      :des "Relocate Mode"
      :rules [:relocate-mode
-       [:j [:hs "hyper?method=relocate&target=down"]]
-       [:k [:hs "hyper?method=relocate&target=up"]]
+       [:j [:hyper "relocate" "down"]]
+       [:k [:hyper "relocate" "up"]]
      ]
    }
    {
      :des "Debug mode and Vim movements"
      :rules [:debug-mode
        [:h :!Oleft_arrow] ; move one word back
-       [:j [:hs "hyper?method=debug&target=j"]]
-       [:k [:hs "hyper?method=debug&target=k"]]
+       [:j [:hyper "debug" "j"]]
+       [:k [:hyper "debug" "k"]]
        [:l :!Oright_arrow] ; move one character forward
      ]
    }
@@ -197,56 +198,56 @@
    {
      :des "Append Mode"
      :rules [:append-mode
-       [:comma [:hs "hyper?method=append&target=comma"]]
-       [:semicolon [:hs "hyper?method=append&target=semicolon"]]
+       [:comma [:hyper "append" "comma"]]
+       [:semicolon [:hyper "append" "semicolon"]]
      ]
    }
    {
      :des "Insert Mode"
      :rules [:insert-mode
-       [:a [:hs "hyper?method=insert&target=a"]]
-       [:c [:hs "hyper?method=insert&target=c"]]
-       [:d [:hs "hyper?method=insert&target=d"]]
-       [:e [:hs "hyper?method=insert&target=e"]]
-       [:f [:hs "hyper?method=insert&target=f"]]
-       [:g [:hs "hyper?method=insert&target=g"]]
-       [:s [:hs "hyper?method=insert&target=s"]]
-       [:t [:hs "hyper?method=insert&target=t"]]
-       [:w [:hs "hyper?method=insert&target=w"]]
-       [:x [:hs "hyper?method=insert&target=x"]]
+       [:a [:hyper "insert" "a"]]
+       [:c [:hyper "insert" "c"]]
+       [:d [:hyper "insert" "d"]]
+       [:e [:hyper "insert" "e"]]
+       [:f [:hyper "insert" "f"]]
+       [:g [:hyper "insert" "g"]]
+       [:s [:hyper "insert" "s"]]
+       [:t [:hyper "insert" "t"]]
+       [:w [:hyper "insert" "w"]]
+       [:x [:hyper "insert" "x"]]
      ]
    }
    {
      :des "Make mode"
      :rules [:make-mode
-       [:r [:hs "hyper?method=make&target=r"]]
+       [:r [:hyper "make" "r"]]
      ]
    }
    {
      :des "Open Mode"
      :rules [:open-mode
-       [:caps_lock [:hs "hyper?method=open&target=options"]]
-       [:a [:hs "hyper?method=open&target=a"]]
-       [:b [:hs "hyper?method=open&target=b"]]
-       [:c [:hs "hyper?method=open&target=c"]]
-       [:d [:hs "hyper?method=open&target=d"]]
-       [:e [:hs "hyper?method=open&target=e"]]
-       [:f [:hs "hyper?method=open&target=f"]]
-       [:g [:hs "hyper?method=open&target=g"]]
-       [:r [:hs "hyper?method=open&target=r"]]
-       [:s [:hs "hyper?method=open&target=s"]]
-       [:t [:hs "hyper?method=open&target=t"]]
-       [:v [:hs "hyper?method=open&target=v"]]
-       [:w [:hs "hyper?method=open&target=w"]]
-       [:x [:hs "hyper?method=open&target=x"]]
+       [:caps_lock [:hyper "open" "options"]]
+       [:a [:hyper "open" "a"]]
+       [:b [:hyper "open" "b"]]
+       [:c [:hyper "open" "c"]]
+       [:d [:hyper "open" "d"]]
+       [:e [:hyper "open" "e"]]
+       [:f [:hyper "open" "f"]]
+       [:g [:hyper "open" "g"]]
+       [:r [:hyper "open" "r"]]
+       [:s [:hyper "open" "s"]]
+       [:t [:hyper "open" "t"]]
+       [:v [:hyper "open" "v"]]
+       [:w [:hyper "open" "w"]]
+       [:x [:hyper "open" "x"]]
      ]
    }
    {
      :des "Change Mode"
      :rules [:change-mode
-       [:k [:hs "hyper?method=change&target=k"]]
-       [:l [:hs "hyper?method=change&target=l"]]
-       [:u [:hs "hyper?method=change&target=u"]]
+       [:k [:hyper "change" "k"]]
+       [:l [:hyper "change" "l"]]
+       [:u [:hyper "change" "u"]]
      ]
    }
   ]
