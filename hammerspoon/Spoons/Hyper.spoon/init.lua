@@ -43,9 +43,9 @@ function hyper:app(app)
 end
 
 hs.urlevent.bind('hyper', function(_, params)
-    command = hyperKeys[params.method][params.target][frontApp()]
+    command = hyperKeys[params.mode][params.target][frontApp()]
     if (command == nil) then
-        command = hyperKeys[params.method][params.target]['default']
+        command = hyperKeys[params.mode][params.target]['default']
     end
 
     if (command ~= nil) then
