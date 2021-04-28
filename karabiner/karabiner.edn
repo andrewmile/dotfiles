@@ -77,14 +77,14 @@
         [:e [:launch "Sublime\\ Text.app"]]
         [:f [:launch "Finder.app"]]
         [:g [:launch "Omnifocus.app"]]
-        [:q [:launch "Trello.app"]]
+        [:q [:launch "Zoom.us.app"]]
         [:r [:launch "Bear.app"]]
         [:s [:launch "Spotify.app"]]
         [:t :!Ospacebar] ; iTerm
         [:v [:launch "Sublime\\ Merge.app"]]
         [:w [:launch "Drafts.app"]]
         [:x [:launch "Discord.app"]]
-        [:z [:launch "Zoom.us.app"]]
+        [:z [:launch "Trello.app"]]
       ]
     }
     {
