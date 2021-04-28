@@ -96,6 +96,12 @@ hyper:app(finder)
     })
 
 hyper:app(iterm)
+    :mode('copy', {
+        b = chain({
+            keys('git branch --show-current | pbcopy'),
+            combo({}, 'return'),
+        }),
+    })
     :mode('common', {
         delete = combo({'control'}, 'c'),
     })
