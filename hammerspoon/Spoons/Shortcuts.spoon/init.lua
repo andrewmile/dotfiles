@@ -98,7 +98,7 @@ hyper:app(finder)
 hyper:app(iterm)
     :mode('copy', {
         b = chain({
-            keys('git branch --show-current | pbcopy'),
+            keys('git branch --show-current | tr -d \'\n\' | pbcopy'),
             combo({}, 'return'),
         }),
     })
