@@ -1,6 +1,6 @@
 hs.loadSpoon('Private')
 hs.loadSpoon('ModalMgr')
-hs.loadSpoon('Shortcuts')
+hs.loadSpoon('Mappings')
 hs.loadSpoon('Windows')
 
 mode = 'normal'
