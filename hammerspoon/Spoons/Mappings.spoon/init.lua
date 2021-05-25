@@ -54,6 +54,9 @@ hyper:app(chrome)
         primary = copy(keys('yy')),
         d = copyChromeUrlAsMarkdown(),
     })
+    :mode('find', {
+        z = combo({'cmd', 'ctrl', 'shift'}, 'z'), -- amazon
+    })
 
 hyper:app(dash)
     :mode('open', {
