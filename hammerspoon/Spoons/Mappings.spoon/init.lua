@@ -313,6 +313,9 @@ hyper:app(sublimemerge)
     :mode('common', {
         save = combo({'cmd', 'shift', 'option', 'ctrl'}, 's'), -- stage
     })
+    :mode('toggle', {
+        sidebar = combo({'cmd'}, 'k'),
+    })
 
 hyper:app(tableplus)
     :mode('open', {
