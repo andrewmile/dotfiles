@@ -302,7 +302,8 @@ hyper:app(sublimemerge)
         sidebar = combo({'cmd'}, 'k'),
     })
     :mode('make', {
-        r = combo({'cmd', 'shift'}, 'n') -- repo
+        r = combo({'cmd', 'shift'}, 'n'), -- repo
+        b = combo({'cmd', 'shift'}, 'b'), -- branch
     })
     :mode('execute', {
         primary = combo({'cmd', 'shift'}, 'p'),

@@ -221,6 +221,7 @@
    {
      :des "Make mode"
      :rules [:make-mode
+       [:b [:hyper "make" "b"]]
        [:r [:hyper "make" "r"]]
      ]
    }
