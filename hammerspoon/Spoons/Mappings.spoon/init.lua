@@ -275,6 +275,10 @@ hyper:app(sublime)
             combo({}, 'tab'),
         }),
         s = combo({}, 'f1'), -- import namespace
+        w = chain({
+            keys('::factory'),
+            combo({}, 'tab'),
+        }),
         x = combo({'cmd', 'shift', 'option'}, 'x'), -- debug
     })
     :mode('common', {
