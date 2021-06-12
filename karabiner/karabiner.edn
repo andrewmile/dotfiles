@@ -69,7 +69,7 @@
       :des "Launch mode"
       :rules [:launch-mode
         ; [:caps_lock :!!n] ; Show notification center
-        [:caps_lock [:hs "appMode"]]
+        [:caps_lock [:hyper "modal" "a"]]
         [:a [:launch "Slack.app"]]
         [:b [:launch "Google\\ Chrome.app"]]
         [:c :!!c] ; Fantastical

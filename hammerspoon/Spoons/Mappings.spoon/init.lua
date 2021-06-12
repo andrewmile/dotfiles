@@ -5,6 +5,8 @@ hs.loadSpoon('Hyper')
 hs.loadSpoon('Helpers')
 hs.loadSpoon('Apps')
 
+local modeMenuBar = hs.menubar.new():setTitle('Normal');
+
 hyper:app(bear)
     :mode('open', {
         primary = alfredWorkflow('com.drgrib.bear', 'search bear'),
@@ -400,6 +402,22 @@ hyper:app('default')
     })
     :mode('find', {
         primary = combo({'cmd'}, 'f'),
+    })
+    :mode('modal', {
+        a = modal('app', {
+            a = launch(activitymonitor),
+            k = launch(keynote),
+            m = launch(messages),
+            n = launch(notion),
+            p = launch(postman),
+            s = launch(systempreferences),
+        },
+        function()
+            modeMenuBar:setTitle('App')
+        end,
+        function()
+            modeMenuBar:setTitle('Normal')
+        end),
     })
 
 hs.urlevent.bind('navigateForward', function()

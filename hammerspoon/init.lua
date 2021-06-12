@@ -1,9 +1,6 @@
 hs.loadSpoon('Private')
-hs.loadSpoon('ModalMgr')
 hs.loadSpoon('Mappings')
 hs.loadSpoon('Windows')
-
-mode = 'normal'
 
 gokuWatcher = hs.pathwatcher.new(os.getenv('HOME') .. '/.config/karabiner.edn/', function ()
     output = hs.execute('/usr/local/bin/goku')
@@ -95,48 +92,4 @@ allwindows:subscribe(wf.windowDestroyed, function (window, appName, reason)
             app:hide()
         end
     end
-end)
-
-local modeMenuBar = hs.menubar.new():setTitle('Normal');
-
-spoon.ModalMgr:new('app')
-local modal = spoon.ModalMgr.modal_list['app']
-modal:bind('', 'escape', 'Deactivate appM', function() spoon.ModalMgr:deactivate({'app'}) end)
-
-local modeText = hs.styledtext.new('App', {
-    color = {hex = '#FFFFFF', alpha = 1},
-    backgroundColor = {hex = '#0000FF', alpha = 1},
-})
-modal.entered = function()
-  mode = 'app'
-    modeMenuBar:setTitle(modeText)
-end
-modal.exited = function()
-  mode = 'normal'
-  modeMenuBar:setTitle('Normal')
-end
-
-
-hsapp_list = {
-    {key = 'a', app = activitymonitor},
-    {key = 'k', app = keynote},
-    {key = 'm', app = messages},
-    {key = 'n', app = notion},
-    {key = 'p', app = postman},
-    {key = 's', app = systempreferences},
-}
-
-for _, v in ipairs(hsapp_list) do
-    local located_name = hs.application.nameForBundleID(v.app)
-    if located_name then
-        modal:bind('', v.key, located_name, function()
-            hs.application.launchOrFocusByBundleID(v.app)
-            spoon.ModalMgr:deactivate({'app'})
-        end)
-    end
-end
-
-hs.urlevent.bind('appMode', function()
-    spoon.ModalMgr:deactivateAll()
-    spoon.ModalMgr:activate({'app'}, '#0000FF', false)
 end)
