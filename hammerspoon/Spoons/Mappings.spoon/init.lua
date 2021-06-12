@@ -404,7 +404,7 @@ hyper:app('default')
         primary = combo({'cmd'}, 'f'),
     })
     :mode('modal', {
-        a = modal('app', {
+        app = modal('app', {
             a = launch(activitymonitor),
             k = launch(keynote),
             m = launch(messages),

@@ -68,7 +68,7 @@
     {
       :des "Launch mode"
       :rules [:launch-mode
-        [:caps_lock [:hyper "modal" "a"]]
+        [:caps_lock [:hyper "modal" "app"]]
         [:a [:launch "Slack.app"]]
         [:b [:launch "Google\\ Chrome.app"]]
         [:c :!!c] ; Fantastical
