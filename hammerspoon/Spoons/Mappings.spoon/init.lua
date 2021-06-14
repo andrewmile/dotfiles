@@ -157,6 +157,9 @@ hyper:app(omnifocus)
     :mode('common', {
         refresh = combo({'cmd'}, 'k'),
     })
+    :mode('find', {
+        primary = combo({'cmd', 'option'}, 'f'),
+    })
 
 hyper:app(onePassword)
     :mode('copy', {
