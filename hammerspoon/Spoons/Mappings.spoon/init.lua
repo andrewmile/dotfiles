@@ -106,6 +106,10 @@ hyper:app(iterm)
             keys('git branch --show-current | tr -d \'\\n\' | pbcopy'),
             combo({}, 'return'),
         }),
+        d = chain ({
+            keys('pwd | pbcopy'),
+            combo({}, 'return'),
+        }),
     })
     :mode('common', {
         delete = combo({'control'}, 'c'),
