@@ -308,6 +308,11 @@ hyper:app(sublime)
         u = combo({'cmd', 'shift', 'option'}, 'u'), -- uppercase
     })
     :mode('copy', {
+        a = chain({
+            combo({}, 'escape'),
+            combo({'cmd'}, 'a'),
+            keys('y'),
+        }),
         w = copy(keys('yiw')),
     })
 
