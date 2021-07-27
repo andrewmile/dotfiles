@@ -307,11 +307,14 @@ hyper:app(sublime)
         l = combo({'cmd', 'shift', 'option'}, 'l'), -- lowercase
         u = combo({'cmd', 'shift', 'option'}, 'u'), -- uppercase
     })
+    :mode('copy', {
+        w = copy(keys('yiw')),
+    })
 
 hyper:app(sublimemerge)
     :mode('open', {
-        primary = combo({'cmd', 'shift'}, 'o'),
-        b = combo({'cmd'}, 'b'), -- branch
+        primary = combo({'cmd'}, 'b'), -- branch
+        r = combo({'cmd', 'shift'}, 'o'), -- repo
         sidebar = combo({'cmd'}, 'k'),
     })
     :mode('make', {

@@ -167,6 +167,7 @@
        [:b [:hyper "copy" "b"]]
        [:c [:hyper "copy" "c"]]
        [:d [:hyper "copy" "d"]]
+       [:w [:hyper "copy" "w"]]
      ]
     }
     {
