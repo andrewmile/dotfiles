@@ -109,6 +109,7 @@ npm install -g @vue/cli
 npm install -g eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
 npm install -g fx
 npm install -g yo
+npm install -g eslint
 
 # list globally installed packages
 npm -g list --depth=0
