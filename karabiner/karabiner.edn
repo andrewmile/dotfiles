@@ -20,7 +20,7 @@
    :hyper "open -g hammerspoon://hyper?mode=%s\\&target=%s"
   }
   :layers {
-    :primary-mode {:key :caps_lock :alone {:key :escape}}
+    :default-mode {:key :caps_lock :alone {:key :escape}}
   }
   :simlayers {
     :append-mode {:key :a}
@@ -43,8 +43,8 @@
   }
   :main [
     {
-      :des "Primary Mode"
-      :rules [:primary-mode
+      :des "Default Mode"
+      :rules [:default-mode
         [:semicolon :!!semicolon] ; open Alfred
         [:a :!!a] ; get app bundle ID from Alfred
         [:h [:hyper "navigate" "back"]]
@@ -53,16 +53,16 @@
         [:k [:hyper "navigate" "up"]]
         [:l [:hyper "navigate" "forward"]]
         [:m [:hyper "toggle" "sidebar"]]
-        [:n [:hyper "make" "primary"]]
-        [:o [:hyper "open" "primary"]]
+        [:n [:hyper "make" "default"]]
+        [:o [:hyper "open" "default"]]
         [:p :!Cv]
         [:u :!Cz]
-        [:y [:hyper "copy" "primary"]]
+        [:y [:hyper "copy" "default"]]
         [:return_or_enter :!CTOSquote] ; vimac scroll mode
-        [:spacebar [:hyper "toggle" "primary"]]
+        [:spacebar [:hyper "toggle" "default"]]
         [:comma :!CTOSn] ; notification center
-        [:period [:hyper "execute" "primary"]]
-        [:slash [:hyper "find" "primary"]]
+        [:period [:hyper "execute" "default"]]
+        [:slash [:hyper "find" "default"]]
       ]
     }
     {

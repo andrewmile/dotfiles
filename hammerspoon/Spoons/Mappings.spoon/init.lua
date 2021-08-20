@@ -9,7 +9,7 @@ local modeMenuBar = hs.menubar.new():setTitle('Normal');
 
 hyper:app(bear)
     :mode('open', {
-        primary = alfredWorkflow('com.drgrib.bear', 'search bear'),
+        default = alfredWorkflow('com.drgrib.bear', 'search bear'),
         t = function()
                 hs.urlevent.openURL('bear://x-callback-url/open-note?title=' .. os.date('%Y.%m.%d') ..'&show_window=yes&new_window=no') -- open today's work journal
             end,
@@ -26,12 +26,12 @@ hyper:app(bear)
         up = combo({'cmd', 'option'}, 'up'),
     })
     :mode('copy', {
-        primary = copy(combo({'cmd', 'option', 'shift'}, 'l')),
+        default = copy(combo({'cmd', 'option', 'shift'}, 'l')),
     })
 
 hyper:app(chrome)
     :mode('open', {
-        primary = alfredSearch('bm'),
+        default = alfredSearch('bm'),
         options = combo({'control', 'shift'}, 's'),
         a = combo({'cmd', 'shift'}, 'm'), -- profile
         e = combo({'cmd', 'shift'}, 'c'), -- select element
@@ -53,7 +53,7 @@ hyper:app(chrome)
         k = combo({'cmd'}, ']'), -- network tab
     })
     :mode('copy', {
-        primary = copy(keys('yy')),
+        default = copy(keys('yy')),
         d = copyChromeUrlAsMarkdown(),
     })
     :mode('find', {
@@ -62,7 +62,7 @@ hyper:app(chrome)
 
 hyper:app(dash)
     :mode('open', {
-        primary = combo({'cmd'}, 'f'),
+        default = combo({'cmd'}, 'f'),
     })
     :mode('navigate', {
         up = combo({'option'}, 'up'),
@@ -71,12 +71,12 @@ hyper:app(dash)
 
 hyper:app(discord)
     :mode('open', {
-        primary = combo({'cmd'}, 'k'),
+        default = combo({'cmd'}, 'k'),
     })
 
 hyper:app(drafts)
     :mode('open', {
-        primary = combo({'cmd', 'shift'}, 'f'),
+        default = combo({'cmd', 'shift'}, 'f'),
     })
     :mode('toggle', {
         sidebar = combo({'cmd'}, '1'),
@@ -84,13 +84,13 @@ hyper:app(drafts)
 
 hyper:app(finder)
     :mode('open', {
-        primary = alfredSearch('open'),
+        default = alfredSearch('open'),
     })
     :mode('toggle', {
         sidebar = combo({'cmd', 'option'}, 's'),
     })
     :mode('make', {
-        primary = combo({'cmd', 'shift'}, 'n'),
+        default = combo({'cmd', 'shift'}, 'n'),
     })
     :mode('navigate', {
         back = combo({'cmd'}, '['),
@@ -125,7 +125,7 @@ hyper:app(mindnode)
 
 hyper:app(notion)
     :mode('open', {
-        primary = combo({'cmd'}, 'p'),
+        default = combo({'cmd'}, 'p'),
     })
     :mode('toggle', {
         sidebar = combo({'cmd'}, '\\'),
@@ -137,7 +137,7 @@ hyper:app(notion)
 
 hyper:app(omnifocus)
     :mode('open', {
-        primary = combo({'cmd'}, 'o'),
+        default = combo({'cmd'}, 'o'),
         f = chain({
             combo({'cmd'}, '5'), -- flagged
             combo({'cmd', 'option'}, '2'), -- go to outline
@@ -158,7 +158,7 @@ hyper:app(omnifocus)
         refresh = combo({'cmd'}, 'k'),
     })
     :mode('find', {
-        primary = combo({'cmd', 'option'}, 'f'),
+        default = combo({'cmd', 'option'}, 'f'),
     })
 
 hyper:app(onePassword)
@@ -176,7 +176,7 @@ hyper:app(postman)
 
 hyper:app(githubDesktop)
     :mode('open', {
-        primary = combo({'cmd'}, 't'),
+        default = combo({'cmd'}, 't'),
         b = combo({'cmd'}, 'b'), -- branch
         c = combo({'cmd'}, '1'), -- changes
         v = combo({'cmd'}, '2'), -- history
@@ -192,7 +192,7 @@ hyper:app(sketch)
 
 hyper:app(slack)
     :mode('open', {
-        primary = combo({'cmd'}, 'k'),
+        default = combo({'cmd'}, 'k'),
         a = openSlackChannel('internal'),
         c = openSlackChannel('client'),
         e = openSlackChannel('external'),
@@ -204,7 +204,7 @@ hyper:app(slack)
         forward = combo({'cmd'}, ']'),
     })
     :mode('execute', {
-        primary = keys('r'), -- pick emoji for selected message
+        default = keys('r'), -- pick emoji for selected message
         options = combo({'cmd', 'shift'}, '\\'),
         a = slackReaction(':thanks'),
         g = slackReaction(':thumbsup:'),
@@ -225,7 +225,7 @@ hyper:app(slack)
 
 hyper:app(spotify)
     :mode('open', {
-        primary = alfredWorkflow('com.vdesabou.spotify.mini.player', 'spot_mini'),
+        default = alfredWorkflow('com.vdesabou.spotify.mini.player', 'spot_mini'),
         w = alfredWorkflow('com.vdesabou.spotify.mini.player', 'lyrics'),
     })
     :mode('navigate', {
@@ -233,15 +233,15 @@ hyper:app(spotify)
         forward = combo({'cmd', 'option'}, 'right'),
     })
     :mode('copy', {
-        primary = copy(copySpotifyCurrentTrack()),
+        default = copy(copySpotifyCurrentTrack()),
     })
     :mode('find', {
-        primary = combo({'cmd'}, 'l'),
+        default = combo({'cmd'}, 'l'),
     })
 
 hyper:app(sublime)
     :mode('open', {
-        primary = combo({'cmd'}, 'p'),
+        default = combo({'cmd'}, 'p'),
         options = combo({'cmd', 'shift', 'option'}, ';'),
         b = function()
                 hs.eventtap.leftClick({ x=900, y=1000 }) -- focus bottom panel
@@ -253,18 +253,18 @@ hyper:app(sublime)
         w = combo({'cmd', 'shift'}, 'o'), -- window
     })
     :mode('toggle', {
-        primary = combo({'cmd'}, '/'),
+        default = combo({'cmd'}, '/'),
         sidebar = combo({'cmd'}, 'b'),
     })
     :mode('make', {
-        primary = combo({'cmd', 'option'}, 'n'),
+        default = combo({'cmd', 'option'}, 'n'),
     })
     :mode('navigate', {
         back = combo({'control'}, '-'),
         forward = combo({'cmd', 'option'}, 'down'),
     })
     :mode('execute', {
-        primary = combo({'cmd', 'shift'}, 'p'),
+        default = combo({'cmd', 'shift'}, 'p'),
         a = combo({'cmd', 'ctrl'}, 'a'), -- run all tests
         f = combo({'cmd', 'ctrl'}, 'f'), -- test current file
         r = combo({'cmd', 'ctrl'}, 'p'), -- rerun last test
@@ -318,7 +318,7 @@ hyper:app(sublime)
 
 hyper:app(sublimemerge)
     :mode('open', {
-        primary = combo({'cmd'}, 'b'), -- branch
+        default = combo({'cmd'}, 'b'), -- branch
         r = combo({'cmd', 'shift'}, 'o'), -- repo
         sidebar = combo({'cmd'}, 'k'),
     })
@@ -327,7 +327,7 @@ hyper:app(sublimemerge)
         b = combo({'cmd', 'shift'}, 'b'), -- branch
     })
     :mode('execute', {
-        primary = combo({'cmd', 'shift'}, 'p'),
+        default = combo({'cmd', 'shift'}, 'p'),
         c = combo({'cmd'}, 'return'), -- commit
         f = combo({'cmd', 'option'}, 'down'), -- pull
         s = combo({'cmd', 'option'}, 'up'), -- push
@@ -341,14 +341,14 @@ hyper:app(sublimemerge)
 
 hyper:app(tableplus)
     :mode('open', {
-        primary = combo({'cmd'}, 'p'),
+        default = combo({'cmd'}, 'p'),
         a = combo({'cmd', 'shift'}, 'k'), -- connection
         d = combo({'cmd', 'control'}, '['), -- data
         e = combo({'cmd'}, 'e'), -- editor
         s = combo({'cmd', 'control'}, ']'), -- structure
     })
     :mode('make', {
-        primary = combo({'cmd'}, 'i'),
+        default = combo({'cmd'}, 'i'),
     })
     :mode('navigate', {
         up = combo({'cmd'}, ']'),
@@ -360,7 +360,7 @@ hyper:app(tableplus)
 
 hyper:app(trello)
     :mode('open', {
-        primary = keys('b'),
+        default = keys('b'),
         c = combo({}, 'f'), -- card
     })
     :mode('navigate', {
@@ -381,17 +381,17 @@ hyper:app(trello)
 
 hyper:app(vscode)
     :mode('copy', {
-        primary = copy(combo({'cmd', 'option', 'control'}, 'y')),
+        default = copy(combo({'cmd', 'option', 'control'}, 'y')),
     })
     :mode('open', {
-        primary = combo({'cmd'}, 'p'),
+        default = combo({'cmd'}, 'p'),
         r = combo({'cmd', 'ctrl'}, 'o'), -- project / repo
     })
     :mode('execute', {
-        primary = combo({'cmd', 'shift'}, 'p'),
+        default = combo({'cmd', 'shift'}, 'p'),
     })
     :mode('toggle', {
-        primary = combo({'cmd'}, '/'),
+        default = combo({'cmd'}, '/'),
         sidebar = combo({'cmd', 'shift'}, 'e'),
     })
 
@@ -409,14 +409,14 @@ hyper:app('default')
         down = combo({'cmd', 'shift'}, '['),
     })
     :mode('execute', {
-        primary = alfredWorkflow('com.tedwise.menubarsearch', 'menubarsearch'),
+        default = alfredWorkflow('com.tedwise.menubarsearch', 'menubarsearch'),
     })
     :mode('common', {
         save = combo({'cmd'}, 's'),
         refresh = combo({'cmd'}, 'r'),
     })
     :mode('find', {
-        primary = combo({'cmd'}, 'f'),
+        default = combo({'cmd'}, 'f'),
     })
     :mode('modal', {
         app = modal('app', {
