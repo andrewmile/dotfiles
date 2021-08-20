@@ -45,7 +45,7 @@ hyper:app(chrome)
     :action('insert', {
         c = combo({'ctrl', 'option', 'cmd'}, 'p'), -- credentials
     })
-    :action('common', {
+    :action('general', {
         delete = combo({'cmd'}, 'w'),
     })
     :action('debug', {
@@ -96,7 +96,7 @@ hyper:app(finder)
         back = combo({'cmd'}, '['),
         forward = combo({'cmd'}, ']'),
     })
-    :action('common', {
+    :action('general', {
         delete = combo({'cmd'}, 'delete'),
     })
 
@@ -111,7 +111,7 @@ hyper:app(iterm)
             combo({}, 'return'),
         }),
     })
-    :action('common', {
+    :action('general', {
         delete = combo({'control'}, 'c'),
     })
 
@@ -154,7 +154,7 @@ hyper:app(omnifocus)
     :action('toggle', {
         sidebar = combo({'cmd', 'option'}, 's'),
     })
-    :action('common', {
+    :action('general', {
         refresh = combo({'cmd'}, 'k'),
     })
     :action('find', {
@@ -290,7 +290,7 @@ hyper:app(sublime)
         }),
         x = combo({'cmd', 'shift', 'option'}, 'x'), -- debug
     })
-    :action('common', {
+    :action('general', {
         save = chain({
             combo({'cmd'}, 's'),
             combo({}, 'escape'),
@@ -332,7 +332,7 @@ hyper:app(sublimemerge)
         f = combo({'cmd', 'option'}, 'down'), -- pull
         s = combo({'cmd', 'option'}, 'up'), -- push
     })
-    :action('common', {
+    :action('general', {
         save = combo({'cmd', 'shift', 'option', 'ctrl'}, 's'), -- stage
     })
     :action('toggle', {
@@ -354,7 +354,7 @@ hyper:app(tableplus)
         up = combo({'cmd'}, ']'),
         down = combo({'cmd'}, '['),
     })
-    :action('common', {
+    :action('general', {
         duplicate = combo({'cmd'}, 'd'),
     })
 
@@ -375,7 +375,7 @@ hyper:app(trello)
             combo({}, 'right'),
         }),
     })
-    :action('common', {
+    :action('general', {
         save = combo({'cmd'}, 'return'), -- description
     })
 
@@ -411,7 +411,7 @@ hyper:app('default')
     :action('execute', {
         default = alfredWorkflow('com.tedwise.menubarsearch', 'menubarsearch'),
     })
-    :action('common', {
+    :action('general', {
         save = combo({'cmd'}, 's'),
         refresh = combo({'cmd'}, 'r'),
     })
