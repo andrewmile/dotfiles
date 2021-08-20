@@ -20,31 +20,31 @@
    :hyper "open -g hammerspoon://hyper?action=%s\\&target=%s"
   }
   :layers {
-    :default-mode {:key :caps_lock :alone {:key :escape}}
+    :default {:key :caps_lock :alone {:key :escape}}
   }
   :simlayers {
-    :append-mode {:key :a}
-    :launch-mode {:key :comma}
-    :copy-mode {:key :y}
-    :change-mode {:key :c}
-    :general-mode {:key :semicolon}
-    :share-mode {:key :quote}
-    :toggle-mode {:key :spacebar}
-    :find-mode {:key :slash}
-    :execute-mode {:key :period}
-    :insert-mode {:key :i}
-    :make-mode {:key :n}
-    :open-mode {:key :o}
-    :relocate-mode {:key :r}
-    :redo-mode {:key :u}
-    :window-mode {:key :w}
-    :debug-mode {:key :x}
-    :vim-mode {:key :z}
+    :append {:key :a}
+    :launch {:key :comma}
+    :copy {:key :y}
+    :change {:key :c}
+    :general {:key :semicolon}
+    :share {:key :quote}
+    :toggle {:key :spacebar}
+    :find {:key :slash}
+    :execute {:key :period}
+    :insert {:key :i}
+    :make {:key :n}
+    :open {:key :o}
+    :relocate {:key :r}
+    :redo {:key :u}
+    :window {:key :w}
+    :debug {:key :x}
+    :vim {:key :z}
   }
   :main [
     {
-      :des "Default Mode"
-      :rules [:default-mode
+      :des "Default layer"
+      :rules [:default
         [:semicolon :!!semicolon] ; open Alfred
         [:a :!!a] ; get app bundle ID from Alfred
         [:h [:hyper "navigate" "back"]]
@@ -58,7 +58,7 @@
         [:p :!Cv]
         [:u :!Cz]
         [:y [:hyper "copy" "default"]]
-        [:return_or_enter :!CTOSquote] ; vimac scroll mode
+        [:return_or_enter :!CTOSquote] ; vimac scroll
         [:spacebar [:hyper "toggle" "default"]]
         [:comma :!CTOSn] ; notification center
         [:period [:hyper "execute" "default"]]
@@ -66,8 +66,8 @@
       ]
     }
     {
-      :des "Launch mode"
-      :rules [:launch-mode
+      :des "Launch layer"
+      :rules [:launch
         [:caps_lock [:hyper "modal" "app"]]
         [:a [:launch "Slack.app"]]
         [:b [:launch "Google\\ Chrome.app"]]
@@ -87,8 +87,8 @@
       ]
     }
     {
-      :des "General mode"
-      :rules [:general-mode
+      :des "General layer"
+      :rules [:general
         [:a :!Ca] ; Select all
         [:d [:hyper "general" "duplicate"]]
         ; [:f]
@@ -100,12 +100,12 @@
         [:v :!Cd] ; highlight next selection in Sublime
         [:w :!Cw] ; Cmd+t
         [:x [:hyper "general" "delete"]]
-        [:z :!!quote] ; scroll mode
+        [:z :!!quote] ; scroll
       ]
     }
     {
-     :des "Share mode"
-     :rules [:share-mode
+     :des "Share layer"
+     :rules [:share
       [:d :!!d] ; Edit done
       [:e :!!e] ; Edit with
       [:f :!SOCf] ; Add selected text to BitBar
@@ -113,8 +113,8 @@
      ]
     }
     {
-     :des "Toggle mode"
-     :rules [:toggle-mode
+     :des "Toggle layer"
+     :rules [:toggle
       [:c :!STC4] ; Screenshot to clipboard
       [:d [:hyper "toggle" "display"]]
       [:r [:hyper "toggle" "r"]]
@@ -123,8 +123,8 @@
      ]
    }
    {
-    :des "Window mode"
-    :rules [:window-mode
+    :des "Window layer"
+    :rules [:window
      [:semicolon [:hs "moveWindow?key=full"]]
      [:i [:hs "moveWindow?key=center"]]
      [:h [:hs "moveWindow?key=left"]]
@@ -138,8 +138,8 @@
     ]
    }
    {
-     :des "Find mode"
-     :rules [:find-mode
+     :des "Find layer"
+     :rules [:find
        [:a :!CSf] ; find all
        [:g :!CSOg] ; global google search
        [:r :!TSt] ; open selection hints in new tab
@@ -147,8 +147,8 @@
      ]
    }
    {
-     :des "Execute mode"
-     :rules [:execute-mode
+     :des "Execute layer"
+     :rules [:execute
        [:caps_lock [:hyper "execute" "options"]]
        [:a [:hyper "execute" "a"]]
        [:c [:hyper "execute" "c"]]
@@ -162,8 +162,8 @@
      ]
     }
     {
-     :des "Copy mode"
-     :rules [:copy-mode
+     :des "Copy layer"
+     :rules [:copy
        [:a [:hyper "copy" "a"]]
        [:b [:hyper "copy" "b"]]
        [:c [:hyper "copy" "c"]]
@@ -172,15 +172,15 @@
      ]
     }
     {
-     :des "Relocate Mode"
-     :rules [:relocate-mode
+     :des "Relocate layer"
+     :rules [:relocate
        [:j [:hyper "relocate" "down"]]
        [:k [:hyper "relocate" "up"]]
      ]
    }
    {
-     :des "Debug mode and Vim movements"
-     :rules [:debug-mode
+     :des "Debug layer and Vim movements"
+     :rules [:debug
        [:h :!Oleft_arrow] ; move one word back
        [:j [:hyper "debug" "j"]]
        [:k [:hyper "debug" "k"]]
@@ -188,8 +188,8 @@
      ]
    }
    {
-     :des "Vim mode"
-     :rules [:vim-mode
+     :des "Vim layer"
+     :rules [:vim
        [:h :left_arrow] ; go back one character
        [:j :down_arrow] ; go down one line
        [:k :up_arrow] ; go up one line
@@ -198,15 +198,15 @@
      ]
     }
    {
-     :des "Append Mode"
-     :rules [:append-mode
+     :des "Append layer"
+     :rules [:append
        [:comma [:hyper "append" "comma"]]
        [:semicolon [:hyper "append" "semicolon"]]
      ]
    }
    {
-     :des "Insert Mode"
-     :rules [:insert-mode
+     :des "Insert layer"
+     :rules [:insert
        [:a [:hyper "insert" "a"]]
        [:c [:hyper "insert" "c"]]
        [:d [:hyper "insert" "d"]]
@@ -220,15 +220,15 @@
      ]
    }
    {
-     :des "Make mode"
-     :rules [:make-mode
+     :des "Make layer"
+     :rules [:make
        [:b [:hyper "make" "b"]]
        [:r [:hyper "make" "r"]]
      ]
    }
    {
-     :des "Open Mode"
-     :rules [:open-mode
+     :des "Open layer"
+     :rules [:open
        [:caps_lock [:hyper "open" "options"]]
        [:a [:hyper "open" "a"]]
        [:b [:hyper "open" "b"]]
@@ -246,8 +246,8 @@
      ]
    }
    {
-     :des "Change Mode"
-     :rules [:change-mode
+     :des "Change layer"
+     :rules [:change
        [:k [:hyper "change" "k"]]
        [:l [:hyper "change" "l"]]
        [:u [:hyper "change" "u"]]
