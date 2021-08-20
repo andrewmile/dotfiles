@@ -17,7 +17,7 @@
   :templates {
    :launch "open -a %s"
    :hs "open -g hammerspoon://\"%s\""
-   :hyper "open -g hammerspoon://hyper?mode=%s\\&target=%s"
+   :hyper "open -g hammerspoon://hyper?action=%s\\&target=%s"
   }
   :layers {
     :default-mode {:key :caps_lock :alone {:key :escape}}
