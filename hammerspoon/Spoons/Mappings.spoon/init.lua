@@ -395,7 +395,7 @@ hyper:app(vscode)
         sidebar = combo({'cmd', 'shift'}, 'e'),
     })
 
-hyper:app('default')
+hyper:app('fallback')
     :action('open', {
         options = combo({'cmd', 'shift', 'option'}, 's'), -- search selections with vimac
         t = combo({'cmd', 'shift', 'option'}, 't'), -- search tabs with witch
