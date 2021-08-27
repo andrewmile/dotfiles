@@ -401,6 +401,9 @@ hyper:app('fallback')
         t = combo({'cmd', 'shift', 'option'}, 't'), -- search tabs with witch
         w = combo({'cmd', 'shift', 'option'}, 'w'), -- search windows with witch
     })
+    :action('insert', {
+        default = combo({'cmd', 'shift', 'option', 'control'}, 'i'), -- Alfred clipboard
+    })
     :action('toggle', {
         display = moveWindowToNextDisplay()
     })

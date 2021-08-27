@@ -48,7 +48,7 @@
         [:semicolon :!!semicolon] ; open Alfred
         [:a :!!a] ; get app bundle ID from Alfred
         [:h [:hyper "navigate" "back"]]
-        [:i :!!i] ; Alfred clipboard
+        [:i [:hyper "insert" "default"]]
         [:j [:hyper "navigate" "down"]]
         [:k [:hyper "navigate" "up"]]
         [:l [:hyper "navigate" "forward"]]
