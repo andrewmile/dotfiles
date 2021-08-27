@@ -397,6 +397,7 @@ hyper:app(vscode)
 
 hyper:app('fallback')
     :action('open', {
+        alfred = combo({'cmd', 'shift', 'option', 'control'}, ';'),
         options = combo({'cmd', 'shift', 'option'}, 's'), -- search selections with vimac
         t = combo({'cmd', 'shift', 'option'}, 't'), -- search tabs with witch
         w = combo({'cmd', 'shift', 'option'}, 'w'), -- search windows with witch

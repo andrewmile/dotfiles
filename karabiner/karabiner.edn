@@ -45,7 +45,7 @@
     {
       :des "Default layer"
       :rules [:default
-        [:semicolon :!!semicolon] ; open Alfred
+        [:semicolon [:hyper "open" "alfred"]]
         [:a :!!a] ; get app bundle ID from Alfred
         [:h [:hyper "navigate" "back"]]
         [:i [:hyper "insert" "default"]]
