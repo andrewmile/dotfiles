@@ -67,6 +67,10 @@
       ]
     }
     {
+      :des "command c"
+      :rules [[:!Cc [:hyper "copy" "default"]]]
+    }
+    {
       :des "Launch layer"
       :rules [:launch
         [:caps_lock [:hyper "modal" "app"]]
