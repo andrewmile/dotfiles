@@ -74,12 +74,26 @@ function openSlackChannel(channel)
     end
 end
 
+function openObsidianNote(note)
+    return function()
+        hs.urlevent.openURL('obsidian://open?' .. obsidianNotes[note])
+    end
+end
+
 function slackReaction(emoji)
     return function()
         hs.eventtap.keyStroke({'cmd', 'shift'}, '\\')
         hs.eventtap.keyStrokes(emoji)
         hs.timer.doAfter(1, function ()
             hs.eventtap.keyStroke({}, 'return')
+        end)
+    end
+end
+
+function wait(time, command)
+    return function()
+        hs.timer.doAfter(time, function ()
+            command()
         end)
     end
 end

@@ -8,6 +8,9 @@ set expandtab                  " Replace tabs with spaces
 set autoindent
 set cursorline
 
+nmap j gj
+nmap k gk
+
 " ********************
 " nerdtree
 " ********************

@@ -2,7 +2,7 @@ hs.loadSpoon('Private')
 hs.loadSpoon('Mappings')
 hs.loadSpoon('Windows')
 
-gokuWatcher = hs.pathwatcher.new(os.getenv('HOME') .. '/.config/karabiner.edn/', function ()
+hs.pathwatcher.new(os.getenv('HOME') .. '/.config/karabiner.edn/', function ()
     output = hs.execute('/usr/local/bin/goku')
     hs.notify.new({title = 'Karabiner Config', informativeText = output}):send()
 end):start()

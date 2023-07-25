@@ -59,6 +59,7 @@ export PATH=/usr/local/bin:"$(brew --prefix php)/bin:$PATH"
 export PATH=~/.composer/vendor/bin:$PATH:~/Library/Python/2.7/bin:~/bin
 export PATH=~/.npm-packages/bin:$PATH
 export PATH="$PATH:$HOME/.bin"
+export PATH="$PATH:/usr/local/opt/python/libexec/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -109,8 +110,15 @@ alias bs="npm browser-sync start --config .browsersync.js"
 #export PATH="$/usr/local/Cellar/php55/5.5.17/bin:$PATH"
 #export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 
+# Antigen
+source ~/antigen.zsh
+antigen bundle jessarcher/zsh-artisan
+antigen apply
+
+ARTISAN_OPEN_ON_MAKE_EDITOR=subl
 
 # source ~/.xsh
+source ~/aliases/index.sh
 source ~/aliases/github.sh
 source ~/aliases/git.sh
 
@@ -118,3 +126,9 @@ source ~/aliases/git.sh
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/andrew/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/andrew/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/andrew/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/andrew/google-cloud-sdk/completion.zsh.inc'; fi

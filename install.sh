@@ -28,12 +28,18 @@ ln -s "$dotfiles/.xsh" "$HOME/.xsh"
 ln -s "$dotfiles/aliases" "$HOME/aliases"
 source $HOME/.zshrc
 
+# Install Antigen
+curl -L git.io/antigen > antigen.zsh
+
 ln -s "$dotfiles/iterm2/cobalt2.zsh-theme" "$HOME/.oh-my-zsh/themes/cobalt2.zsh-theme"
 
 ln -s "$dotfiles/lambo" "$HOME/.lambo"
 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
+
+## Initialize git repositories with main branch
+git config --global init.defaultBranch main
 
 ## Install powerline
 pip install --user powerline-status
@@ -47,7 +53,7 @@ sudo rm -R fonts
 mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
 
 # Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/spark-installer laravel/valet tightenco/lambo tightenco/tlint squizlabs/php_codesniffer friendsofphp/php-cs-fixer codedungeon/laravel-craftsman laravel-zero/installer
+/usr/local/bin/composer global require laravel/installer laravel/spark-installer laravel/valet tightenco/lambo tightenco/tlint tightenco/tighten-coding-standard squizlabs/php_codesniffer friendsofphp/php-cs-fixer codedungeon/laravel-craftsman laravel-zero/installer
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
@@ -57,8 +63,9 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin
 
 mkdir $HOME/Code
 
-# Enable key repeat in Sublime
-defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
+# Enable key repeat in Sublime and VS Code
+defaults write com.sublimetext.4 ApplePressAndHoldEnabled -bool false
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 # link karabiner config
 echo "linking karabiner config"
@@ -110,6 +117,7 @@ npm install -g eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-js
 npm install -g fx
 npm install -g yo
 npm install -g eslint
+npm install -g n
 
 # list globally installed packages
 npm -g list --depth=0

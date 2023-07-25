@@ -31,6 +31,7 @@
     :share {:key :quote}
     :toggle {:key :spacebar}
     :find {:key :slash}
+    :symbol {:key :f}
     :execute {:key :period}
     :insert {:key :i}
     :make {:key :n}
@@ -70,16 +71,18 @@
       :rules [:launch
         [:caps_lock [:hyper "modal" "app"]]
         [:a [:launch "Slack.app"]]
-        [:b [:launch "Google\\ Chrome.app"]]
+        [:b [:launch "Arc.app"]]
+        ; [:b [:launch "Google\\ Chrome.app"]]
         [:c :!!c] ; Fantastical
         [:d [:launch "TablePlus.app"]]
         [:e [:launch "Sublime\\ Text.app"]]
+        ; [:e [:launch "Visual\\ Studio\\ Code"]]
         [:f [:launch "Finder.app"]]
-        [:g [:launch "Omnifocus.app"]]
+        [:g [:launch "Obsidian.app"]]
         [:q [:launch "Zoom.us.app"]]
-        [:r [:launch "Bear.app"]]
+        [:r [:hyper "launch" "bunch"]]
         [:s [:launch "Spotify.app"]]
-        [:t :!Ospacebar] ; iTerm
+        [:t [:launch "iTerm.app"]]
         [:v [:launch "Sublime\\ Merge.app"]]
         [:w [:launch "Drafts.app"]]
         [:x [:launch "Discord.app"]]
@@ -97,7 +100,7 @@
         [:r [:hyper "general" "refresh"]]
         [:s [:hyper "general" "save"]]
         [:t :!Ct] ; Cmd+t
-        [:v :!Cd] ; highlight next selection in Sublime
+        [:v [:hyper "general" "v"]] ; highlight next selection
         [:w :!Cw] ; Cmd+t
         [:x [:hyper "general" "delete"]]
         [:z :!!quote] ; scroll
@@ -117,8 +120,12 @@
      :rules [:toggle
       [:c :!STC4] ; Screenshot to clipboard
       [:d [:hyper "toggle" "display"]]
+      [:f [:hyper "toggle" "f"]]
+      [:m [:hyper "toggle" "m"]]
+      [:q [:hyper "toggle" "q"]]
       [:r [:hyper "toggle" "r"]]
       [:s :!SC4] ; Screenshot to filesystem
+      [:t [:hyper "toggle" "t"]]
       [:w :!Ch] ; Cmd+h
      ]
    }
@@ -126,15 +133,15 @@
     :des "Window layer"
     :rules [:window
      [:semicolon [:hs "moveWindow?key=full"]]
-     [:i [:hs "moveWindow?key=center"]]
-     [:h [:hs "moveWindow?key=left"]]
-     [:j [:hs "moveWindow?key=bottom"]]
-     [:k [:hs "moveWindow?key=top"]]
-     [:l [:hs "moveWindow?key=right"]]
-     [:u [:hs "moveWindow?key=topLeft"]]
-     [:o [:hs "moveWindow?key=topRight"]]
-     [:n [:hs "moveWindow?key=bottomLeft"]]
-     [:period [:hs "moveWindow?key=bottomRight"]]
+     ; [:i [:hs "moveWindow?key=center"]]
+     ; [:h [:hs "moveWindow?key=left"]]
+     ; [:j [:hs "moveWindow?key=bottom"]]
+     ; [:k [:hs "moveWindow?key=top"]]
+     ; [:l [:hs "moveWindow?key=right"]]
+     ; [:u [:hs "moveWindow?key=topLeft"]]
+     ; [:o [:hs "moveWindow?key=topRight"]]
+     ; [:n [:hs "moveWindow?key=bottomLeft"]]
+     ; [:period [:hs "moveWindow?key=bottomRight"]]
     ]
    }
    {
@@ -143,7 +150,14 @@
        [:a :!CSf] ; find all
        [:g :!CSOg] ; global google search
        [:r :!TSt] ; open selection hints in new tab
-       [:z :!CSOz] ; global amazon search
+       [:z [:hyper "find" "z"]] ; global amazon search
+     ]
+   }
+   {
+     :des "Symbol layer"
+     :rules [:symbol
+       [:j [:hyper "symbol" "next"]]
+       [:k [:hyper "symbol" "previous"]]
      ]
    }
    {
@@ -176,6 +190,7 @@
      :rules [:relocate
        [:j [:hyper "relocate" "down"]]
        [:k [:hyper "relocate" "up"]]
+       [:semicolon [:hyper "relocate" "semicolon"]]
      ]
    }
    {
@@ -223,7 +238,13 @@
      :des "Make layer"
      :rules [:make
        [:b [:hyper "make" "b"]]
+       [:c [:hyper "make" "c"]]
+       [:d [:hyper "make" "d"]]
+       [:e [:hyper "make" "e"]]
        [:r [:hyper "make" "r"]]
+       [:t [:hyper "make" "t"]]
+       [:w [:hyper "make" "w"]]
+       [:z [:hyper "make" "z"]]
      ]
    }
    {
@@ -237,7 +258,7 @@
        [:e [:hyper "open" "e"]]
        [:f [:hyper "open" "f"]]
        [:g [:hyper "open" "g"]]
-       [:r [:hyper "open" "r"]]
+       [:r [:hyper "open" "r" ["key" "r"]]]
        [:s [:hyper "open" "s"]]
        [:t [:hyper "open" "t"]]
        [:v [:hyper "open" "v"]]
