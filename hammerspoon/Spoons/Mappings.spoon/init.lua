@@ -119,7 +119,7 @@ hyper:app(arc)
         k = combo({'cmd'}, ']'), -- network tab
     })
     :action('copy', {
-        default = combo({'cmd', 'shift'}, 'c'),
+        default = copy(combo({'cmd', 'shift'}, 'c')),
         d = combo({'cmd', 'shift', 'option'}, 'c'),
     })
     :action('find', {
@@ -603,6 +603,9 @@ hyper:app('fallback')
         options = combo({'cmd', 'shift', 'option'}, 's'), -- search selections with vimac
         t = combo({'cmd', 'shift', 'option'}, 't'), -- search tabs with witch
         w = combo({'cmd', 'shift', 'option'}, 'w'), -- search windows with witch
+    })
+    :action('copy', {
+        default = copy(),
     })
     :action('insert', {
         default = combo({'cmd', 'shift', 'option', 'control'}, 'i'), -- Alfred clipboard
