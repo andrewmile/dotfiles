@@ -42,6 +42,12 @@ function hyper:app(app)
     return o
 end
 
+function showKeyCombo(combo)
+    if (string.len(combo) > 0) then
+        hs.alert(combo)
+    end
+end
+
 hs.urlevent.bind('hyper', function(_, params)
     if (
         not hyperKeys[params.action] or
@@ -51,6 +57,7 @@ hs.urlevent.bind('hyper', function(_, params)
     end
 
     command = hyperKeys[params.action][params.target][frontApp()]
+    showKeyCombo(params.combo)
     if (command == nil) then
         command = hyperKeys[params.action][params.target]['fallback']
     end
