@@ -168,6 +168,19 @@ use({
 })
 
 use({
+  'nvim-treesitter/nvim-treesitter',
+  run = ':TSUpdate',
+  requires = {
+    'nvim-treesitter/playground',
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    'JoosepAlviste/nvim-ts-context-commentstring',
+  },
+  config = function()
+    require('user.plugins.treesitter')
+  end,
+})
+
+use({
     'tpope/vim-fugitive',
     requires = 'tpope/vim-rhubarb',
 })
