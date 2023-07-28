@@ -13,6 +13,7 @@ brew 'mas' # Mac App Store manager
 
 # Development
 brew 'act'
+brew 'neovim'
 brew 'php'
 brew 'php@7.4'
 brew 'php@7.3'
@@ -33,6 +34,8 @@ brew 'node'
 brew 'nvm'
 brew 'python'
 brew 'redis'
+brew 'ripgrep'
+brew 'tmux'
 brew 'yarn'
 
 # Apps

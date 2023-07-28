@@ -107,6 +107,13 @@ ln -s "$dotfiles/.mackup.cfg" "${HOME}/.mackup.cfg"
 # link vimrc
 ln -s "$dotfiles/vim/vimrc" "${HOME}/.vim/vimrc"
 
+# link nvim
+ln -s "$dotfiles/nvim" "${HOME}/.config/nvim"
+
+# link tmux
+mkdir "${HOME}/.tmux"
+ln -s "$dotfiles/tmux/tmux.conf" "${HOME}/.tmux/.conf"
+
 # link global .gitignore
 ln -s "$dotfiles/gitignore" "${HOME}/.gitignore"
 git config --global core.excludesfile "${HOME}/.gitignore"
