@@ -1,0 +1,71 @@
+local telescope = require('telescope')
+local actions = require('telescope.actions')
+
+-- vim.cmd([[
+--   highlight link TelescopePromptTitle PMenuSel
+--   highlight link TelescopePreviewTitle PMenuSel
+--   highlight link TelescopePromptNormal NormalFloat
+--   highlight link TelescopePromptBorder FloatBorder
+--   highlight link TelescopeNormal CursorLine
+--   highlight link TelescopeBorder CursorLineBg
+-- ]])
+
+telescope.setup({
+  defaults = {
+  --   path_display = { truncate = 1 },
+    prompt_prefix = '',
+    selection_caret = '  ',
+    layout_config = {
+      prompt_position = 'top',
+      height = 10,
+      width = 80,
+    },
+    sorting_strategy = 'ascending',
+    mappings = {
+      i = {
+        ['<esc>'] = actions.close,
+      },
+    },
+    file_ignore_patterns = { '.git/' },
+    preview = {
+      hide_on_startup = true,
+    },
+  },
+  pickers = {
+    find_files = {
+      hidden = true,
+      prompt_title = false,
+      results_title = false,
+    },
+    commands = {
+      prompt_title = false,
+      results_title = false,
+    }
+  --   buffers = {
+  --     previewer = false,
+  --     layout_config = {
+  --       width = 80,
+  --     },
+  --   },
+  --   oldfiles = {
+  --     prompt_title = 'History',
+  --   },
+  --   lsp_references = {
+  --     previewer = false,
+  --   },
+  },
+})
+
+require('telescope').load_extension('fzf')
+-- require('telescope').load_extension('live_grep_args')
+
+vim.keymap.set('n', '<leader>c', [[<cmd>lua require('telescope.builtin').commands()<CR>]])
+vim.keymap.set('n', '<leader>f', [[<cmd>lua require('telescope.builtin').find_files()<CR>]])
+vim.keymap.set('n', '<leader>F', [[<cmd>lua require('telescope.builtin').find_files({
+  no_ignore = true, prompt_title = 'All Files'
+})<CR>]]) -- luacheck: no max line length
+vim.keymap.set('n', '<leader>b', [[<cmd>lua require('telescope.builtin').buffers()<CR>]])
+vim.keymap.set('n', '<leader>g', [[<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>]])
+vim.keymap.set('n', '<leader>h', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]])
+vim.keymap.set('n', '<leader>s', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]])
+

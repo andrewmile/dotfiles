@@ -175,18 +175,35 @@ hyper:app(finder)
     })
 
 hyper:app(iterm)
+    :action('open', {
+        default = keys(' f'), -- open nvim file
+    })
+    :action('execute', {
+        default = keys(' c'), -- open nvim command
+    })
+    :action('toggle', {
+        default = keys('gcc'), -- nvim comment
+        sidebar = keys(' n'), -- nvim tree
+    })
     :action('copy', {
-        b = chain({
-            keys('git branch --show-current | tr -d \'\\n\' | pbcopy'),
+        default = chain ({
+            keys('pwd | pbcopy'),
             combo({}, 'return'),
         }),
-        d = chain ({
-            keys('pwd | pbcopy'),
+        b = chain({
+            keys('git branch --show-current | tr -d \'\\n\' | pbcopy'),
             combo({}, 'return'),
         }),
     })
     :action('general', {
         delete = combo({'control'}, 'c'),
+        -- nvim save
+        save = chain({
+            combo({}, 'escape'),
+            keys(':w'),
+            combo({}, 'return'),
+            combo({}, 'escape'),
+        }),
     })
 
 hyper:app(mindnode)
@@ -275,6 +292,9 @@ hyper:app(obsidian)
     :action('relocate', {
         down = combo({'cmd', 'option'}, 'down'),
         up = combo({'cmd', 'option'}, 'up'),
+    })
+    :action('copy', {
+        default = copy(combo({'cmd', 'option'}, 'c')) -- copy URL
     })
     :action('general', {
         v = combo({'ctrl', 'option'}, 'd'),
@@ -606,6 +626,9 @@ hyper:app('fallback')
     })
     :action('copy', {
         default = copy(),
+    })
+    :action('paste', {
+        default = combo({'cmd'}, 'v'),
     })
     :action('insert', {
         default = combo({'cmd', 'shift', 'option', 'control'}, 'i'), -- Alfred clipboard
