@@ -195,6 +195,10 @@ hyper:app(iterm)
             combo({}, 'return'),
         }),
     })
+    :action('navigate', {
+        back = combo({'ctrl'}, 'o'), -- nvim previous position
+        forward = keys('gd'), -- nvim go to definition
+    })
     :action('general', {
         delete = combo({'control'}, 'c'),
         -- nvim save
