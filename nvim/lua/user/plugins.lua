@@ -42,6 +42,9 @@ use({
       Color.new("dark", "#1B2C3F")
       Color.new("selected", "#1F4661")
 
+      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#1B2C3F' })
+      vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#1B2C3F" })
+
       -- @todo get red undercurl working
       Group.new('SpellBad', nil, nil, styles.undercurl)
 
@@ -50,6 +53,8 @@ use({
       Group.new('TelescopeResultsBorder', colors.dark, colors.dark, nil)
       Group.new('TelescopeResultsNormal', colors.white, colors.dark, nil)
       Group.new("TelescopeSelection", colors.white, colors.selected, nil)
+
+      Group.new("CmpItemAbbrMatch", colors.selected, nil, styles.bold)
 
       -- Lualine
       Group.new("StatusLineNonText", colors.dark, colors.cursor_line)

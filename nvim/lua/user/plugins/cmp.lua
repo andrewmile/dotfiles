@@ -17,6 +17,12 @@ cmp.setup({
   experimental = {
     ghost_text = true,
   },
+  window = {
+    completion = {
+      -- Set the bg color to CmpNormal (see plugins.lua)
+      winhighlight = "Normal:CmpNormal",
+    }
+  },
   formatting = {
     format = lspkind.cmp_format({
       with_text = true,
@@ -32,25 +38,18 @@ cmp.setup({
       require('luasnip').lsp_expand(args.body)
     end,
   },
+  completion = {
+    -- auto select first item
+    completeopt = 'menu,menuone,noinsert'
+  },
   mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<up>'] = cmp.mapping.select_prev_item(),
+    ['<down>'] = cmp.mapping.select_next_item(),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
-    -- ['<CR>'] = cmp.mapping.confirm {
-    --   behavior = cmp.ConfirmBehavior.Replace,
-    --   select = false,
-    -- },
-    ['<CR>'] = cmp.mapping(function(fallback)
-      if not cmp.confirm(option) then
-        fallback()
-      end
-      -- .confirm {
-      -- behavior = cmp.ConfirmBehavior.Replace,
-      -- select = false,
-    end, { 'i', 's' }),
+    ['<CR>'] = cmp.mapping.confirm { select = true },
     ['<Tab>'] = cmp.mapping(function(fallback)
       if luasnip.jumpable(1) then
         luasnip.jump(1)
