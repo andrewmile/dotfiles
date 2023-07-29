@@ -37,9 +37,13 @@ use({
       local colors = require("cobalt2.utils").colors
       local Color = require("cobalt2.utils").Color
       local Group = require("cobalt2.utils").Group
+      local styles = require("cobalt2.utils").styles
 
       Color.new("dark", "#1B2C3F")
       Color.new("selected", "#1F4661")
+
+      -- @todo get red undercurl working
+      Group.new('SpellBad', nil, nil, styles.undercurl)
 
       Group.new('TelescopePromptNormal', colors.white, colors.dark, nil)
       Group.new('TelescopePromptBorder', colors.dark, colors.dark, nil)
