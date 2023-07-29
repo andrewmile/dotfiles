@@ -1,11 +1,14 @@
 require('mason').setup()
 require('mason-lspconfig').setup({ automatic_installation = true })
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 -- PHP
-require('lspconfig').intelephense.setup({})
+require('lspconfig').intelephense.setup({ capabilities = capabilities })
 
 -- Vue, JavaScript, TypeScript
 require('lspconfig').volar.setup({
+  capabilities = capabilities,
   -- Enable "Take Over Mode" where volar will provide all JS/TS LSP services
   filetypes = {
     'typescript',
@@ -17,7 +20,17 @@ require('lspconfig').volar.setup({
 })
 
 -- Tailwind CSS
-require('lspconfig').tailwindcss.setup({})
+require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
+
+-- JSON
+require('lspconfig').jsonls.setup({
+  capabilities = capabilities,
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+    }
+  }
+})
 
 vim.keymap.set('n', '<Leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>')
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
