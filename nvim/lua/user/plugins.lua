@@ -49,7 +49,7 @@ use({
       Group.new('SpellBad', nil, nil, styles.undercurl)
 
       Group.new('TelescopePromptNormal', colors.white, colors.dark, nil)
-      Group.new('TelescopePromptBorder', colors.dark, colors.dark, nil)
+      Group.new('TelescopePromptBorder', colors.dark, colors.selected, nil)
       Group.new('TelescopeResultsBorder', colors.dark, colors.dark, nil)
       Group.new('TelescopeResultsNormal', colors.white, colors.dark, nil)
       Group.new("TelescopeSelection", colors.white, colors.selected, nil)

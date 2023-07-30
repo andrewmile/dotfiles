@@ -1,6 +1,15 @@
 local telescope = require('telescope')
 local actions = require('telescope.actions')
 
+require('telescope.pickers.layout_strategies').horizontal_merged = function(picker, max_columns, max_lines, layout_config)
+  local layout = require('telescope.pickers.layout_strategies').horizontal(picker, max_columns, max_lines, layout_config)
+
+  layout.results.line = layout.results.line - 1
+  layout.results.height = layout.results.height + 1
+
+  return layout
+end
+
 -- vim.cmd([[
 --   highlight link TelescopePromptTitle PMenuSel
 --   highlight link TelescopePreviewTitle PMenuSel
@@ -13,13 +22,15 @@ local actions = require('telescope.actions')
 telescope.setup({
   defaults = {
   --   path_display = { truncate = 1 },
-    prompt_prefix = '',
+    border = false,
+    prompt_prefix = ' ',
     selection_caret = '  ',
     layout_config = {
       prompt_position = 'top',
       height = 10,
       width = 80,
     },
+    layout_strategy = 'horizontal_merged',
     sorting_strategy = 'ascending',
     mappings = {
       i = {
@@ -40,7 +51,7 @@ telescope.setup({
     commands = {
       prompt_title = false,
       results_title = false,
-    }
+    },
   --   buffers = {
   --     previewer = false,
   --     layout_config = {
