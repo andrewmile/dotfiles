@@ -129,5 +129,8 @@ npm install -g n
 # list globally installed packages
 npm -g list --depth=0
 
+# Sublime merge command line
+ln -s "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" ~/bin/smerge
+
 # Symlink the Mackup config file to the home directory
 ln -s $dotfiles/.mackup.cfg $HOME/.mackup.cfg
