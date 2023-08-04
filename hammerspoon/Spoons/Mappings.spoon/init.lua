@@ -130,6 +130,7 @@ hyper:app(arc)
         })
     })
     :action('toggle', {
+        default = combo({'cmd', 'option'}, 'j'), -- console
         sidebar = combo({'cmd'}, 's'),
     })
 
@@ -161,6 +162,7 @@ hyper:app(finder)
         default = combo({'cmd', 'shift'}, 'g'),
     })
     :action('toggle', {
+        default = combo({'cmd', 'shift'}, '.'), -- hidden files
         sidebar = combo({'cmd', 'option'}, 's'),
     })
     :action('make', {
