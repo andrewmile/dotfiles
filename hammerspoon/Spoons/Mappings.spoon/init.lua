@@ -115,7 +115,7 @@ hyper:app(arc)
         c = combo({'cmd'}, 's'), -- add to anybox collection
     })
     :action('debug', {
-        j = combo({'cmd'}, '['), -- sources tabe
+        j = combo({'cmd'}, '['), -- sources tab
         k = combo({'cmd'}, ']'), -- network tab
     })
     :action('copy', {
