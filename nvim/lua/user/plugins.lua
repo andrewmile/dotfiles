@@ -226,6 +226,33 @@ use({
   end,
 })
 
+-- Floating terminal
+use({
+  'akinsho/toggleterm.nvim',
+  config = function()
+    local colors = require("cobalt2.utils").colors
+    require('toggleterm').setup({
+      shade_terminals = false,
+      highlights = {
+        Normal = {guibg = '#193549'},
+        FloatBorder = {
+          guifg = '#193549',
+          guibg = '#193549',
+        },
+      },
+    })
+    vim.keymap.set('t', '<Esc>', '<C-\\><C-n>:ToggleTerm<CR>')
+  end
+})
+
+-- Testing helper
+use({
+  'vim-test/vim-test',
+  config = function()
+    require('user/plugins/vim-test')
+  end
+})
+
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
 if packer_bootstrap then

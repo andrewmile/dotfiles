@@ -182,6 +182,10 @@ hyper:app(iterm)
     })
     :action('execute', {
         default = keys(' c'), -- open nvim command
+        a = keys(' ta'), -- run test suite
+        f = keys(' tf'), -- run test file
+        r = keys(' tr'), -- run last test
+        t = keys(' tn'), -- run nearest test
     })
     :action('toggle', {
         default = keys('gcc'), -- nvim comment
