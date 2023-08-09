@@ -179,6 +179,7 @@ hyper:app(finder)
 hyper:app(iterm)
     :action('open', {
         default = keys(' f'), -- open nvim file
+        f = keys(' s'), -- find nvim symbols
     })
     :action('execute', {
         default = keys(' c'), -- open nvim command
