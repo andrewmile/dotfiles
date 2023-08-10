@@ -10,6 +10,8 @@ local luasnip = require('luasnip')
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 
+require('luasnip/loaders/from_snipmate').lazy_load()
+
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,longest,preview'
 
@@ -19,9 +21,9 @@ cmp.setup({
   },
   window = {
     completion = {
-      -- Set the bg color to CmpNormal (see plugins.lua)
-      winhighlight = "Normal:CmpNormal",
-    }
+      border = {'', '', '', ' ', '', '', '', ' '},
+      winhighlight = "Normal:CmpNormal,FloatBorder:BorderBG",
+    },
   },
   formatting = {
     format = lspkind.cmp_format({
@@ -99,3 +101,6 @@ cmp.setup({
     -- { name = 'fuzzy_path' },
   },
 })
+
+vim.cmd "highlight! BorderBG guibg=#1B2C3F guifg=#1B2C3F"
+

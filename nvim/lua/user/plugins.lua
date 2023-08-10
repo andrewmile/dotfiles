@@ -41,6 +41,8 @@ use({
 
       Color.new("dark", "#1B2C3F")
       Color.new("selected", "#1F4661")
+      Color.new("lualine", "#0d3a58")
+      Color.new("cursor_line", "#1F4661")
 
       vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#1B2C3F' })
       vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#1B2C3F" })
@@ -54,10 +56,12 @@ use({
       Group.new('TelescopeResultsNormal', colors.white, colors.dark, nil)
       Group.new("TelescopeSelection", colors.white, colors.selected, nil)
 
-      Group.new("CmpItemAbbrMatch", colors.selected, nil, styles.bold)
+      -- Group.new("CmpItemAbbrMatch", colors.selected, nil, styles.bold)
+      Group.new("CmpItemAbbr", colors.white, nil, nil)
 
       -- Lualine
-      Group.new("StatusLineNonText", colors.dark, colors.cursor_line)
+      Group.new("StatusLineNonText", colors.dark, colors.lualine)
+      Group.new("StatusLine", colors.yellow, colors.lualine)
     end,
 })
 
