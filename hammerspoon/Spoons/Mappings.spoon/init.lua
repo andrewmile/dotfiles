@@ -111,7 +111,10 @@ hyper:app(arc)
         save = combo({'cmd', 'ctrl', 'option'}, 's'), -- anybox quick save
     })
     :action('execute', {
-        default = combo({'cmd'}, 't'),
+        default = chain({
+            combo({'cmd'}, 't'),
+            combo({}, 'tab'),
+        }),
         c = combo({'cmd'}, 's'), -- add to anybox collection
     })
     :action('debug', {
