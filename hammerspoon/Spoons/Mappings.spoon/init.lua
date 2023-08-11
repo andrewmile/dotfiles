@@ -89,7 +89,11 @@ hyper:app(arc)
         b = launch(anybox),
         e = combo({'cmd', 'shift'}, 'c'), -- select element
         g = combo({'cmd'}, '1'),
-        r = alfredWorkflow('com.alfredapp.arc-spaces', 'open space'),
+        r = chain({
+            combo({'cmd'}, 't'),
+            combo({}, 'tab'),
+            keys('Focus on '),
+        }),
         t = alfredWorkflow('com.hellovietduc.alfred.arc-control', 'open tab'),
         x = combo({'cmd', 'option'}, 'j'), -- console
     })
