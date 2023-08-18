@@ -28,7 +28,7 @@
     :copy {:key :y}
     :change {:key :c}
     :general {:key :semicolon}
-    :share {:key :quote}
+    :switch {:key :quote}
     :toggle {:key :spacebar}
     :find {:key :slash}
     :symbol {:key :f}
@@ -111,8 +111,9 @@
       ]
     }
     {
-     :des "Share layer"
-     :rules [:share
+     :des "Switch layer"
+     :rules [:switch
+      [:c [:hyper "switch" "c"]]
       [:d :!!d] ; Edit done
       [:e :!!e] ; Edit with
       [:f :!SOCf] ; Add selected text to BitBar

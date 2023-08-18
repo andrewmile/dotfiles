@@ -272,6 +272,12 @@ hyper:app(obsidian)
         l = combo({'cmd', 'shift', 'option'}, 'l'), -- lowercase
         u = combo({'cmd', 'shift', 'option'}, 'u'), -- uppercase
     })
+    :action('switch', {
+        c = chain({ -- switch to multiline cursors
+            combo({'option', 'shift'}, 'i'),
+            combo({'shift'}, '6'),
+        }),
+    })
     :action('symbol', {
         next = chain({
             combo({'cmd', 'shift'}, 's'),
@@ -458,6 +464,13 @@ hyper:app(sublime)
     :action('symbol', {
         next = combo({'cmd', 'option', 'shift'}, 'down'),
         previous = combo({'cmd', 'option', 'shift'}, 'up'),
+    })
+    :action('switch', {
+        c = chain({ -- switch to multiline cursors
+            combo({'cmd', 'shift'}, 'l'),
+            combo({}, 'escape'),
+            combo({'shift'}, '6'),
+        }),
     })
     :action('make', {
         default = combo({'cmd', 'option'}, 'n'),
