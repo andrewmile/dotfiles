@@ -130,11 +130,11 @@ hyper:app(arc)
         d = combo({'cmd', 'shift', 'option'}, 'c'),
     })
     :action('find', {
-        z = chain({
-            combo({'cmd'}, 't'),
-            keys('Amazon'),
-            wait(.2, combo({}, 'tab')),
-        })
+        g = arcSiteSearch('GitHub'),
+        s = arcSiteSearch('Metal'),
+        v = arcSiteSearch('YouTube'),
+        w = arcSiteSearch('Wikipedia'),
+        z = arcSiteSearch('Amazon'),
     })
     :action('toggle', {
         default = combo({'cmd', 'option'}, 'j'), -- console

@@ -153,9 +153,12 @@
      :des "Find layer"
      :rules [:find
        [:a :!CSf] ; find all
-       [:g :!CSOg] ; global google search
+       [:g [:hyper "find" "g"]]
        [:r :!TSt] ; open selection hints in new tab
-       [:z [:hyper "find" "z"]] ; global amazon search
+       [:s [:hyper "find" "s"]]
+       [:v [:hyper "find" "v"]]
+       [:w [:hyper "find" "w"]]
+       [:z [:hyper "find" "z"]]
      ]
    }
    {

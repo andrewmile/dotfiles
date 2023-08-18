@@ -41,6 +41,14 @@ function launch(bundleID)
     end
 end
 
+function arcSiteSearch(site)
+    return chain({
+        combo({'cmd'}, 't'),
+        keys(site),
+        wait(.2, combo({}, 'tab')),
+    })
+end
+
 function modal(name, actions, onEnter, onExit)
     spoon.ModalMgr:new(name)
     local modal = spoon.ModalMgr.modal_list[name]
