@@ -147,13 +147,15 @@ hyper:app(tinkerwell)
         r = function()
             sites = {}
             for file in hs.fs.dir("~/.config/valet/Sites") do
-                if file ~= "." and file ~= ".." then
-                    table.insert(sites, {
-                        ["text"] = file,
-                        ["subText"] = hs.fs.symlinkAttributes("~/.config/valet/Sites/" .. file, "target"),
-                    })
-                end
+                if file == "." or file == ".." then goto continue end
+                table.insert(sites, {
+                    ["text"] = file,
+                    ["subText"] = hs.fs.symlinkAttributes("~/.config/valet/Sites/" .. file, "target"),
+                })
+                ::continue::
             end
+
+            table.sort(sites, function(a, b) return a["text"] < b["text"] end)
 
             hs.chooser.new(function(choice)
                 if (choice) then
