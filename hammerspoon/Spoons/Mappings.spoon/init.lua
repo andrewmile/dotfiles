@@ -141,6 +141,28 @@ hyper:app(arc)
         sidebar = combo({'cmd'}, 's'),
     })
 
+hyper:app(tinkerwell)
+    :action('open', {
+        default = combo({'cmd', 'shift'}, 'p'),
+        r = function()
+            sites = {}
+            for file in hs.fs.dir("~/.config/valet/Sites") do
+                if file ~= "." and file ~= ".." then
+                    table.insert(sites, {
+                        ["text"] = file,
+                        ["subText"] = hs.fs.symlinkAttributes("~/.config/valet/Sites/" .. file, "target"),
+                    })
+                end
+            end
+
+            hs.chooser.new(function(choice)
+                if (choice) then
+                    hs.urlevent.openURL('tinkerwell://?cwd=' .. hs.base64.encode(choice.subText))
+                end
+            end):choices(sites):show()
+        end,
+    })
+
 hyper:app(dash)
     :action('open', {
         default = combo({'cmd'}, 'f'),

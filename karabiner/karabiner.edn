@@ -60,15 +60,11 @@
         [:u :!Cz]
         [:y [:hyper "copy" "default"]]
         [:return_or_enter :!CTOSquote] ; vimac scroll
-        [:spacebar [:hyper "toggle" "default"]]
-        [:comma :!CTOSn] ; notification center
+        [:spacebar [:hyper "toggle" "default" "Cmd+Spacebar"]]
+        [:comma [:hyper "launch" "bunch"]]
         [:period [:hyper "execute" "default"]]
         [:slash [:hyper "find" "default"]]
       ]
-    }
-    {
-      :des "command c"
-      :rules [[:!Cc [:hyper "copy" "default"]]]
     }
     {
       :des "Launch layer"
@@ -84,13 +80,14 @@
         [:f [:launch "Finder.app"]]
         [:g [:launch "Obsidian.app"]]
         [:q [:launch "Zoom.us.app"]]
-        [:r [:hyper "launch" "bunch"]]
+        [:r [:launch "Tinkerwell.app"]]
         [:s [:launch "Spotify.app"]]
         [:t [:launch "iTerm.app"]]
         [:v [:launch "Sublime\\ Merge.app"]]
         [:w [:launch "Drafts.app"]]
         [:x [:launch "Discord.app"]]
         [:z [:launch "Trello.app"]]
+        ; [:z [:launch "Zoom.us.app"]]
       ]
     }
     {
@@ -132,6 +129,7 @@
       [:s :!SC4] ; Screenshot to filesystem
       [:t [:hyper "toggle" "t"]]
       [:w :!Ch] ; Cmd+h
+      [:semicolon :!CTOSn] ; notification center
      ]
    }
    {
