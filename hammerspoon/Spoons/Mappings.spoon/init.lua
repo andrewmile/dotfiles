@@ -144,6 +144,7 @@ hyper:app(arc)
 hyper:app(tinkerwell)
     :action('open', {
         default = combo({'cmd', 'shift'}, 'p'),
+        c = combo({'cmd', 'shift'}, 'c'),
         r = function()
             valet = "~/.config/valet/Sites/";
             sites = {}
@@ -164,6 +165,11 @@ hyper:app(tinkerwell)
                 end
             end):choices(sites):show()
         end,
+        t = combo({'cmd', 'shift'}, 't'),
+    })
+    :action('toggle', {
+        default = combo({'cmd'}, '/'),
+        a = combo({'cmd', 'shift'}, 'a'),
     })
 
 hyper:app(dash)
