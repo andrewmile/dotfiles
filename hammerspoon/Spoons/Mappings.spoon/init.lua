@@ -145,12 +145,13 @@ hyper:app(tinkerwell)
     :action('open', {
         default = combo({'cmd', 'shift'}, 'p'),
         r = function()
+            valet = "~/.config/valet/Sites/";
             sites = {}
-            for file in hs.fs.dir("~/.config/valet/Sites") do
+            for file in hs.fs.dir(valet) do
                 if file == "." or file == ".." then goto continue end
                 table.insert(sites, {
                     ["text"] = file,
-                    ["subText"] = hs.fs.symlinkAttributes("~/.config/valet/Sites/" .. file, "target"),
+                    ["subText"] = hs.fs.symlinkAttributes(valet .. file, "target"),
                 })
                 ::continue::
             end
