@@ -120,6 +120,7 @@
     {
      :des "Toggle layer"
      :rules [:toggle
+      [:a [:hyper "toggle" "a"]]
       [:c :!STC4] ; Screenshot to clipboard
       [:d [:hyper "toggle" "display"]]
       [:f [:hyper "toggle" "f"]]
