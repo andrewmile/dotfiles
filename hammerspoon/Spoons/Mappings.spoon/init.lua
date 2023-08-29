@@ -651,6 +651,22 @@ hyper:app(vscode)
     })
     :action('execute', {
         default = combo({'cmd', 'shift'}, 'p'),
+        a = chain({
+            combo({'cmd', 'ctrl'}, 'a'), -- run all tests
+            combo({'control'}, '`'), -- focus terminal
+        }),
+        f = chain({
+            combo({'cmd', 'ctrl'}, 'f'), -- test current file
+            combo({'control'}, '`'), -- focus terminal
+        }),
+        r = chain({
+            combo({'cmd', 'ctrl'}, 'p'), -- rerun last test
+            combo({'control'}, '`'), -- focus terminal
+        }),
+        t = chain({
+            combo({'cmd', 'ctrl'}, 't'), -- test current method
+            combo({'control'}, '`'), -- focus terminal
+        }),
     })
     :action('make', {
         default = combo({'cmd', 'option'}, 'n'),
@@ -658,10 +674,7 @@ hyper:app(vscode)
     :action('toggle', {
         default = combo({'cmd'}, '/'),
         sidebar = combo({'cmd', 'shift'}, 'e'),
-        t = chain({
-            combo({'cmd'}, 'k'),
-            combo({'cmd'}, 'i'),
-        }),
+        t = combo({'control'}, '`'),
     })
     :action('general', {
         save = chain({
