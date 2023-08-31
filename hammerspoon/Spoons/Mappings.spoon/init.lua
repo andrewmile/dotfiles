@@ -84,7 +84,29 @@ hyper:app(chrome)
 
 hyper:app(arc)
     :action('open', {
-        default = combo({'cmd', 'ctrl', 'option'}, 'o'), -- anybox quick find
+        default = function()
+            success, space = hs.osascript.applescript([[
+                tell application "Arc"
+                    return title of active space of front window
+                end tell
+            ]])
+            hs.urlevent.openURL('anybox://quick-find?filter=' .. space)
+
+
+            escapeWatcher = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(event)
+                if (event:getKeyCode() == 53) then -- escape
+                    closeQuickOpen()
+                end
+            end)
+
+            escapeWatcher:start()
+
+            function closeQuickOpen()
+                escapeWatcher:stop()
+                hs.eventtap.keyStroke({}, 'escape')
+                hs.application.launchOrFocusByBundleID(arc)
+            end
+        end,
         options = combo({'control', 'shift'}, 's'),
         b = launch(anybox),
         e = combo({'cmd', 'shift'}, 'c'), -- select element
