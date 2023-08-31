@@ -59,6 +59,12 @@ function openArcBrowserSpace(space)
     ]])
 end
 
+function openArcSpace(space)
+    return function()
+        openArcBrowserSpace(arcSpaces[space])
+    end
+end
+
 function modal(name, actions, onEnter, onExit)
     spoon.ModalMgr:new(name)
     local modal = spoon.ModalMgr.modal_list[name]

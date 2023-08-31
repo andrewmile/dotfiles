@@ -108,8 +108,11 @@ hyper:app(arc)
             end
         end,
         options = combo({'control', 'shift'}, 's'),
+        a = openArcSpace('admin'),
         b = launch(anybox),
+        c = openArcSpace('client'),
         e = combo({'cmd', 'shift'}, 'c'), -- select element
+        f = openArcSpace('play'),
         g = combo({'cmd'}, '1'),
         r = function()
             choices = {}
@@ -135,6 +138,7 @@ hyper:app(arc)
             end):choices(choices):rows(4):width(30):show()
         end,
         t = alfredWorkflow('com.hellovietduc.alfred.arc-control', 'open tab'),
+        w = openArcSpace('work'),
         x = combo({'cmd', 'option'}, 'j'), -- console
     })
     :action('navigate', {
