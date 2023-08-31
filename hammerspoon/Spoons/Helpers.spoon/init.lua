@@ -49,6 +49,16 @@ function arcSiteSearch(site)
     })
 end
 
+function openArcBrowserSpace(space)
+    hs.osascript.applescript([[
+        tell application "Arc"
+            tell front window
+                tell (the first space whose title is "]] .. space .. [[") to focus
+            end tell
+        end tell
+    ]])
+end
+
 function modal(name, actions, onEnter, onExit)
     spoon.ModalMgr:new(name)
     local modal = spoon.ModalMgr.modal_list[name]

@@ -130,13 +130,7 @@ hyper:app(arc)
 
             hs.chooser.new(function(choice)
                 if (choice) then
-                    hs.osascript.applescript([[
-                        tell application "Arc"
-                            tell front window
-                                tell (the first space whose title is "]] .. choice.text .. [[") to focus
-                            end tell
-                        end tell
-                    ]])
+                    openArcBrowserSpace(choice.text)
                 end
             end):choices(choices):rows(4):width(30):show()
         end,
