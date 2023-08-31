@@ -96,6 +96,8 @@ hyper:app(arc)
             escapeWatcher = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(event)
                 if (event:getKeyCode() == 53) then -- escape
                     closeQuickOpen()
+                elseif (event:getKeyCode() == 36) then -- return
+                    escapeWatcher:start()
                 end
             end)
 
