@@ -502,6 +502,10 @@ hyper:app(sublime)
             combo({}, 'escape'),
             combo({'shift'}, '6'),
         }),
+        r = chain({
+            combo({'cmd'}, 'c'),
+            openCodeInTinkerwell(),
+        }),
     })
     :action('make', {
         default = combo({'cmd', 'option'}, 'n'),

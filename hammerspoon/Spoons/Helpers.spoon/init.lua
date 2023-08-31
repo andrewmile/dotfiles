@@ -88,6 +88,12 @@ function openObsidianNote(note)
     end
 end
 
+function openCodeInTinkerwell()
+    return function()
+        hs.urlevent.openURL('tinkerwell://?code=' .. hs.base64.encode(hs.pasteboard.getContents()))
+    end
+end
+
 function slackReaction(emoji)
     return function()
         hs.eventtap.keyStroke({'cmd', 'shift'}, '\\')

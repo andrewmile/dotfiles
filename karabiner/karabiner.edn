@@ -114,6 +114,7 @@
       [:d :!!d] ; Edit done
       [:e :!!e] ; Edit with
       [:f :!SOCf] ; Add selected text to BitBar
+      [:r [:hyper "switch" "r"]]
       [:w :!SCw] ; Close all windows
      ]
     }
