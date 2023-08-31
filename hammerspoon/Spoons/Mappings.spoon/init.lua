@@ -89,11 +89,35 @@ hyper:app(arc)
         b = launch(anybox),
         e = combo({'cmd', 'shift'}, 'c'), -- select element
         g = combo({'cmd'}, '1'),
-        r = chain({
-            combo({'cmd'}, 't'),
-            combo({}, 'tab'),
-            keys('Focus on '),
-        }),
+        r = function()
+            choices = {}
+            success, spaces = hs.osascript.applescript([[
+                tell application "Arc"
+                    return title of every space of front window
+                end tell
+            ]])
+            for _, space in pairs(spaces) do
+                if space == "" then goto continue end
+                table.insert(choices, {
+                    ["text"] = space,
+                })
+                ::continue::
+            end
+
+            table.sort(choices, function(a, b) return a["text"] < b["text"] end)
+
+            hs.chooser.new(function(choice)
+                if (choice) then
+                    hs.osascript.applescript([[
+                        tell application "Arc"
+                            tell front window
+                                tell (the first space whose title is "]] .. choice.text .. [[") to focus
+                            end tell
+                        end tell
+                    ]])
+                end
+            end):choices(choices):rows(4):width(30):show()
+        end,
         t = alfredWorkflow('com.hellovietduc.alfred.arc-control', 'open tab'),
         x = combo({'cmd', 'option'}, 'j'), -- console
     })
