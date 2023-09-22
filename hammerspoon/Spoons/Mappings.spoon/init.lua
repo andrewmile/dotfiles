@@ -97,7 +97,7 @@ hyper:app(arc)
                 if (event:getKeyCode() == 53) then -- escape
                     closeQuickOpen()
                 elseif (event:getKeyCode() == 36) then -- return
-                    escapeWatcher:start()
+                    escapeWatcher:stop()
                 end
             end)
 
