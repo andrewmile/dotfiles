@@ -9,7 +9,7 @@ local modeMenuBar = hs.menubar.new():setTitle('Normal');
 
 function calloutSnippet()
     return chain({
-        combo({'cmd', 'shift', 'option', 'control'}, 's'), -- Alfred snippets
+        combo({'cmd', 'shift', 'option', 'control'}, 'p'), -- Alfred snippets
         keys('callout'),
         combo({}, 'return'),
     })
@@ -806,7 +806,7 @@ hyper:app('fallback')
     })
     :action('insert', {
         default = combo({'cmd', 'shift', 'option', 'control'}, 'i'), -- Alfred clipboard
-        -- s = combo({'cmd', 'shift', 'option', 'control'}, 's'), -- Alfred snippets
+        s = combo({'cmd', 'shift', 'option', 'control'}, 'p'), -- Alfred snippets
     })
     :action('toggle', {
         display = moveWindowToNextDisplay(),
