@@ -13,6 +13,7 @@ brew 'mas' # Mac App Store manager
 
 # Development
 brew 'act'
+brew 'asdf'
 brew 'neovim'
 brew 'php'
 brew 'php@7.4'
@@ -56,6 +57,8 @@ cask 'hammerspoon'
 cask 'handbrake'
 cask 'iterm2'
 cask 'karabiner-elements'
+cask 'lastfm'
+cask 'neovide'
 cask 'ngrok'
 cask 'notion'
 cask 'phpmon'

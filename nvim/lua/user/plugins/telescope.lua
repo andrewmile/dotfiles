@@ -19,6 +19,8 @@ end
 --   highlight link TelescopeBorder CursorLineBg
 -- ]])
 
+local project_actions = require("telescope._extensions.project.actions")
+
 telescope.setup({
   defaults = {
   --   path_display = { truncate = 1 },
@@ -65,9 +67,20 @@ telescope.setup({
   --     previewer = false,
   --   },
   },
+  extensions = {
+    project = {
+      base_dirs = {
+        {path = '~/Code', max_depth = 4},
+      },
+      on_project_selected = function(prompt_bufnr)
+        project_actions.change_working_directory(prompt_bufnr, false)
+      end
+    },
+  },
 })
 
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('project')
 -- require('telescope').load_extension('live_grep_args')
 
 vim.keymap.set('n', '<leader>c', [[<cmd>lua require('telescope.builtin').commands()<CR>]])
@@ -80,3 +93,9 @@ vim.keymap.set('n', '<leader>g', [[<cmd>lua require('telescope').extensions.live
 vim.keymap.set('n', '<leader>h', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]])
 vim.keymap.set('n', '<leader>s', [[<cmd>lua require('telescope.builtin').lsp_document_symbols({symbol_width = 70, symbols = 'method'})<CR>]])
 
+vim.api.nvim_set_keymap(
+        'n',
+        '<leader>r',
+        ":lua require'telescope'.extensions.project.project{}<CR>",
+        {noremap = true, silent = true}
+)

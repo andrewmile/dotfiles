@@ -81,13 +81,13 @@
         [:g [:launch "Obsidian.app"]]
         [:q [:launch "Zoom.us.app"]]
         [:r [:launch "Tinkerwell.app"]]
-        [:s [:launch "Spotify.app"]]
+        [:s [:launch "Music.app"]]
         [:t [:launch "iTerm.app"]]
         [:v [:launch "Sublime\\ Merge.app"]]
         [:w [:launch "Drafts.app"]]
         [:x [:launch "Discord.app"]]
-        [:z [:launch "Trello.app"]]
-        ; [:z [:launch "Zoom.us.app"]]
+        ; [:z [:launch "Trello.app"]]
+        [:z [:launch "Zoom.us.app"]]
       ]
     }
     {

@@ -3,3 +3,4 @@ npm-debug.log
 .env.testing
 localphpunit.xml
 hammerspoon/Ax
+prepare-commit-msg

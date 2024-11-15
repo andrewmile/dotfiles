@@ -160,6 +160,7 @@ use({
     { 'kyazdani42/nvim-web-devicons' },
     { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
     { 'nvim-telescope/telescope-live-grep-args.nvim' },
+    { 'nvim-telescope/telescope-project.nvim' },
   },
   config = function()
     require('user/plugins/telescope')
@@ -191,6 +192,16 @@ use({
   config = function()
     require('user.plugins.treesitter')
   end,
+})
+
+use({
+  'JoosepAlviste/nvim-ts-context-commentstring',
+  config = function()
+    require('ts_context_commentstring').setup {
+      enable_autocmd = false,
+    }
+    vim.g.skip_ts_context_commentstring_module = true
+  end
 })
 
 use({
@@ -236,6 +247,8 @@ use({
   config = function()
     local colors = require("cobalt2.utils").colors
     require('toggleterm').setup({
+      persist_mode = false,
+      start_in_insert = false,
       shade_terminals = false,
       highlights = {
         Normal = {guibg = '#193549'},
@@ -246,6 +259,26 @@ use({
       },
     })
     vim.keymap.set('t', '<Esc>', '<C-\\><C-n>:ToggleTerm<CR>')
+  end
+})
+
+use('tpope/vim-dispatch')
+use('powerman/vim-plugin-AnsiEsc')
+use('chrisbra/Colorizer')
+
+use({
+  'm00qek/baleia.nvim',
+  config = function()
+    vim.cmd([[
+      let s:baleia = luaeval("require('baleia').setup { }")
+      command! BaleiaColorize call s:baleia.once(bufnr('%'))
+
+      autocmd QuickfixCmdPost * copen
+        \ | setlocal modifiable
+        \ | call s:baleia.once(bufnr('%'))
+        \ | setlocal nomodifiable
+        \ | map <esc> :cclose
+    ]])
   end
 })
 

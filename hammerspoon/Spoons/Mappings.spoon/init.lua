@@ -7,6 +7,14 @@ hs.loadSpoon('Apps')
 
 local modeMenuBar = hs.menubar.new():setTitle('Normal');
 
+function calloutSnippet()
+    return chain({
+        combo({'cmd', 'shift', 'option', 'control'}, 's'), -- Alfred snippets
+        keys('callout'),
+        combo({}, 'return'),
+    })
+end
+
 hyper:app(anybox)
     :action('open', {
         default = combo({'cmd'}, 'p'),
@@ -90,24 +98,7 @@ hyper:app(arc)
                     return title of active space of front window
                 end tell
             ]])
-            hs.urlevent.openURL('anybox://quick-find?filter=' .. space)
-
-
-            escapeWatcher = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(event)
-                if (event:getKeyCode() == 53) then -- escape
-                    closeQuickOpen()
-                elseif (event:getKeyCode() == 36) then -- return
-                    escapeWatcher:stop()
-                end
-            end)
-
-            escapeWatcher:start()
-
-            function closeQuickOpen()
-                escapeWatcher:stop()
-                hs.eventtap.keyStroke({}, 'escape')
-                hs.application.launchOrFocusByBundleID(arc)
-            end
+            hs.osascript.applescript('tell application id "cc.anybox.Anybox" to open Quick Find with Smart List "' .. space .. '"')
         end,
         options = combo({'control', 'shift'}, 's'),
         a = openArcSpace('admin'),
@@ -151,10 +142,11 @@ hyper:app(arc)
         forward = combo({'cmd'}, ']'),
     })
     :action('insert', {
-        c = chain({
-            combo({'shift', 'cmd'}, 'x'), -- credentials
-            combo({}, 'tab'),
-        }),
+        -- c = chain({
+        --     combo({'shift', 'cmd'}, 'x'), -- credentials
+        --     combo({}, 'tab'),
+        -- }),
+        c = calloutSnippet(),
     })
     :action('general', {
         delete = combo({'cmd'}, 'w'),
@@ -181,6 +173,9 @@ hyper:app(arc)
         v = arcSiteSearch('YouTube'),
         w = arcSiteSearch('Wikipedia'),
         z = arcSiteSearch('Amazon'),
+    })
+    :action('switch', {
+        r = combo({'option'}, 'r'), -- save to readwise
     })
     :action('toggle', {
         default = combo({'cmd', 'option'}, 'j'), -- console
@@ -264,6 +259,7 @@ hyper:app(iterm)
     :action('open', {
         default = keys(' f'), -- open nvim file
         f = keys(' s'), -- find nvim symbols
+        r = keys(' r'), -- find nvim projects
     })
     :action('execute', {
         default = keys(' c'), -- open nvim command
@@ -292,6 +288,37 @@ hyper:app(iterm)
     })
     :action('general', {
         delete = combo({'control'}, 'c'),
+        -- nvim save
+        save = chain({
+            combo({}, 'escape'),
+            keys(':w'),
+            combo({}, 'return'),
+            combo({}, 'escape'),
+        }),
+    })
+
+hyper:app(neovide)
+    :action('open', {
+        default = keys(' f'), -- open nvim file
+        f = keys(' s'), -- find nvim symbols
+        r = keys(' r'), -- find nvim projects
+    })
+    :action('execute', {
+        default = keys(' c'), -- open nvim command
+        a = keys(' ta'), -- run test suite
+        f = keys(' tf'), -- run test file
+        r = keys(' tr'), -- run last test
+        t = keys(' tn'), -- run nearest test
+    })
+    :action('toggle', {
+        default = keys('gcc'), -- nvim comment
+        sidebar = keys(' n'), -- nvim tree
+    })
+    :action('navigate', {
+        back = combo({'ctrl'}, 'o'), -- nvim previous position
+        forward = keys('gd'), -- nvim go to definition
+    })
+    :action('general', {
         -- nvim save
         save = chain({
             combo({}, 'escape'),
@@ -343,6 +370,7 @@ hyper:app(obsidian)
             combo({}, 'down'),
             combo({}, 'return'),
         }),
+        c = calloutSnippet(),
         e = combo({'cmd', 'ctrl'}, 'space'),
     })
     :action('change', {
@@ -503,9 +531,15 @@ hyper:app(slack)
         r = combo({'cmd'}, '.'),
     })
 
+hyper:app(music)
+    :action('open', {
+        default = alfredWorkflow('com.calebevans.playsong', 'playalbumby'),
+    })
+
 hyper:app(spotify)
     :action('open', {
-        default = alfredWorkflow('com.vdesabou.spotify.mini.player', 'spot_mini'),
+        -- default = alfredWorkflow('com.vdesabou.spotify.mini.player', 'spot_mini'),
+        default = combo({'cmd', 'option', 'control'}, 'p'),
         b = alfredWorkflow('com.vdesabou.spotify.mini.player', 'lookup_artist_online'),
         w = alfredWorkflow('com.vdesabou.spotify.mini.player', 'lyrics'),
     })
@@ -699,6 +733,10 @@ hyper:app(vscode)
         default = combo({'cmd'}, 'p'),
         r = combo({'cmd', 'ctrl'}, 'o'), -- project / repo
     })
+    :action('navigate', {
+        back = combo({'control'}, '-'),
+        forward = combo({'function'}, 'f12'),
+    })
     :action('execute', {
         default = combo({'cmd', 'shift'}, 'p'),
         a = chain({
@@ -742,6 +780,17 @@ hyper:app(zoom)
         r = combo({'cmd', 'shift'}, 'h'), -- chat
     })
 
+hyper:app(reader)
+    :action('open', {
+        default = combo({}, 'v'),
+    })
+    :action('execute', {
+        default = combo({'cmd'}, 'k'),
+    })
+    :action('find', {
+        default = combo({}, '/'),
+    })
+
 hyper:app('fallback')
     :action('open', {
         alfred = combo({'cmd', 'shift', 'option', 'control'}, ';'),
@@ -757,9 +806,10 @@ hyper:app('fallback')
     })
     :action('insert', {
         default = combo({'cmd', 'shift', 'option', 'control'}, 'i'), -- Alfred clipboard
+        -- s = combo({'cmd', 'shift', 'option', 'control'}, 's'), -- Alfred snippets
     })
     :action('toggle', {
-        display = moveWindowToNextDisplay()
+        display = moveWindowToNextDisplay(),
     })
     :action('navigate', {
         up = combo({'cmd', 'shift'}, ']'),

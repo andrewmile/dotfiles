@@ -1,18 +1,21 @@
-require('indent_blankline').setup({
-  filetype_exclude = {
-    'help',
-    'terminal',
-    'dashboard',
-    'packer',
-    'lspinfo',
-    'TelescopePrompt',
-    'TelescopeResults',
+require('ibl').setup({
+  exclude = {
+    filetypes = {
+      'help',
+        'terminal',
+      'dashboard',
+      'packer',
+      'lspinfo',
+      'TelescopePrompt',
+      'TelescopeResults',
+    },
+    buftypes = {
+      'terminal',
+      'NvimTree',
+    }
   },
-  buftype_exclude = {
-    'terminal',
-    'NvimTree',
-  },
-  show_trailing_blankline_indent = false,
-  show_first_indent_level = true,
-  char = '▏',
+  indent = {
+    -- char = '▏',
+    char = '┊',
+  }
 })
